@@ -1,4 +1,4 @@
-// Cookie Consent Management Utilities
+﻿// Cookie Consent Management Utilities
 // Provides utilities for managing GDPR-compliant cookie consent
 
 export interface CookieConsentSettings {
@@ -210,3 +210,4 @@ if (typeof window !== 'undefined') {
     trackEvent
   };
 }
+

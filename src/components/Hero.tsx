@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+﻿import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import heroEpoxyWarehouse from '@/assets/hero-epoxy-warehouse.jpg';
@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src={heroEpoxyWarehouse}
-          alt="Pavimento epoxi industrial en almacén de Valencia - JefeEpoxi especialistas en suelos epoxi profesionales"
+          alt="Pavimento epoxy industrial en almacén de Valencia - Jefeepoxy especialistas en suelos epoxy profesionales"
           className="w-full h-full object-cover opacity-30"
           loading="eager"
           fetchpriority="high"
@@ -32,7 +32,7 @@ const Hero = () => {
           {/* Main Title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              JefeEpoxi
+              Jefeepoxy
             </span>
             <br />
             <span className="text-2xl md:text-4xl lg:text-5xl font-normal text-muted-foreground">

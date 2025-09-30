@@ -1,4 +1,4 @@
-import { useLanguage } from '@/hooks/useLanguage';
+﻿import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Shield, Palette, Wrench, Sparkles, Building } from 'lucide-react';
 import vlogHeroImage from '@/assets/vlog-epoxy-hero.jpg';

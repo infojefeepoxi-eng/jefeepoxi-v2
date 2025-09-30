@@ -1,4 +1,4 @@
-import { Users, Award, Clock, Target } from 'lucide-react';
+﻿import { Users, Award, Clock, Target } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -35,7 +35,7 @@ const About = () => {
     },
     {
       title: "Experiencia Técnica",
-      description: "Nuestro equipo cuenta con certificaciones específicas en sistemas epoxi y cumplimiento normativo."
+      description: "Nuestro equipo cuenta con certificaciones específicas en sistemas epoxy y cumplimiento normativo."
     },
     {
       title: "Servicio Integral",
@@ -53,10 +53,10 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Sobre JefeEpoxi
+            Sobre Jefeepoxy
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Especialistas en pavimentos epoxi con más de 5 años de experiencia transformando espacios industriales, 
+            Especialistas en pavimentos epoxy con más de 5 años de experiencia transformando espacios industriales, 
             comerciales y residenciales en toda Europa. Nuestro compromiso es ofrecer soluciones de pavimentación 
             que combinen durabilidad, estética y funcionalidad.
           </p>
@@ -89,9 +89,9 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                JefeEpoxi nació de la pasión por transformar espacios mediante soluciones de pavimentación 
+                Jefeepoxy nació de la pasión por transformar espacios mediante soluciones de pavimentación 
                 innovadoras y duraderas. Comenzamos nuestro recorrido en Valencia, especializándonos en 
-                pavimentos epoxi para la industria local.
+                pavimentos epoxy para la industria local.
               </p>
               <p>
                 Con el tiempo, nuestra reputación de excelencia y compromiso nos ha llevado a expandir 
@@ -111,7 +111,7 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                En JefeEpoxi entendemos que cada proyecto es único. Por eso, trabajamos estrechamente 
+                En Jefeepoxy entendemos que cada proyecto es único. Por eso, trabajamos estrechamente 
                 con nuestros clientes para desarrollar soluciones personalizadas que superen sus expectativas.
               </p>
               <p>

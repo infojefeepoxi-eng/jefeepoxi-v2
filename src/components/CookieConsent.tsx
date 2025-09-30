@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Cookie, Shield } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -157,3 +157,4 @@ const CookieConsent = () => {
 };
 
 export default CookieConsent;
+

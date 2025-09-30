@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -45,7 +45,7 @@ const ProjectsGallery = () => {
       type: 'industrial',
       image: projectIndustrialBlueGray,
       description: {
-        es: 'Pavimento epoxi multicapa con señalización integrada para nave de distribución',
+        es: 'Pavimento epoxy multicapa con señalización integrada para nave de distribución',
         en: 'Multi-layer epoxy flooring with integrated signage for distribution warehouse'
       }
     },

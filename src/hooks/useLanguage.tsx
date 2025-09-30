@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+﻿import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface LanguageContextType {
   language: 'es' | 'en';
@@ -20,19 +20,19 @@ const translations = {
     'nav.cookies': 'Política de Cookies',
     'nav.faq': 'FAQ',
     
-    'hero.title': 'Pavimentos epoxi profesionales en Valencia',
+    'hero.title': 'Pavimentos epoxy profesionales en Valencia',
     'hero.subtitle': 'Más de 5 años de experiencia. 30 proyectos entregados en España y Europa.',
     'hero.cta.primary': 'Solicitar presupuesto',
     'hero.cta.secondary': 'Ver proyectos',
     
     'services.title': 'Nuestros Servicios',
-    'services.subtitle': 'Sistemas certificados Flowcrete® para industria alimentaria, logística, parkings y aplicaciones especializadas en toda Europa',
+    'services.subtitle': 'Sistemas certificados Epoxy M² para industria alimentaria, logística, parkings y aplicaciones especializadas en toda Europa',
     'services.food.title': 'Industria Alimentaria',
-    'services.food.desc': 'Sistemas Flowfresh® con Polygiene® para máxima higiene y seguridad alimentaria',
+    'services.food.desc': 'Sistemas EpoxyClean M² con BioShield™ para máxima higiene y seguridad alimentaria',
     'services.industrial.title': 'Pavimentos Industriales',
-    'services.industrial.desc': 'Sistemas de alto rendimiento Flowfast® para naves, almacenes y zonas logísticas',
+    'services.industrial.desc': 'Sistemas de alto rendimiento EpoxySpeed M² para naves, almacenes y zonas logísticas',
     'services.parking.title': 'Parkings y Cubiertas',
-    'services.parking.desc': 'Sistemas Deckshield® para parkings, cubiertas transitables e impermeabilización',
+    'services.parking.desc': 'Sistemas EpoxyDeck M² para parkings, cubiertas transitables e impermeabilización',
     'services.decorative.title': 'Pavimentos Decorativos',
     'services.decorative.desc': 'Acabados exclusivos con efectos metálicos, 3D y diseños personalizados',
     'services.esd.title': 'Sistemas Especializados',
@@ -52,23 +52,23 @@ const translations = {
     'contact.whatsapp': 'WhatsApp',
     'contact.coverage': 'Desplazamiento por toda Europa',
     
-    'footer.company': 'JefeEpoxi - Pavimentos epoxi profesionales',
+    'footer.company': 'Jefeepoxy - Pavimentos epoxy profesionales',
     'footer.location': 'Valencia, España',
 
     // Vlog Section
-    'vlog.title': 'Por qué la resina epoxi es superior a otros pavimentos',
-    'vlog.subtitle': 'Descubre las ventajas técnicas y estéticas que hacen del epoxi la mejor opción',
+    'vlog.title': 'Por qué la resina epoxy es superior a otros pavimentos',
+    'vlog.subtitle': 'Descubre las ventajas técnicas y estéticas que hacen del epoxy la mejor opción',
     'vlog.cta': 'Solicitar presupuesto',
-    'vlog.content.intro': 'En el mundo de los pavimentos industriales y decorativos, la resina epoxi se ha posicionado como la solución más avanzada y versátil del mercado. Su combinación única de propiedades técnicas y estéticas la convierte en la opción preferida por profesionales y propietarios que buscan durabilidad, funcionalidad y belleza.',
+    'vlog.content.intro': 'En el mundo de los pavimentos industriales y decorativos, la resina epoxy se ha posicionado como la solución más avanzada y versátil del mercado. Su combinación única de propiedades técnicas y estéticas la convierte en la opción preferida por profesionales y propietarios que buscan durabilidad, funcionalidad y belleza.',
     'vlog.content.durability.title': 'Durabilidad Excepcional',
-    'vlog.content.durability.text': 'Los pavimentos epoxi ofrecen una resistencia superior al desgaste, impacto y cargas pesadas. Mientras que la cerámica puede agrietarse y el vinilo se deforma, el epoxi mantiene su integridad estructural durante décadas.',
+    'vlog.content.durability.text': 'Los pavimentos epoxy ofrecen una resistencia superior al desgaste, impacto y cargas pesadas. Mientras que la cerámica puede agrietarse y el vinilo se deforma, el epoxy mantiene su integridad estructural durante décadas.',
     'vlog.content.chemical.title': 'Resistencia Química Inigualable',
-    'vlog.content.chemical.text': 'A diferencia del hormigón tradicional que absorbe líquidos y se mancha, la resina epoxi crea una barrera impermeable que resiste ácidos, bases, aceites y productos químicos industriales.',
+    'vlog.content.chemical.text': 'A diferencia del hormigón tradicional que absorbe líquidos y se mancha, la resina epoxy crea una barrera impermeable que resiste ácidos, bases, aceites y productos químicos industriales.',
     'vlog.content.maintenance.title': 'Mantenimiento Mínimo',
     'vlog.content.maintenance.text': 'Su superficie no porosa facilita la limpieza y desinfección, siendo ideal para industrias alimentarias y farmacéuticas donde la higiene es crucial.',
     'vlog.content.design.title': 'Versatilidad de Diseño',
-    'vlog.content.design.text': 'Desde acabados industriales hasta efectos decorativos metalizados, el epoxi ofrece infinitas posibilidades de personalización que otros pavimentos no pueden igualar.',
-    'vlog.advantages.title': 'Ventajas Clave del Pavimento Epoxi',
+    'vlog.content.design.text': 'Desde acabados industriales hasta efectos decorativos metalizados, el epoxy ofrece infinitas posibilidades de personalización que otros pavimentos no pueden igualar.',
+    'vlog.advantages.title': 'Ventajas Clave del Pavimento epoxy',
     'vlog.advantages.chemical': 'Alta resistencia química y mecánica',
     'vlog.advantages.waterproof': 'Impermeabilidad total y fácil limpieza',
     'vlog.advantages.design': 'Flexibilidad en diseños y colores personalizados',
@@ -78,7 +78,7 @@ const translations = {
     
     // Blog Page
     'blog.title': 'Blog y Artículos',
-    'blog.subtitle': 'Conocimiento técnico y tendencias en pavimentos epoxi',
+    'blog.subtitle': 'Conocimiento técnico y tendencias en pavimentos epoxy',
     'blog.readMore': 'Leer más',
     'blog.backHome': 'Volver al Inicio',
     'blog.backToBlog': 'Volver al blog',
@@ -113,13 +113,13 @@ const translations = {
     'hero.cta.secondary': 'View projects',
     
     'services.title': 'Our Services',
-    'services.subtitle': 'Certified Flowcrete® systems for food industry, logistics, parking and specialized applications throughout Europe',
+    'services.subtitle': 'Certified Epoxy M² systems for food industry, logistics, parking and specialized applications throughout Europe',
     'services.food.title': 'Food Industry',
-    'services.food.desc': 'Flowfresh® systems with Polygiene® for maximum hygiene and food safety',
+    'services.food.desc': 'EpoxyClean M² systems with BioShield™ for maximum hygiene and food safety',
     'services.industrial.title': 'Industrial Flooring',
-    'services.industrial.desc': 'High-performance Flowfast® systems for warehouses, storage and logistics areas',
+    'services.industrial.desc': 'High-performance EpoxySpeed M² systems for warehouses, storage and logistics areas',
     'services.parking.title': 'Parking & Decks',
-    'services.parking.desc': 'Deckshield® systems for parking, walkable decks and waterproofing',
+    'services.parking.desc': 'EpoxyDeck M² systems for parking, walkable decks and waterproofing',
     'services.decorative.title': 'Decorative Flooring',
     'services.decorative.desc': 'Exclusive finishes with metallic effects, 3D and custom designs',
     'services.esd.title': 'Specialized Systems',
@@ -139,7 +139,7 @@ const translations = {
     'contact.whatsapp': 'WhatsApp',
     'contact.coverage': 'Travel throughout Europe',
     
-    'footer.company': 'JefeEpoxi - Professional epoxy flooring',
+    'footer.company': 'Jefeepoxy - Professional epoxy flooring',
     'footer.location': 'Valencia, Spain',
 
     // Vlog Section

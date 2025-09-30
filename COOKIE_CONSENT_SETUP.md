@@ -1,4 +1,4 @@
-# 🍪 Cookie Consent & Google Analytics Setup
+﻿# 🍪 Cookie Consent & Google Analytics Setup
 
 ## Огляд
 
@@ -133,3 +133,4 @@ trackEvent('contact_form_submitted', {
 ---
 
 **Примітка:** Не забудьте замінити `GA_MEASUREMENT_ID` на ваш реальний ID перед запуском в продакшені!
+

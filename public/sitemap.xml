@@ -1,106 +1,107 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Homepage -->
   <url>
-    <loc>https://jefeepoxi.com/</loc>
+    <loc>https://jefeepoxy.com/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxi.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxi.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxy.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxy.com/?lang=en" />
     <image:image>
-      <image:loc>https://jefeepoxi.com/src/assets/hero-epoxy-warehouse.jpg</image:loc>
-      <image:caption>Pavimentos epoxi industriales Valencia - JefeEpoxi</image:caption>
-      <image:title>Especialistas en pavimentos epoxi Valencia</image:title>
+      <image:loc>https://jefeepoxy.com/src/assets/hero-epoxy-warehouse.jpg</image:loc>
+      <image:caption>Pavimentos epoxy industriales Valencia - Jefeepoxy</image:caption>
+      <image:title>Especialistas en pavimentos epoxy Valencia</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://jefeepoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png</image:loc>
-      <image:caption>Logo JefeEpoxi - Pavimentos epoxi profesionales</image:caption>
-      <image:title>JefeEpoxi Logo</image:title>
+      <image:loc>https://jefeepoxy.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png</image:loc>
+      <image:caption>Logo Jefeepoxy - Pavimentos epoxy profesionales</image:caption>
+      <image:title>Jefeepoxy Logo</image:title>
     </image:image>
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>https://jefeepoxi.com/blog</loc>
+    <loc>https://jefeepoxy.com/blog</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxi.com/blog" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxi.com/blog?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxy.com/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxy.com/blog?lang=en" />
   </url>
 
   <!-- Blog Article -->
   <url>
-    <loc>https://jefeepoxi.com/blog/why-epoxy-wins</loc>
+    <loc>https://jefeepoxy.com/blog/why-epoxy-wins</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxi.com/blog/why-epoxy-wins" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxi.com/blog/why-epoxy-wins?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxy.com/blog/why-epoxy-wins" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxy.com/blog/why-epoxy-wins?lang=en" />
     <image:image>
-      <image:loc>https://jefeepoxi.com/src/assets/vlog-epoxy-hero.jpg</image:loc>
-      <image:caption>Por qué la resina epoxi es superior a otros pavimentos</image:caption>
-      <image:title>Ventajas del pavimento epoxi</image:title>
+      <image:loc>https://jefeepoxy.com/src/assets/vlog-epoxy-hero.jpg</image:loc>
+      <image:caption>Por qué la resina epoxy es superior a otros pavimentos</image:caption>
+      <image:title>Ventajas del pavimento epoxy</image:title>
     </image:image>
   </url>
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://jefeepoxi.com/privacy-policy</loc>
+    <loc>https://jefeepoxy.com/privacy-policy</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxi.com/privacy-policy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxi.com/privacy-policy?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxy.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxy.com/privacy-policy?lang=en" />
   </url>
 
   <!-- Services Pages (Virtual URLs for SEO) -->
   <url>
-    <loc>https://jefeepoxi.com/servicios/pavimentos-industriales</loc>
+    <loc>https://jefeepoxy.com/servicios/pavimentos-industriales</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://jefeepoxi.com/src/assets/project-industrial-blue-gray.jpg</image:loc>
-      <image:caption>Pavimentos epoxi industriales Valencia</image:caption>
-      <image:title>Suelos industriales epoxi</image:title>
+      <image:loc>https://jefeepoxy.com/src/assets/project-industrial-blue-gray.jpg</image:loc>
+      <image:caption>Pavimentos epoxy industriales Valencia</image:caption>
+      <image:title>Suelos industriales epoxy</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://jefeepoxi.com/servicios/pavimentos-alimentarios</loc>
+    <loc>https://jefeepoxy.com/servicios/pavimentos-alimentarios</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://jefeepoxi.com/src/assets/project-warehouse-before-after.jpg</image:loc>
-      <image:caption>Pavimentos epoxi alimentarios certificados</image:caption>
+      <image:loc>https://jefeepoxy.com/src/assets/project-warehouse-before-after.jpg</image:loc>
+      <image:caption>Pavimentos epoxy alimentarios certificados</image:caption>
       <image:title>Suelos higiénicos industria alimentaria</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://jefeepoxi.com/servicios/pavimentos-decorativos</loc>
+    <loc>https://jefeepoxy.com/servicios/pavimentos-decorativos</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://jefeepoxi.com/src/assets/project-decorative-metallic-gray.jpg</image:loc>
-      <image:caption>Pavimentos epoxi decorativos metalizados</image:caption>
-      <image:title>Suelos decorativos epoxi Valencia</image:title>
+      <image:loc>https://jefeepoxy.com/src/assets/project-decorative-metallic-gray.jpg</image:loc>
+      <image:caption>Pavimentos epoxy decorativos metalizados</image:caption>
+      <image:title>Suelos decorativos epoxy Valencia</image:title>
     </image:image>
   </url>
 
   <!-- Location Pages -->
   <url>
-    <loc>https://jefeepoxi.com/valencia</loc>
+    <loc>https://jefeepoxy.com/valencia</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
 </urlset>
+

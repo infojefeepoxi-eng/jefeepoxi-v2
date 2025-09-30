@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+﻿import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Factory, Utensils, Zap, Car, Sparkles, Wrench, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -13,7 +13,7 @@ const Services = () => {
       icon: Utensils,
       titleKey: 'services.food.title',
       descKey: 'services.food.desc',
-      features: ['Autonivelantes (2-4 mm)', 'Capas medias (4-6 mm)', 'Capas gruesas (6-12 mm)', 'Certificación HACCP/FDA', 'Acabado antideslizante', 'Higiénico con Polygiene®']
+      features: ['Autonivelantes (2-4 mm)', 'Capas medias (4-6 mm)', 'Capas gruesas (6-12 mm)', 'Certificación HACCP/FDA', 'Acabado antideslizante', 'Higiénico con BioShield™']
     },
     {
       id: 'industrial',

@@ -1,4 +1,4 @@
-import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+﻿import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -16,7 +16,7 @@ const PrivacyPolicyContent = () => {
         {
           title: 'Información General',
           icon: Shield,
-          content: 'En JefeEpoxi, nos comprometemos a proteger tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando visitas nuestro sitio web.'
+          content: 'En Jefeepoxy, nos comprometemos a proteger tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando visitas nuestro sitio web.'
         },
         {
           title: 'Cookies que Utilizamos',
@@ -46,7 +46,7 @@ const PrivacyPolicyContent = () => {
       },
       contact: {
         title: 'Contacto',
-        content: 'Para cualquier consulta sobre privacidad o ejercer tus derechos, contacta con nosotros en: info@jefeepoxi.com o +34 622 313 855'
+        content: 'Para cualquier consulta sobre privacidad o ejercer tus derechos, contacta con nosotros en: info@jefeepoxy.com o +34 622 313 855'
       }
     },
     en: {
@@ -56,7 +56,7 @@ const PrivacyPolicyContent = () => {
         {
           title: 'General Information',
           icon: Shield,
-          content: 'At JefeEpoxi, we are committed to protecting your privacy. This policy explains how we collect, use, and protect your personal information when you visit our website.'
+          content: 'At Jefeepoxy, we are committed to protecting your privacy. This policy explains how we collect, use, and protect your personal information when you visit our website.'
         },
         {
           title: 'Cookies We Use',
@@ -86,7 +86,7 @@ const PrivacyPolicyContent = () => {
       },
       contact: {
         title: 'Contact',
-        content: 'For any privacy inquiries or to exercise your rights, contact us at: info@jefeepoxi.com or +34 622 313 855'
+        content: 'For any privacy inquiries or to exercise your rights, contact us at: info@jefeepoxy.com or +34 622 313 855'
       }
     }
   };
@@ -184,3 +184,4 @@ const PrivacyPolicy = () => {
 };
 
 export default PrivacyPolicy;
+

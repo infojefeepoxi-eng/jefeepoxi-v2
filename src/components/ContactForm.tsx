@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -189,7 +189,7 @@ const ContactForm = () => {
                     <a href="/#contact" className="text-primary hover:underline">
                       política de privacidad
                     </a>{' '}
-                    y consiento el tratamiento de mis datos para recibir información comercial de JefeEpoxi.
+                    y consiento el tratamiento de mis datos para recibir información comercial de Jefeepoxy.
                   </label>
                 </div>
 
@@ -243,8 +243,8 @@ const ContactForm = () => {
                     <Mail className="w-5 h-5 text-primary mr-3" />
                     <div>
                       <p className="text-foreground font-medium">Email</p>
-                      <a href="mailto:infojefeepoxi@gmail.com" className="text-muted-foreground hover:text-primary">
-                        infojefeepoxi@gmail.com
+                      <a href="mailto:infojefeepoxy@gmail.com" className="text-muted-foreground hover:text-primary">
+                        infojefeepoxy@gmail.com
                       </a>
                     </div>
                   </div>

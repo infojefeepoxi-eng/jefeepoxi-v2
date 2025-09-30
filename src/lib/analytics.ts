@@ -1,4 +1,4 @@
-// JefeEpoxi Business Analytics Events
+﻿// Jefeepoxy Business Analytics Events
 // Специфічні події для відстеження бізнес-метрик
 
 import { trackEvent } from './cookies';
@@ -215,7 +215,7 @@ export const trackValenciaSpecific = (action: string, district?: string) => {
 };
 
 // Export all tracking functions for easy import
-export const JefeEpoxiAnalytics = {
+export const JefeepoxyAnalytics = {
   trackQuoteRequest,
   trackPhoneCall,
   trackWhatsAppClick,
@@ -229,3 +229,4 @@ export const JefeEpoxiAnalytics = {
   trackPageView,
   trackValenciaSpecific
 };
+

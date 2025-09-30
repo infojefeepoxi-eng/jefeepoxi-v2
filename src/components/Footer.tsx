@@ -1,6 +1,6 @@
-import { Phone, MessageCircle, Mail, MapPin } from 'lucide-react';
+﻿import { Phone, MessageCircle, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
-import jefeepoxi_logo from '@/assets/jefeepoxi-logo.png';
+import jefeepoxy_logo from '@/assets/jefeepoxy-logo.png';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -16,10 +16,10 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png" 
-              alt="JefeEpoxi logo" 
+              alt="Jefeepoxy logo" 
               className="w-8 h-8 rounded-full object-cover"
             />
-            <span className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">JefeEpoxi</span>
+            <span className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Jefeepoxy</span>
             </div>
             <p className="text-muted-foreground text-sm">
               {t('footer.company')}
@@ -78,11 +78,11 @@ const Footer = () => {
               </a>
               
               <a 
-                href="mailto:infojefeepoxi@gmail.com" 
+                href="mailto:infojefeepoxy@gmail.com" 
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                infojefeepoxi@gmail.com
+                infojefeepoxy@gmail.com
               </a>
               
               <div className="flex items-center text-sm text-muted-foreground">
@@ -97,7 +97,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
             <p>
-              © {currentYear} JefeEpoxi. Todos los derechos reservados.
+              © {currentYear} Jefeepoxy. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <span>CIF: B12345678</span>

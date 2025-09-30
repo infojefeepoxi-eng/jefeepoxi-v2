@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+﻿import { useEffect } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const StructuredData = () => {
@@ -11,25 +11,25 @@ const StructuredData = () => {
       existingScript.remove();
     }
 
-    // JefeEpoxi Business Schema
+    // Jefeepoxy Business Schema
     const businessSchema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://jefeepoxi.com/#business",
-      "name": "JefeEpoxi",
-      "alternateName": "Jefe Epoxi Valencia",
+      "@id": "https://jefeepoxy.com/#business",
+      "name": "Jefeepoxy",
+      "alternateName": "Jefe epoxy Valencia",
       "description": language === 'es' 
-        ? "Especialistas en pavimentos epoxi en Valencia. Más de 5 años de experiencia en suelos industriales, alimentarios y decorativos. Presupuesto gratuito."
+        ? "Especialistas en pavimentos epoxy en Valencia. Más de 5 años de experiencia en suelos industriales, alimentarios y decorativos. Presupuesto gratuito."
         : "Epoxy flooring specialists in Valencia. Over 5 years of experience in industrial, food-grade and decorative floors. Free quote.",
-      "url": "https://jefeepoxi.com",
-      "logo": "https://jefeepoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png",
+      "url": "https://jefeepoxy.com",
+      "logo": "https://jefeepoxy.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png",
       "image": [
-        "https://jefeepoxi.com/src/assets/hero-epoxy-warehouse.jpg",
-        "https://jefeepoxi.com/src/assets/project-industrial-blue-gray.jpg",
-        "https://jefeepoxi.com/src/assets/project-decorative-metallic-gray.jpg"
+        "https://jefeepoxy.com/src/assets/hero-epoxy-warehouse.jpg",
+        "https://jefeepoxy.com/src/assets/project-industrial-blue-gray.jpg",
+        "https://jefeepoxy.com/src/assets/project-decorative-metallic-gray.jpg"
       ],
       "telephone": "+34622313855",
-      "email": "info@jefeepoxi.com",
+      "email": "info@jefeepoxy.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Valencia",
@@ -89,12 +89,12 @@ const StructuredData = () => {
             "@type": "Rating",
             "ratingValue": "5"
           },
-          "reviewBody": "Excelente trabajo en nuestro almacén. Pavimento epoxi de alta calidad y servicio profesional."
+          "reviewBody": "Excelente trabajo en nuestro almacén. Pavimento epoxy de alta calidad y servicio profesional."
         }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Servicios de Pavimentos Epoxi",
+        "name": "Servicios de Pavimentos epoxy",
         "itemListElement": [
           {
             "@type": "Offer",
@@ -123,8 +123,8 @@ const StructuredData = () => {
         ]
       },
       "sameAs": [
-        "https://www.facebook.com/jefeepoxi",
-        "https://www.instagram.com/jefeepoxi", 
+        "https://www.facebook.com/jefeepoxy",
+        "https://www.instagram.com/jefeepoxy", 
         "https://wa.me/34622313855"
       ]
     };
@@ -133,10 +133,10 @@ const StructuredData = () => {
     const servicesSchema = {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "JefeEpoxi - Pavimentos Epoxi Valencia",
+      "name": "Jefeepoxy - Pavimentos epoxy Valencia",
       "serviceType": "Epoxy Flooring Installation",
       "provider": {
-        "@id": "https://jefeepoxi.com/#business"
+        "@id": "https://jefeepoxy.com/#business"
       },
       "areaServed": {
         "@type": "City",
@@ -175,10 +175,10 @@ const StructuredData = () => {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Cuánto dura un pavimento epoxi?",
+          "name": "¿Cuánto dura un pavimento epoxy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Un pavimento epoxi profesional puede durar entre 15-20 años con el mantenimiento adecuado, siendo superior a otros tipos de suelos industriales."
+            "text": "Un pavimento epoxy profesional puede durar entre 15-20 años con el mantenimiento adecuado, siendo superior a otros tipos de suelos industriales."
           }
         },
         {
@@ -213,10 +213,11 @@ const StructuredData = () => {
     script.textContent = JSON.stringify(combinedSchema, null, 2);
     document.head.appendChild(script);
 
-    console.log('🔍 Structured Data (Schema.org) loaded for JefeEpoxi');
+    console.log('🔍 Structured Data (Schema.org) loaded for Jefeepoxy');
   }, [language]);
 
   return null; // This component doesn't render anything
 };
 
 export default StructuredData;
+

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle, Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -35,10 +35,10 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <img 
               src="/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png" 
-              alt="JefeEpoxi logo" 
+              alt="Jefeepoxy logo" 
               className="w-10 h-10 rounded-full object-cover"
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">JefeEpoxi</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">Jefeepoxy</span>
           </Link>
 
           {/* Desktop Navigation */}
