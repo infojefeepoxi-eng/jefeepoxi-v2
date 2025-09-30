@@ -7,40 +7,40 @@ const Services = () => {
 
   const services = [
     {
-      icon: Factory,
-      titleKey: 'services.industrial.title',
-      descKey: 'services.industrial.desc',
-      features: ['Resistencia química', 'Alta durabilidad', 'Fácil limpieza']
-    },
-    {
       icon: Utensils,
       titleKey: 'services.food.title',
       descKey: 'services.food.desc',
-      features: ['Certificación HACCP', 'Anti-bacteriano', 'Normativa FDA']
+      features: ['Autonivelantes (2-4 mm)', 'Capas medias (4-6 mm)', 'Capas gruesas (6-12 mm)', 'Certificación HACCP/FDA', 'Acabado antideslizante', 'Higiénico con Polygiene®']
     },
     {
-      icon: Zap,
-      titleKey: 'services.esd.title',
-      descKey: 'services.esd.desc',
-      features: ['ISO 61340', 'DIN EN 61340', 'ASTM D2737']
+      icon: Factory,
+      titleKey: 'services.industrial.title',
+      descKey: 'services.industrial.desc',
+      features: ['Pavimentos para naves', 'Centros logísticos', 'Zonas alto tráfico', 'Señalización integrada', 'Montaje rápido (2-4h)', 'Aplicable hasta -20°C']
     },
     {
       icon: Car,
       titleKey: 'services.parking.title',
       descKey: 'services.parking.desc',
-      features: ['Antideslizante', 'Resistente a aceites', 'Señalización integrada']
+      features: ['Sistemas Deckshield', 'Parkings cubiertos/abiertos', 'Cubiertas transitables', 'Impermeabilización', 'Balcones y terrazas', 'Resistente a sales/aceites']
     },
     {
       icon: Sparkles,
       titleKey: 'services.decorative.title',
       descKey: 'services.decorative.desc',
-      features: ['Efectos metálicos', 'Diseños únicos', 'Acabados personalizados']
+      features: ['Efectos metallic', 'Suelos 3D', 'Revestimientos cuarzo', 'Diseños personalizados', 'Logotipos integrados', 'Acabados exclusivos']
+    },
+    {
+      icon: Zap,
+      titleKey: 'services.esd.title',
+      descKey: 'services.esd.desc',
+      features: ['Pavimentos ESD', 'Pavimentos conductivos', 'Salas blancas', 'ISO 61340 / DIN / ASTM', 'Industria electrónica', 'Control estático']
     },
     {
       icon: Wrench,
       titleKey: 'services.repair.title',
       descKey: 'services.repair.desc',
-      features: ['Reparación grietas', 'Nivelación', 'Mantenimiento preventivo']
+      features: ['Reparación grietas', 'Autonivelado suelos', 'Restauración pavimentos', 'Impermeabilización', 'Imprimaciones', 'Capas protectoras']
     }
   ];
 
@@ -51,8 +51,8 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t('services.title')}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Soluciones especializadas en pavimentos epoxi para cada sector industrial
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            {t('services.subtitle')}
           </p>
         </div>
 
