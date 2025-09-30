@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, MapPin, Calendar, Square } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Link, useLocation } from 'react-router-dom';
 
 // Import project images
 import projectIndustrialBlueGray from '@/assets/project-industrial-blue-gray.jpg';
@@ -28,6 +29,7 @@ interface Project {
 
 const ProjectsGallery = () => {
   const { language, t } = useLanguage();
+  const location = useLocation();
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const projects: Project[] = [
@@ -247,9 +249,24 @@ const ProjectsGallery = () => {
                   </div>
                 </div>
 
-                <Button variant="ghost" size="sm" className="mt-4 w-full group-hover:bg-primary/10">
-                  Ver detalles
-                  <ExternalLink className="w-4 h-4 ml-2" />
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="mt-4 w-full group-hover:bg-primary/10"
+                  asChild
+                >
+                  <Link 
+                    to={location.pathname === '/' ? '#contact' : '/#contact'}
+                    onClick={(e) => {
+                      if (location.pathname === '/') {
+                        e.preventDefault();
+                        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    Ver detalles
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

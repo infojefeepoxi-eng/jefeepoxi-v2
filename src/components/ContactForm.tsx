@@ -181,7 +181,7 @@ const ContactForm = () => {
                   />
                   <label htmlFor="gdpr" className="text-sm text-muted-foreground leading-relaxed">
                     Acepto la{' '}
-                    <a href="#" className="text-primary hover:underline">
+                    <a href="/#contact" className="text-primary hover:underline">
                       política de privacidad
                     </a>{' '}
                     y consiento el tratamiento de mis datos para recibir información comercial de JefeEpoxi.

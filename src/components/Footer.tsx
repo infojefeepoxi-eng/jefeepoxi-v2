@@ -33,12 +33,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-foreground font-semibold">Servicios</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Pavimentos Industriales</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Industria Alimentaria</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Pavimentos ESD</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Parkings y Talleres</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Pavimentos Decorativos</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Reparaciones</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">Pavimentos Industriales</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">Industria Alimentaria</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">Pavimentos ESD</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">Parkings y Talleres</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">Pavimentos Decorativos</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">Reparaciones</a></li>
             </ul>
           </div>
 
@@ -46,12 +46,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-foreground font-semibold">Enlaces</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t('nav.projects')}</a></li>
+              <li><a href="/#about" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
+              <li><a href="/#projects" className="hover:text-primary transition-colors">{t('nav.projects')}</a></li>
               <li><a href="/blog" className="hover:text-primary transition-colors">{t('nav.blog')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t('nav.legal')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t('nav.privacy')}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t('nav.cookies')}</a></li>
+              <li><a href="/#contact" className="hover:text-primary transition-colors">{t('nav.legal')}</a></li>
+              <li><a href="/#contact" className="hover:text-primary transition-colors">{t('nav.privacy')}</a></li>
+              <li><a href="/#contact" className="hover:text-primary transition-colors">{t('nav.cookies')}</a></li>
             </ul>
           </div>
 

@@ -115,8 +115,17 @@ const VlogSection = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary-glow text-primary-foreground px-8 py-4 text-lg font-semibold transition-all duration-300 shadow-elegant hover:shadow-glow"
+              asChild
             >
-              {t('vlog.cta')}
+              <a 
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {t('vlog.cta')}
+              </a>
             </Button>
           </div>
         </div>
