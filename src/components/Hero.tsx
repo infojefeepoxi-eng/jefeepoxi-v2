@@ -12,8 +12,10 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src={heroEpoxyWarehouse}
-          alt="Professional epoxy flooring warehouse"
+          alt="Pavimento epoxi industrial en almacén de Valencia - JefeEpoxi especialistas en suelos epoxi profesionales"
           className="w-full h-full object-cover opacity-30"
+          loading="eager"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-background/40"></div>
       </div>
