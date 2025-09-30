@@ -1,0 +1,14 @@
+# Netlify redirects for SPA (Single Page Application)
+/*    /index.html   200
+
+# Redirect old URLs to new service pages
+/servicios/*  /services/:splat  301
+/contacto     /#contact        301
+/proyectos    /#projects       301
+/sobre-nosotros  /#about       301
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
