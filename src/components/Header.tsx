@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle, Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Link, useLocation } from 'react-router-dom';
+import { trackPhoneCall, trackWhatsAppClick, trackLanguageChange } from '@/lib/analytics';
 
 
 const Header = () => {
@@ -11,7 +12,10 @@ const Header = () => {
   const location = useLocation();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'es' ? 'en' : 'es');
+    const oldLanguage = language;
+    const newLanguage = language === 'es' ? 'en' : 'es';
+    setLanguage(newLanguage);
+    trackLanguageChange(newLanguage, oldLanguage);
   };
 
   const navItems = [
@@ -70,7 +74,12 @@ const Header = () => {
             </Button>
 
             {/* Phone */}
-            <Button variant="ghost" size="sm" asChild>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={() => trackPhoneCall('header')}
+              asChild
+            >
               <a href="tel:+34622313855" className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
                 +34 622 313 855
@@ -78,7 +87,12 @@ const Header = () => {
             </Button>
 
             {/* WhatsApp */}
-            <Button variant="ghost" size="sm" asChild>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={() => trackWhatsAppClick('header')}
+              asChild
+            >
               <a 
                 href="https://wa.me/34622313855" 
                 target="_blank" 
@@ -149,14 +163,26 @@ const Header = () => {
                 {language.toUpperCase()}
               </Button>
 
-              <Button variant="ghost" size="sm" asChild className="justify-start">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => trackPhoneCall('mobile_menu')}
+                asChild 
+                className="justify-start"
+              >
                 <a href="tel:+34622313855" className="flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
                   +34 622 313 855
                 </a>
               </Button>
 
-              <Button variant="ghost" size="sm" asChild className="justify-start">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => trackWhatsAppClick('mobile_menu')}
+                asChild 
+                className="justify-start"
+              >
                 <a 
                   href="https://wa.me/34622313855" 
                   target="_blank" 

@@ -102,11 +102,7 @@ const BlogContent = () => {
 };
 
 const Blog = () => {
-  return (
-    <LanguageProvider>
-      <BlogContent />
-    </LanguageProvider>
-  );
+  return <BlogContent />;
 };
 
 export default Blog;

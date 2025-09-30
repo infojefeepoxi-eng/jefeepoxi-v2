@@ -7,6 +7,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Phone, MessageCircle, Mail, MapPin, Clock } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useToast } from '@/hooks/use-toast';
+import { trackQuoteRequest, trackFormSubmission, trackPhoneCall, trackWhatsAppClick } from '@/lib/analytics';
 
 const ContactForm = () => {
   const { t } = useLanguage();
@@ -36,6 +37,10 @@ const ContactForm = () => {
     }
 
     setIsSubmitting(true);
+    
+    // Track form submission and quote request
+    trackFormSubmission('contact_quote_form', formData);
+    trackQuoteRequest('contact_form');
     
     // Simulate form submission
     setTimeout(() => {

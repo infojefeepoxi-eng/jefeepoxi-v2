@@ -1,42 +1,50 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Factory, Utensils, Zap, Car, Sparkles, Wrench } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Factory, Utensils, Zap, Car, Sparkles, Wrench, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t } = useLanguage();
 
   const services = [
     {
+      id: 'food-industry',
       icon: Utensils,
       titleKey: 'services.food.title',
       descKey: 'services.food.desc',
       features: ['Autonivelantes (2-4 mm)', 'Capas medias (4-6 mm)', 'Capas gruesas (6-12 mm)', 'Certificación HACCP/FDA', 'Acabado antideslizante', 'Higiénico con Polygiene®']
     },
     {
+      id: 'industrial',
       icon: Factory,
       titleKey: 'services.industrial.title',
       descKey: 'services.industrial.desc',
       features: ['Pavimentos para naves', 'Centros logísticos', 'Zonas alto tráfico', 'Señalización integrada', 'Montaje rápido (2-4h)', 'Aplicable hasta -20°C']
     },
     {
+      id: 'parking-decks',
       icon: Car,
       titleKey: 'services.parking.title',
       descKey: 'services.parking.desc',
       features: ['Sistemas Deckshield', 'Parkings cubiertos/abiertos', 'Cubiertas transitables', 'Impermeabilización', 'Balcones y terrazas', 'Resistente a sales/aceites']
     },
     {
+      id: 'decorative',
       icon: Sparkles,
       titleKey: 'services.decorative.title',
       descKey: 'services.decorative.desc',
       features: ['Efectos metallic', 'Suelos 3D', 'Revestimientos cuarzo', 'Diseños personalizados', 'Logotipos integrados', 'Acabados exclusivos']
     },
     {
+      id: 'specialized',
       icon: Zap,
       titleKey: 'services.esd.title',
       descKey: 'services.esd.desc',
       features: ['Pavimentos ESD', 'Pavimentos conductivos', 'Salas blancas', 'ISO 61340 / DIN / ASTM', 'Industria electrónica', 'Control estático']
     },
     {
+      id: 'repairs',
       icon: Wrench,
       titleKey: 'services.repair.title',
       descKey: 'services.repair.desc',
@@ -73,7 +81,7 @@ const Services = () => {
                   <p className="text-muted-foreground mb-4 text-center">
                     {t(service.descKey)}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
                         <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
@@ -81,6 +89,16 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
+                  <Button 
+                    variant="outline" 
+                    className="w-full group"
+                    asChild
+                  >
+                    <Link to={`/services/${service.id}`}>
+                      Más información
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
             );
