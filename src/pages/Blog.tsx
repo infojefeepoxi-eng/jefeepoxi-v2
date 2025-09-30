@@ -13,7 +13,7 @@ const BlogContent = () => {
   // Mock articles data - in a real app, this would come from a CMS or database
   const articles = [
     {
-      id: 'why-epoxy-wins',
+      id: 'why-Epoxi-wins',
       title: t('vlog.title'),
       excerpt: t('vlog.subtitle'),
       image: vlogHeroImage,

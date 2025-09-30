@@ -13,7 +13,7 @@ const Services = () => {
       icon: Utensils,
       titleKey: 'services.food.title',
       descKey: 'services.food.desc',
-      features: ['Autonivelantes (2-4 mm)', 'Capas medias (4-6 mm)', 'Capas gruesas (6-12 mm)', 'Certificación HACCP/FDA', 'Acabado antideslizante', 'Higiénico con BioShield™']
+      features: ['Autonivelantes (2-4 mm)', 'Capas medias (4-6 mm)', 'Capas gruesas (6-12 mm)', 'Certificación HACCP/FDA', 'Acabado antideslizante', 'Higiénico con EscudoBio™']
     },
     {
       id: 'industrial',

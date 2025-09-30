@@ -5,7 +5,7 @@
 ### 4.1 Підготовка до тестування
 ```bash
 # Переконайтеся що ви в правильній директорії
-cd jefeepoxy-main
+cd jefeEpoxi-main
 
 # Встановіть залежності (якщо ще не встановлені)
 npm install
@@ -145,7 +145,7 @@ window.cookieUtils.resetCookieConsent()
 // Перевірити чи дозволена категорія
 window.cookieUtils.isCookieCategoryAllowed('analytics')
 
-// === ТЕСТУВАННЯ БІЗНЕС-ПОДІЙ JEFEepoxy ===
+// === ТЕСТУВАННЯ БІЗНЕС-ПОДІЙ JEFEEpoxi ===
 
 // Імпортуйте функції в консолі:
 import('./src/lib/analytics.js').then(analytics => {

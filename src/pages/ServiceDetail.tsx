@@ -13,17 +13,17 @@ const ServiceDetailContent = () => {
   // Service details based on Flowcrete official website
   const serviceDetails: Record<string, any> = {
     'food-industry': {
-      title: 'Industria Alimentaria - EpoxyClean M²',
-      subtitle: 'Sistemas de poliuretano-cemento con BioShield™ para máxima higiene',
+      title: 'Industria Alimentaria - EpoxiLimpio M²',
+      subtitle: 'Sistemas de poliuretano-cemento con EscudoBio™ para máxima higiene',
       heroImage: '/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png',
-      description: 'Los sistemas EpoxyClean M² han sido específicamente diseñados para proporcionar pavimentos higiénicos y duraderos en entornos de procesamiento de alimentos. Incorpora la tecnología antimicrobiana BioShield™, que inhibe el crecimiento de hasta el 99.9% de las bacterias.',
+      description: 'Los sistemas EpoxiLimpio M² han sido específicamente diseñados para proporcionar pavimentos higiénicos y duraderos en entornos de procesamiento de alimentos. Incorpora la tecnología antimicrobiana EscudoBio™, que inhibe el crecimiento de hasta el 99.9% de las bacterias.',
       features: [
         {
           title: 'Certificación HACCP Internacional',
           desc: 'Cumple con los más altos estándares de seguridad alimentaria y normativa FDA'
         },
         {
-          title: 'Tecnología BioShield™',
+          title: 'Tecnología EscudoBio™',
           desc: 'Protección antimicrobiana integrada que cumple con ISO 22196'
         },
         {
@@ -37,19 +37,19 @@ const ServiceDetailContent = () => {
       ],
       systems: [
         {
-          name: 'EpoxyClean SL (2-4 mm)',
+          name: 'EpoxiLimpio SL (2-4 mm)',
           desc: 'Sistema autonivelante de capa fina para zonas de procesamiento ligero'
         },
         {
-          name: 'EpoxyClean MF/HD (4-6 mm)',
+          name: 'EpoxiLimpio MF/HD (4-6 mm)',
           desc: 'Capas medias para zonas de producción y envasado'
         },
         {
-          name: 'EpoxyClean HF/RT (6-9 mm)',
+          name: 'EpoxiLimpio HF/RT (6-9 mm)',
           desc: 'Sistemas de alto espesor para tráfico intenso y cargas pesadas'
         },
         {
-          name: 'EpoxyClean Mortar (9+ mm)',
+          name: 'EpoxiLimpio Mortar (9+ mm)',
           desc: 'Máxima resistencia para zonas de procesamiento extremo'
         }
       ],
@@ -64,10 +64,10 @@ const ServiceDetailContent = () => {
       ]
     },
     'industrial': {
-      title: 'Pavimentos Industriales - EpoxySpeed M²',
+      title: 'Pavimentos Industriales - EpoxiRápido M²',
       subtitle: 'Sistemas MMA de curado rápido para máxima productividad',
       heroImage: '/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png',
-      description: 'Los sistemas EpoxySpeed M² utilizan tecnología de metacrilato de metilo (MMA) que permite un curado ultrarrápido y aplicación en condiciones extremas. Ideal cuando el tiempo de inactividad debe minimizarse.',
+      description: 'Los sistemas EpoxiRápido M² utilizan tecnología de metacrilato de metilo (MMA) que permite un curado ultrarrápido y aplicación en condiciones extremas. Ideal cuando el tiempo de inactividad debe minimizarse.',
       features: [
         {
           title: 'Curado Ultrarrápido',
@@ -88,19 +88,19 @@ const ServiceDetailContent = () => {
       ],
       systems: [
         {
-          name: 'EpoxySpeed 101/108 Primer',
+          name: 'EpoxiRápido 101/108 Primer',
           desc: 'Imprimaciones para diferentes tipos de sustrato y condiciones de humedad'
         },
         {
-          name: 'EpoxySpeed 205 Standard',
+          name: 'EpoxiRápido 205 Standard',
           desc: 'Sistema estándar para zonas de tráfico medio-alto'
         },
         {
-          name: 'EpoxySpeed 215/216 Flexible',
+          name: 'EpoxiRápido 215/216 Flexible',
           desc: 'Versión flexible para puentes térmicos y zonas con movimiento'
         },
         {
-          name: 'EpoxySpeed 301/304 Seal',
+          name: 'EpoxiRápido 301/304 Seal',
           desc: 'Sellados finales resistentes a químicos y abrasión'
         }
       ],
@@ -115,10 +115,10 @@ const ServiceDetailContent = () => {
       ]
     },
     'parking-decks': {
-      title: 'Parkings y Cubiertas - EpoxyDeck M²',
+      title: 'Parkings y Cubiertas - EpoxiCubierta M²',
       subtitle: 'Sistemas de impermeabilización para parkings y cubiertas transitables',
       heroImage: '/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png',
-      description: 'EpoxyDeck M² ofrece soluciones completas para la protección e impermeabilización de parkings de múltiples plantas y cubiertas transitables, combinando durabilidad con estética.',
+      description: 'EpoxiCubierta M² ofrece soluciones completas para la protección e impermeabilización de parkings de múltiples plantas y cubiertas transitables, combinando durabilidad con estética.',
       features: [
         {
           title: 'Impermeabilización Total',
@@ -139,19 +139,19 @@ const ServiceDetailContent = () => {
       ],
       systems: [
         {
-          name: 'EpoxyDeck Standard',
+          name: 'EpoxiCubierta Standard',
           desc: 'Sistema estándar para parkings cubiertos y descubiertos'
         },
         {
-          name: 'EpoxyDeck Rapide',
+          name: 'EpoxiCubierta Rapide',
           desc: 'Versión de curado rápido para minimizar cierres'
         },
         {
-          name: 'EpoxyDeck Comfort',
+          name: 'EpoxiCubierta Comfort',
           desc: 'Con propiedades de aislamiento acústico'
         },
         {
-          name: 'EpoxyDeck ED',
+          name: 'EpoxiCubierta ED',
           desc: 'Sistema de impermeabilización para cubiertas transitables'
         }
       ],
@@ -190,19 +190,19 @@ const ServiceDetailContent = () => {
       ],
       systems: [
         {
-          name: 'EpoxyDesign Metallic',
+          name: 'EpoxiDiseño Metallic',
           desc: 'Efectos metálicos translúcidos con acabado tipo mármol'
         },
         {
-          name: 'EpoxyDesign Terrazzo',
+          name: 'EpoxiDiseño Terrazzo',
           desc: 'Terrazzo seamless con agregados naturales de colores'
         },
         {
-          name: 'EpoxyDesign 2700',
+          name: 'EpoxiDiseño 2700',
           desc: 'Sistemas con cuarzo coloreado y piedra natural'
         },
         {
-          name: 'EpoxyDesign 3D',
+          name: 'EpoxiDiseño 3D',
           desc: 'Suelos con efecto tridimensional y profundidad visual'
         }
       ],
@@ -241,11 +241,11 @@ const ServiceDetailContent = () => {
       ],
       systems: [
         {
-          name: 'EpoxyClean ESD',
+          name: 'EpoxiLimpio ESD',
           desc: 'Sistema antiestático con resistencia 10⁴-10⁶ Ω para industria electrónica'
         },
         {
-          name: 'EpoxyChem VE',
+          name: 'EpoxiQuím VE',
           desc: 'Máxima resistencia química para plantas químicas y petroquímicas'
         },
         {
@@ -275,7 +275,7 @@ const ServiceDetailContent = () => {
       features: [
         {
           title: 'Reparación de Grietas',
-          desc: 'Sellado profesional con resinas epoxy y poliuretano'
+          desc: 'Sellado profesional con resinas Epoxi y poliuretano'
         },
         {
           title: 'Autonivelado',
@@ -292,19 +292,19 @@ const ServiceDetailContent = () => {
       ],
       systems: [
         {
-          name: 'EpoxyLevel Screeds',
+          name: 'EpoxiNivel Screeds',
           desc: 'Morteros autonivelantes de 10-80mm para regularización'
         },
         {
-          name: 'EpoxyPro Seal DPM',
+          name: 'EpoxiPro Seal DPM',
           desc: 'Membrana impermeabilizante contra humedad ascendente'
         },
         {
-          name: 'EpoxySpeed 208 Cove Mix',
+          name: 'EpoxiRápido 208 Cove Mix',
           desc: 'Mortero gel para reparaciones rápidas y juntas'
         },
         {
-          name: 'EpoxyPro Primers',
+          name: 'EpoxiPro Primers',
           desc: 'Imprimaciones para todo tipo de sustratos'
         }
       ],

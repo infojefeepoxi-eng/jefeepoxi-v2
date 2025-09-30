@@ -45,8 +45,8 @@ const ProjectsGallery = () => {
       type: 'industrial',
       image: projectIndustrialBlueGray,
       description: {
-        es: 'Pavimento epoxy multicapa con señalización integrada para nave de distribución',
-        en: 'Multi-layer epoxy flooring with integrated signage for distribution warehouse'
+        es: 'Pavimento Epoxi multicapa con señalización integrada para nave de distribución',
+        en: 'Multi-layer Epoxi flooring with integrated signage for distribution warehouse'
       }
     },
     {
