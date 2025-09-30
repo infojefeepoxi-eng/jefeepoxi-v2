@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* JefeEpoxi Design System - Professional Epoxy Flooring Theme
+Dark neutral elegant design with metallic accents
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark Professional Theme */
+    --background: 213 27% 7%;          /* #0B0F12 - Deep dark slate */
+    --foreground: 0 0% 91%;            /* #E6E7E8 - Light gray text */
+
+    --card: 213 22% 9%;                /* Slightly lighter than bg */
+    --card-foreground: 0 0% 91%;
+
+    --popover: 213 22% 9%;
+    --popover-foreground: 0 0% 91%;
+
+    /* Bronze metallic primary */
+    --primary: 38 35% 60%;             /* #BFA46F - Bronze metallic */
+    --primary-foreground: 213 27% 7%;  /* Dark text on bronze */
+
+    /* Muted secondary tones */
+    --secondary: 213 15% 15%;          /* Dark gray secondary */
+    --secondary-foreground: 0 0% 91%;
+
+    --muted: 213 15% 12%;              /* Slightly darker muted */
+    --muted-foreground: 0 0% 65%;      /* Muted text */
+
+    --accent: 38 35% 60%;              /* Bronze accent same as primary */
+    --accent-foreground: 213 27% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 15% 18%;             /* Subtle borders */
+    --input: 213 15% 12%;              /* Dark inputs */
+    --ring: 38 35% 60%;                /* Bronze focus ring */
+
+    /* Enhanced design tokens */
+    --primary-glow: 38 45% 70%;        /* Lighter bronze for hover */
+    --primary-dark: 38 30% 45%;        /* Darker bronze for pressed */
+    
+    /* Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(213 22% 9%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(213 18% 11%));
+    --gradient-company: linear-gradient(135deg, hsl(180 100% 40%), hsl(280 100% 60%));
+    
+    /* Sophisticated shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 4px 20px -8px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
