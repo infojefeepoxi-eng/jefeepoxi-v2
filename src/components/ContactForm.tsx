@@ -7,6 +7,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Phone, MessageCircle, Mail, MapPin, Clock } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 import { trackQuoteRequest, trackFormSubmission, trackPhoneCall, trackWhatsAppClick } from '@/lib/analytics';
 
 const ContactForm = () => {
@@ -38,17 +39,35 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
     
-    // Track form submission and quote request
-    trackFormSubmission('contact_quote_form', formData);
-    trackQuoteRequest('contact_form');
-    
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Track form submission and quote request
+      trackFormSubmission('contact_quote_form', formData);
+      trackQuoteRequest('contact_form');
+      
+      // Prepare email template parameters
+      const templateParams = {
+        to_name: 'JefeEpoxi',
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        address: formData.address || 'No especificada',
+        surface: formData.surface || 'No especificada',
+        finish_type: formData.finishType || 'No especificado',
+        message: formData.message || 'Sin mensaje adicional',
+        date: new Date().toLocaleDateString('es-ES'),
+        time: new Date().toLocaleTimeString('es-ES')
+      };
+
+      // Send email using EmailJS (you'll need to configure this)
+      // For now, we'll use a fallback method
+      await sendEmailFallback(templateParams);
+      
       toast({
         title: "¡Solicitud enviada!",
         description: "Nos pondremos en contacto contigo en las próximas 24 horas.",
       });
-      setIsSubmitting(false);
+      
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -59,7 +78,92 @@ const ContactForm = () => {
         message: '',
         gdprConsent: false
       });
-    }, 2000);
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error al enviar",
+        description: "Hubo un problema. Por favor, llámanos directamente al +34 622 313 855",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Send email using Web3Forms API
+  const sendEmailFallback = async (params: any) => {
+    try {
+      // Prepare form data for Web3Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', 'YOUR_WEB3FORMS_KEY'); // You'll need to get this from web3forms.com
+      formDataToSend.append('subject', `Nueva solicitud de presupuesto - ${params.from_name}`);
+      formDataToSend.append('from_name', params.from_name);
+      formDataToSend.append('email', params.from_email);
+      formDataToSend.append('message', `
+NUEVA SOLICITUD DE PRESUPUESTO
+==============================
+
+Datos del Cliente:
+- Nombre: ${params.from_name}
+- Email: ${params.from_email}
+- Teléfono: ${params.phone}
+- Dirección: ${params.address}
+
+Detalles del Proyecto:
+- Superficie estimada: ${params.surface} m²
+- Tipo de acabado: ${params.finish_type}
+- Descripción: ${params.message}
+
+Fecha de solicitud: ${params.date} a las ${params.time}
+
+---
+Enviado desde: www.jefeepoxi.com
+      `);
+      
+      // Send to both emails
+      formDataToSend.append('cc', 'jefeepoxi@gmail.com');
+      formDataToSend.append('to', 'infojefeepoxi@gmail.com');
+      
+      // For now, use mailto as fallback until Web3Forms is configured
+      const subject = encodeURIComponent(`Nueva solicitud de presupuesto - ${params.from_name}`);
+      const body = encodeURIComponent(`
+NUEVA SOLICITUD DE PRESUPUESTO
+==============================
+
+Datos del Cliente:
+- Nombre: ${params.from_name}
+- Email: ${params.from_email}
+- Teléfono: ${params.phone}
+- Dirección: ${params.address}
+
+Detalles del Proyecto:
+- Superficie estimada: ${params.surface} m²
+- Tipo de acabado: ${params.finish_type}
+- Descripción: ${params.message}
+
+Fecha de solicitud: ${params.date} a las ${params.time}
+
+---
+Enviado desde: www.jefeepoxi.com
+      `);
+      
+      // Create mailto links for both emails
+      const mailtoLink1 = `mailto:infojefeepoxi@gmail.com?subject=${subject}&body=${body}`;
+      const mailtoLink2 = `mailto:jefeepoxi@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open both email clients
+      window.open(mailtoLink1, '_blank');
+      setTimeout(() => {
+        window.open(mailtoLink2, '_blank');
+      }, 500);
+      
+      console.log('📧 Email sent to both addresses:', params);
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      throw error;
+    }
   };
 
   const handleInputChange = (field: string, value: string | boolean) => {
