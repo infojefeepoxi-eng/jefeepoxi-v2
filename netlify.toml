@@ -1,44 +1,63 @@
 [build]
-  # Directory to change to before starting a build
-  base = "."
-  
-  # Directory (relative to root of your repo) that contains the deploy-ready HTML files and assets
   publish = "dist"
-  
-  # Default build command
   command = "npm run build"
 
-# Production context: all deploys from the Production branch set in your site's
-# deploy settings will inherit these settings.
 [build.environment]
   NODE_VERSION = "18"
 
-# Redirect rules for single-page applications
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Headers for security and performance
+# Form handling
+[[forms]]
+  name = "contact-quote"
+  
+[forms.settings]
+  # Email notifications
+  [forms.settings.email]
+    to = ["infojefeepoxi@gmail.com", "jefeepoxi@gmail.com"]
+    subject = "🏗️ Nueva solicitud de presupuesto - {{name}}"
+    template = """
+🏗️ NUEVA SOLICITUD DE PRESUPUESTO EPOXI M²
+==========================================
+
+👤 DATOS DEL CLIENTE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Nombre completo: {{name}}
+• Email: {{email}}
+• Teléfono: {{phone}}
+• Dirección del proyecto: {{address}}
+
+🏭 DETALLES DEL PROYECTO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Superficie estimada: {{surface}} m²
+• Tipo de acabado deseado: {{finish-type}}
+• Descripción del proyecto:
+{{message}}
+
+📅 INFORMACIÓN DE LA SOLICITUD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Origen: Formulario web www.jefeepoxi.com
+
+💼 PRÓXIMOS PASOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Contactar al cliente en 24 horas
+2. Evaluar el proyecto y tipo de sistema Epoxi M²
+3. Preparar presupuesto personalizado
+4. Programar visita técnica si es necesario
+
+---
+🌐 Generado automáticamente por JefeEpoxi.com
+📧 Sistema de gestión de leads v2.1
+    """
+
+# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

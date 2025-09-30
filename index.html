@@ -50,6 +50,18 @@
   </head>
 
   <body>
+    <!-- Hidden form for Netlify Forms detection -->
+    <form name="contact-quote" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="address" />
+      <input type="text" name="surface" />
+      <input type="text" name="finish-type" />
+      <textarea name="message"></textarea>
+      <input type="text" name="full-message" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
