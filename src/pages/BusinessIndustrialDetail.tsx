@@ -339,19 +339,59 @@ const BusinessIndustrialDetailContent = () => {
       systems: [
         {
           name: 'EpoxiRápido M²',
+          badge: 'MONTAJE RÁPIDO',
           description: 'Montaje rápido para logística',
+          basedOn: 'Flowfast',
           thickness: '3mm',
           curing: '12 horas',
-          resistance: 'Tráfico pesado',
-          price: '20-30 €/m²'
+          compression: '>80 N/mm²',
+          chemical: 'Excelente',
+          temperature: '-30°C a +80°C',
+          price: '20-30 €/m²',
+          whyBest: [
+            'Montaje por zonas - centro funciona',
+            'Puesta en servicio en 12 horas',
+            'Mínima parada de producción',
+            'Superficie perfectamente lisa para robots AGV',
+            'Grandes áreas sin juntas'
+          ],
+          finish: 'Liso para robots AGV',
+          applications: [
+            'Centros logísticos 24/7',
+            'Almacenes automatizados',
+            'Zonas de distribución',
+            'Sistemas AGV'
+          ],
+          specialSolutions: [
+            'Posibilidad de trabajo nocturno',
+            'Cobertura por etapas de zonas',
+            'Reemplazo rápido de áreas dañadas'
+          ]
         },
         {
           name: 'EpoxiLiso M² Autonivelante',
-          description: 'Para almacenes automatizados',
+          badge: 'PARA ALMACENES AUTOMATIZADOS',
+          description: 'Sistema autonivelante para alta precisión',
+          basedOn: 'Sistemas Autonivelantes',
           thickness: '1-4mm',
           curing: '24 horas',
-          resistance: 'Superficie perfecta',
-          price: '16-25 €/m²'
+          selfLevel: 'Flujo perfecto',
+          surface: 'Lisa y uniforme',
+          application: 'Optimizado',
+          price: '16-25 €/m²',
+          whyBest: [
+            'Superficie perfectamente nivelada para robótica',
+            'Ausencia de desniveles - precisión para AGV',
+            'Superficie lisa - menor desgaste de ruedas',
+            'Aspecto estético para centros modernos'
+          ],
+          finish: 'Perfectamente liso sin marcas',
+          applications: [
+            'Almacenes robotizados',
+            'Zonas de picking automatizado',
+            'Centros de distribución modernos',
+            'Sistemas de transporte AGV'
+          ]
         }
       ]
     },
@@ -378,19 +418,54 @@ const BusinessIndustrialDetailContent = () => {
       systems: [
         {
           name: 'EpoxiBase M² Universal',
-          description: 'Base universal - SIN OLOR',
+          badge: 'BASE UNIVERSAL - SIN OLOR',
+          description: 'Base epoxi universal',
+          basedOn: 'Protop 1000',
           thickness: '2mm',
           curing: '24 horas',
-          resistance: 'Universal',
-          price: '13-20 €/m²'
+          odor: 'Prácticamente sin olor',
+          versatility: 'Máxima universalidad',
+          compatibility: 'Con cargas de cuarzo',
+          price: '13-20 €/m²',
+          whyBest: [
+            'Se puede trabajar sin parar ventilación (sin olor)',
+            'Universal - apta para diferentes zonas',
+            'Base para recubrimientos gruesos y finos',
+            'Se puede mezclar con agregados de cuarzo'
+          ],
+          finish: 'Universal para múltiples sistemas',
+          applications: [
+            'Talleres de mecanizado',
+            'Líneas de montaje',
+            'Talleres de herramientas',
+            'Zonas de control de calidad'
+          ]
         },
         {
           name: 'EpoxiForte M² Industrial',
-          description: 'Para talleres pesados',
+          badge: 'PARA TALLERES PESADOS',
+          description: 'Máxima resistencia industrial',
+          basedOn: 'Flowscreed',
           thickness: '6mm',
           curing: '24 horas',
-          resistance: 'Máxima resistencia',
-          price: '34-48 €/m²'
+          impact: 'Máxima resistencia a impactos',
+          vibration: 'No se agrieta por vibraciones',
+          oils: 'Resistente a aceites y emulsiones',
+          surface: 'Superficie rugosa para seguridad',
+          price: '34-48 €/m²',
+          whyBest: [
+            'Máxima resistencia a impactos',
+            'No se agrieta por vibraciones',
+            'Resistente a aceites y emulsiones',
+            'Superficie rugosa para seguridad'
+          ],
+          finish: 'Rugoso antideslizante',
+          applications: [
+            'Metalurgia, estampado, prensado',
+            'Talleres de maquinaria pesada',
+            'Zonas de alta vibración',
+            'Áreas con aceites industriales'
+          ]
         }
       ]
     }
