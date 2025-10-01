@@ -1,54 +1,136 @@
 ﻿import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Factory, Utensils, Zap, Car, Sparkles, Wrench, ArrowRight } from 'lucide-react';
+import { Factory, Utensils, Zap, Car, Sparkles, Wrench, ArrowRight, Clock, Droplets, Crown, Package } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
-      id: 'food-industry',
-      icon: Utensils,
-      titleKey: 'services.food.title',
-      descKey: 'services.food.desc',
-      features: ['Autonivelantes (2-4 mm)', 'Capas medias (4-6 mm)', 'Capas gruesas (6-12 mm)', 'Certificación HACCP/FDA', 'Acabado antideslizante', 'Higiénico con EscudoBio™']
-    },
-    {
-      id: 'industrial',
+      id: 'business-industrial',
       icon: Factory,
-      titleKey: 'services.industrial.title',
-      descKey: 'services.industrial.desc',
-      features: ['Pavimentos para naves', 'Centros logísticos', 'Zonas alto tráfico', 'Señalización integrada', 'Montaje rápido (2-4h)', 'Aplicable hasta -20°C']
+      title: {
+        es: 'Pisos para Negocio y Producción',
+        en: 'Business and Production Floors'
+      },
+      subtitle: {
+        es: 'Para: Almacenes, fábricas, centros logísticos, naves de producción',
+        en: 'For: Warehouses, factories, logistics centers, production facilities'
+      },
+      description: {
+        es: 'Sistemas certificados Epoxi M² para industria y logística con máximo rendimiento',
+        en: 'Certified Epoxi M² systems for industry and logistics with maximum performance'
+      },
+      features: {
+        es: ['Pisos resistentes para cargas pesadas (montacargas, camiones)', 'Sistemas de montaje rápido con mínima parada de producción', 'Pisos químico-resistentes para fábricas y químicas', 'Superficies autonivelantes lisas para oficinas y salas de exposición', 'Pisos para locales fríos y almacenes', 'Montaje rápido (8-12h)'],
+        en: ['Heavy-duty floors for heavy loads (forklifts, trucks)', 'Quick installation systems with minimal production downtime', 'Chemical-resistant floors for factories and chemical plants', 'Smooth self-leveling surfaces for offices and exhibition halls', 'Floors for cold rooms and warehouses', 'Quick installation (8-12h)']
+      }
     },
     {
-      id: 'parking-decks',
-      icon: Car,
-      titleKey: 'services.parking.title',
-      descKey: 'services.parking.desc',
-      features: ['Sistemas Deckshield', 'Parkings cubiertos/abiertos', 'Cubiertas transitables', 'Impermeabilización', 'Balcones y terrazas', 'Resistente a sales/aceites']
+      id: 'food-production',
+      icon: Utensils,
+      title: {
+        es: 'Pisos para Producción Alimentaria',
+        en: 'Food Production Floors'
+      },
+      subtitle: {
+        es: 'Para: Mataderos, lácteos, panaderías, restaurantes, cocinas',
+        en: 'For: Slaughterhouses, dairies, bakeries, restaurants, kitchens'
+      },
+      description: {
+        es: 'Sistemas EpoxiLimpio M² con tecnología Polygiene® para máxima higiene alimentaria',
+        en: 'EpoxiLimpio M² systems with Polygiene® technology for maximum food hygiene'
+      },
+      features: {
+        es: ['Pisos higiénicos con recubrimiento antibacterial', 'Recubrimientos para cámaras frigoríficas y congeladores', 'Pisos para talleres de procesamiento de carne, pescado, leche', 'Superficies fáciles de limpiar para cocinas y producciones alimentarias', 'Recubrimientos con certificados HACCP y FDA', 'Tecnología Polygiene® antimicrobiana'],
+        en: ['Hygienic floors with antibacterial coating', 'Coatings for cold storage and freezers', 'Floors for meat, fish, dairy processing workshops', 'Easy-to-clean surfaces for kitchens and food production', 'HACCP and FDA certified coatings', 'Polygiene® antimicrobial technology']
+      }
     },
     {
-      id: 'decorative',
+      id: 'decorative-floors',
       icon: Sparkles,
-      titleKey: 'services.decorative.title',
-      descKey: 'services.decorative.desc',
-      features: ['Efectos metallic', 'Suelos 3D', 'Revestimientos cuarzo', 'Diseños personalizados', 'Logotipos integrados', 'Acabados exclusivos']
+      title: {
+        es: 'Pisos Decorativos Hermosos',
+        en: 'Beautiful Decorative Floors'
+      },
+      subtitle: {
+        es: 'Para: Tiendas, showrooms, hoteles, restaurantes, oficinas, viviendas',
+        en: 'For: Stores, showrooms, hotels, restaurants, offices, homes'
+      },
+      description: {
+        es: 'Acabados exclusivos con efectos metálicos, 3D y diseños personalizados',
+        en: 'Exclusive finishes with metallic effects, 3D and custom designs'
+      },
+      features: {
+        es: ['Pisos decorativos brillantes con efecto mármol', 'Recubrimientos coloridos con agregados de cuarzo (como terrazo)', 'Recubrimientos transparentes protectores para conservar la belleza', 'Recubrimientos marinos resistentes para yates y objetos costeros', 'Pisos de diseño para espacios VIP', 'Diseños personalizados únicos'],
+        en: ['Bright decorative floors with marble effect', 'Colorful coatings with quartz aggregates (like terrazzo)', 'Transparent protective coatings to preserve beauty', 'Marine-resistant coatings for yachts and coastal objects', 'Designer floors for VIP spaces', 'Unique custom designs']
+      }
     },
     {
-      id: 'specialized',
+      id: 'garages-parking',
+      icon: Car,
+      title: 'Pisos para Garajes y Parkings',
+      subtitle: 'Para: Garajes residenciales, parkings de varios pisos, talleres, lavaderos',
+      description: 'Sistemas EpoxiCubierta M² para parkings, cubiertas transitables e impermeabilización',
+      features: ['Recubrimientos resistentes a aceites y gasolina para garajes', 'Impermeabilización de parkings en cubiertas', 'Sistemas de montaje rápido para parkings (con mínimo cierre)', 'Recubrimientos antideslizantes para rampas de acceso', 'Pisos resistentes para talleres y autoservicios', 'Garantía vitalicia impermeabilización']
+    },
+    {
+      id: 'technical-specialized',
       icon: Zap,
-      titleKey: 'services.esd.title',
-      descKey: 'services.esd.desc',
-      features: ['Pavimentos ESD', 'Pavimentos conductivos', 'Salas blancas', 'ISO 61340 / DIN / ASTM', 'Industria electrónica', 'Control estático']
+      title: 'Pisos Técnicos Especiales',
+      subtitle: 'Para: Laboratorios, fábricas electrónicas, hospitales, producciones high-tech',
+      description: 'Pavimentos ESD, conductivos y químico-resistentes para industrias exigentes',
+      features: ['Pisos antiestáticos para electrónica (protección contra estática)', 'Recubrimientos químico-resistentes para laboratorios', 'Pisos para altas temperaturas (hornos, calderas)', 'Recubrimientos antideslizantes para seguridad en producción', 'Soluciones especializadas personalizadas', 'Certificación ISO 61340 / IEC']
     },
     {
-      id: 'repairs',
+      id: 'fast-urgent',
+      icon: Clock,
+      title: 'Trabajos Rápidos y Urgentes',
+      subtitle: 'Para: Objetos con tiempo limitado, situaciones de emergencia, proyectos urgentes',
+      description: 'Sistemas de curado ultra rápido para proyectos urgentes y emergencias',
+      features: ['Reparación express de pisos en 1-2 días', 'Sistemas rápidos con curado acelerado', 'Trabajos en clima frío (desde -5°C)', 'Reparaciones de emergencia y restauración', 'Mínima parada de producción', 'Servicio 24/7 disponible']
+    },
+    {
+      id: 'repair-restoration',
       icon: Wrench,
-      titleKey: 'services.repair.title',
-      descKey: 'services.repair.desc',
-      features: ['Reparación grietas', 'Autonivelado suelos', 'Restauración pavimentos', 'Impermeabilización', 'Imprimaciones', 'Capas protectoras']
+      title: 'Reparación y Restauración',
+      subtitle: 'Para: Cualquier objeto con pisos dañados',
+      description: 'Soluciones de restauración, autonivelado e impermeabilización',
+      features: ['Reparación de grietas y baches', 'Restauración de recubrimientos antiguos', 'Reemplazo de áreas dañadas', 'Sellado de juntas y conexiones', 'Imprimación de superficies débiles', 'Renovación completa de pisos']
+    },
+    {
+      id: 'painting-protective',
+      icon: Sparkles,
+      title: 'Pintura y Recubrimientos Protectores',
+      subtitle: 'Para: Objetos pequeños, proyectos económicos, renovación de pisos',
+      description: 'Recubrimientos de laca y protectores para proyectos económicos',
+      features: ['Recubrimientos de laca para protección del hormigón', 'Pintura de pisos en garajes y almacenes', 'Recubrimientos protectores para metal', 'Renovación rápida de pisos antiguos', 'Soluciones económicas para áreas pequeñas', 'Kits DIY disponibles']
+    },
+    {
+      id: 'wet-areas',
+      icon: Droplets,
+      title: 'Pisos para Áreas Húmedas',
+      subtitle: 'Para: Lavaderos de autos, piscinas, duchas, baños, lavanderías',
+      description: 'Recubrimientos impermeables y antideslizantes para áreas húmedas',
+      features: ['Recubrimientos impermeables', 'Pisos antideslizantes para seguridad', 'Recubrimientos para esquinas redondeadas', 'Selladores especiales para juntas', 'Resistentes a productos de limpieza', 'Certificación R11-R13']
+    },
+    {
+      id: 'vip-individual',
+      icon: Crown,
+      title: 'Proyectos Individuales y VIP',
+      subtitle: 'Para: Objetos exclusivos, soluciones no estándar',
+      description: 'Diseños exclusivos y soluciones personalizadas para proyectos únicos',
+      features: ['Diseño de recubrimientos únicos personalizados', 'Combinación de diferentes sistemas', 'Colores y efectos no estándar', 'Consultas técnicas y desarrollo de soluciones', 'Sistemas complejos multicapa', 'Proyectos desde 20.000€']
+    },
+    {
+      id: 'components-materials',
+      icon: Package,
+      title: 'Componentes y Materiales',
+      subtitle: 'Para: Contratistas, maestros, entusiastas DIY, distribuidores',
+      description: 'Materiales y componentes Epoxi M² para venta por separado',
+      features: ['Pigmentos en polvo para coloración (8 colores)', 'Agregados de cuarzo de diferentes granulometrías', 'Selladores para juntas y conexiones', 'Imprimaciones para preparación de superficies', 'Aceleradores para curado rápido', 'Kits DIY completos con soporte técnico']
     }
   ];
 
@@ -57,7 +139,7 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {t('services.title')}
+            {t('services.title')} Epoxi M²
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {t('services.subtitle')}
@@ -74,15 +156,18 @@ const Services = () => {
                     <IconComponent className="w-8 h-8 text-primary" />
                   </div>
                   <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors duration-300">
-                    {t(service.titleKey)}
+                    {typeof service.title === 'object' ? service.title.es : service.title}
                   </CardTitle>
+                  <p className="text-sm text-primary/80 font-medium mt-2">
+                    {typeof service.subtitle === 'object' ? service.subtitle.es : service.subtitle}
+                  </p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4 text-center">
-                    {t(service.descKey)}
+                  <p className="text-muted-foreground mb-4 text-center text-sm">
+                    {typeof service.description === 'object' ? service.description.es : service.description}
                   </p>
                   <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
+                    {(Array.isArray(service.features) ? service.features : (typeof service.features === 'object' ? service.features.es : [])).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
                         <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                         {feature}
