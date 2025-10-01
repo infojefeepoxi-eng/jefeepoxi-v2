@@ -110,4 +110,3 @@ if ($success1 || $success2) {
     echo json_encode(['success' => false, 'message' => 'Failed to send emails']);
 }
 ?>
-

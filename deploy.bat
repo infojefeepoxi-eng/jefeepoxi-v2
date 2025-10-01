@@ -11,3 +11,4 @@ npx netlify-cli deploy --dir=dist --prod --open
 
 echo Deployment completed!
 pause
+
