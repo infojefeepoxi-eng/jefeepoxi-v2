@@ -803,51 +803,261 @@ const BusinessIndustrialDetailContent = () => {
           </div>
         </section>
 
-        {/* Additional Info Section */}
-        <section className="py-16 bg-card/30">
+        {/* Additional Services for Industrial Projects */}
+        <section className="py-16 bg-gradient-to-r from-secondary/5 to-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-foreground mb-4">
+                  Servicios Adicionales para Proyectos Industriales
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Servicios profesionales completos incluidos en todos nuestros proyectos
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Surface Preparation */}
+                <Card className="border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-primary">Preparación de Superficie</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Lijado mecánico profesional
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Granallado para máxima adherencia
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Reparación grietas con EpoxiRepara M²
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Imprimación con EpoxiBase M²
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Special Solutions */}
+                <Card className="border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-primary">Soluciones Especiales</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        EpoxiTurbo M² - Acelerador clima frío
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Sellador M² - Sellado de juntas
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Relleno M² - Agregados de cuarzo
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Sistemas combinados personalizados
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Warranty and Service */}
+                <Card className="border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-primary">Garantía y Servicio</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Hasta 15 años de garantía
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Soporte técnico 24/7
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Revisiones anuales incluidas
+                      </li>
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Reparación express emergencias
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* System Selection Guide */}
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-foreground mb-4">
-                  Servicios Adicionales Incluidos
+                  ¿Qué Sistema Elegir?
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Servicios profesionales completos para proyectos industriales
+                  Guía rápida para seleccionar el sistema Epoxi M² ideal según su proyecto
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-6 h-6 text-primary" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-4 border border-primary/20">
+                  <h3 className="font-semibold text-foreground mb-2">Para almacén con montacargas:</h3>
+                  <div className="flex items-center text-primary font-medium mb-1">
+                    <span className="text-2xl mr-2">→</span>
+                    <span>EpoxiRápido M²</span>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">Preparación Profesional</h3>
-                  <p className="text-sm text-muted-foreground">Lijado mecánico, granallado, reparación de grietas</p>
+                  <p className="text-sm text-muted-foreground">(rápido + resistente)</p>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-6 h-6 text-primary" />
+                <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-4 border border-primary/20">
+                  <h3 className="font-semibold text-foreground mb-2">Para producción química:</h3>
+                  <div className="flex items-center text-primary font-medium mb-1">
+                    <span className="text-2xl mr-2">→</span>
+                    <span>EpoxiProtect M² Químico</span>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">Montaje Certificado</h3>
-                  <p className="text-sm text-muted-foreground">Personal certificado Flowcrete, control de calidad</p>
+                  <p className="text-sm text-muted-foreground">(resistencia química)</p>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-6 h-6 text-primary" />
+                <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-4 border border-primary/20">
+                  <h3 className="font-semibold text-foreground mb-2">Para zona de carga:</h3>
+                  <div className="flex items-center text-primary font-medium mb-1">
+                    <span className="text-2xl mr-2">→</span>
+                    <span>EpoxiForte M² Industrial</span>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">Garantía Extendida</h3>
-                  <p className="text-sm text-muted-foreground">Hasta 15 años, soporte técnico 24/7</p>
+                  <p className="text-sm text-muted-foreground">(máxima resistencia)</p>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-6 h-6 text-primary" />
+                <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-4 border border-primary/20">
+                  <h3 className="font-semibold text-foreground mb-2">Para zona de oficinas:</h3>
+                  <div className="flex items-center text-primary font-medium mb-1">
+                    <span className="text-2xl mr-2">→</span>
+                    <span>EpoxiLiso M² Autonivelante</span>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">Mantenimiento</h3>
-                  <p className="text-sm text-muted-foreground">Revisiones anuales, reparación express</p>
+                  <p className="text-sm text-muted-foreground">(liso + estético)</p>
                 </div>
+
+                <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-4 border border-primary/20">
+                  <h3 className="font-semibold text-foreground mb-2">Para almacén pequeño (presupuesto):</h3>
+                  <div className="flex items-center text-primary font-medium mb-1">
+                    <span className="text-2xl mr-2">→</span>
+                    <span>EpoxiBase M² Universal</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">(universal + accesible)</p>
+                </div>
+
+                <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-4 border border-primary/20">
+                  <h3 className="font-semibold text-foreground mb-2">Para altas temperaturas:</h3>
+                  <div className="flex items-center text-primary font-medium mb-1">
+                    <span className="text-2xl mr-2">→</span>
+                    <span>EpoxiTermo M² Alta Temp</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">(hasta 1000°C)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Free Consultation Section */}
+        <section className="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-foreground mb-6">
+                Consulta Gratuita
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                ¿No sabe qué sistema es ideal para su proyecto?
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <Card>
+                  <CardContent className="pt-6">
+                    <h3 className="font-semibold text-foreground mb-4">Lo que incluye:</h3>
+                    <ul className="space-y-2 text-left">
+                      <li className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Visita de especialista técnico
+                      </li>
+                      <li className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Evaluación del estado del piso
+                      </li>
+                      <li className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Cálculo de costos
+                      </li>
+                      <li className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        Propuesta técnica detallada
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="pt-6">
+                    <h3 className="font-semibold text-foreground mb-4">Contacto directo:</h3>
+                    <div className="space-y-3">
+                      <Button 
+                        className="w-full"
+                        onClick={() => {
+                          window.location.href = 'tel:+34622313855';
+                        }}
+                      >
+                        <Phone className="w-4 h-4 mr-2" />
+                        Llamar: +34 622 313 855
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => {
+                          window.open('https://wa.me/34622313855?text=Hola, necesito consulta gratuita para pisos industriales. ¿Podrían visitarme?', '_blank');
+                        }}
+                      >
+                        <MessageCircle className="w-4 h-4 mr-2" />
+                        WhatsApp Consulta
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary to-primary/80 rounded-lg p-6">
+                <h3 className="font-bold text-xl mb-2 text-black">
+                  ¡Contáctenos para el cálculo de su proyecto!
+                </h3>
+                <p className="text-black/80 mb-4">
+                  Nuestros expertos le ayudarán a elegir la solución perfecta
+                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button size="lg" variant="secondary" className="bg-white text-black hover:bg-white/90 hover:text-black">
+                      Solicitar Presupuesto Detallado
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle>Solicitar Presupuesto - Pisos para Negocio y Producción</DialogTitle>
+                    </DialogHeader>
+                    <QuoteForm productTitle="Pisos para Negocio y Producción" />
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </div>
@@ -906,54 +1116,6 @@ const BusinessIndustrialDetailContent = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                ¿Necesita una solución para su proyecto industrial?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Nuestros expertos le ayudarán a elegir el sistema Epoxi M² ideal para su instalación
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button size="lg">
-                      Consulta Gratuita
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle>Solicitar Presupuesto - Pisos para Negocio y Producción</DialogTitle>
-                    </DialogHeader>
-                    <QuoteForm productTitle="Pisos para Negocio y Producción" />
-                  </DialogContent>
-                </Dialog>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  onClick={() => {
-                    window.location.href = 'tel:+34622313855';
-                  }}
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  +34 622 313 855
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  onClick={() => {
-                    window.open('https://wa.me/34622313855?text=Hola, estoy interesado en pisos para negocio y producción. ¿Podrían darme más información?', '_blank');
-                  }}
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  WhatsApp
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
