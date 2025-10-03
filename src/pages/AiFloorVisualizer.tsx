@@ -40,14 +40,22 @@ const AiFloorVisualizer = () => {
   };
 
   const generatePreview = async () => {
-    // Placeholder UX: simulate generation while backend API is being prepared
     if (!roomImage) return;
     setIsLoading(true);
     try {
-      // For now, just echo back the room image as a mock result
-      // Later, replace with API call to your backend that wraps OpenAI Responses API / Images API
-      await new Promise((r) => setTimeout(r, 1500));
-      setResultImage(roomImage);
+      const res = await fetch('/.netlify/functions/ai-visualizer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          roomImageBase64: roomImage,
+          referenceImageBase64: referenceImage,
+          prompt
+        })
+      });
+      const data = await res.json();
+      if (data?.image_base64) {
+        setResultImage(`data:image/png;base64,${data.image_base64}`);
+      }
     } finally {
       setIsLoading(false);
     }

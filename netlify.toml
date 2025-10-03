@@ -1,6 +1,7 @@
 # For manual deployment - no build command needed
 [build]
   publish = "."
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/*"
