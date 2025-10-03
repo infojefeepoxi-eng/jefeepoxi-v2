@@ -24,6 +24,7 @@ const translations = {
     'hero.subtitle': 'Más de 5 años de experiencia. 30 proyectos entregados en España y Europa.',
     'hero.cta.primary': 'Solicitar presupuesto',
     'hero.cta.secondary': 'Ver proyectos',
+    'hero.cta.ai': 'Visualizar con IA',
     
     'services.title': 'Nuestros Servicios',
     'services.subtitle': 'Sistemas certificados Epoxi M² para industria alimentaria, logística, parkings y aplicaciones especializadas en toda Europa',
@@ -111,6 +112,7 @@ const translations = {
     'hero.subtitle': 'Over 5 years of experience. 30 projects delivered in Spain and Europe.',
     'hero.cta.primary': 'Request quote',
     'hero.cta.secondary': 'View projects',
+    'hero.cta.ai': 'Visualize with AI',
     
     'services.title': 'Our Services',
     'services.subtitle': 'Certified Epoxi M² systems for food industry, logistics, parking and specialized applications throughout Europe',

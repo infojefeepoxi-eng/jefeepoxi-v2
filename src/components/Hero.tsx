@@ -1,5 +1,6 @@
 ﻿import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Wand2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 import heroEpoxyWarehouse from '@/assets/hero-epoxy-warehouse.jpg';
 
@@ -58,6 +59,18 @@ const Hero = () => {
               </a>
             </Button>
             
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="px-8 py-4 text-lg border border-border hover:bg-card/50"
+              asChild
+            >
+              <Link to="/ai-visualizer">
+                <Wand2 className="mr-2 w-5 h-5" />
+                {t('hero.cta.ai')}
+              </Link>
+            </Button>
+
             <Button 
               variant="ghost" 
               size="lg"

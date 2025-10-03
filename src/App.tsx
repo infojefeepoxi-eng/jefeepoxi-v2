@@ -21,6 +21,7 @@ import PaintProtectiveDetail from "./pages/PaintProtectiveDetail";
 import WetAreasDetail from "./pages/WetAreasDetail";
 import VipIndividualDetail from "./pages/VipIndividualDetail";
 import ComponentsMaterialsDetail from "./pages/ComponentsMaterialsDetail";
+import AiFloorVisualizer from "./pages/AiFloorVisualizer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:articleId" element={<BlogArticle />} />
+            <Route path="/ai-visualizer" element={<AiFloorVisualizer />} />
             {/* Specific service routes MUST be before the generic :serviceId route */}
             <Route path="/services/business-industrial" element={<BusinessIndustrialDetail />} />
             <Route path="/services/food-production" element={<FoodProductionDetail />} />
