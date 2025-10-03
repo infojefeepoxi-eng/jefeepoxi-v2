@@ -13,6 +13,8 @@ import ServiceDetail from "./pages/ServiceDetail";
 import BusinessIndustrialDetail from "./pages/BusinessIndustrialDetail";
 import FoodProductionDetail from "./pages/FoodProductionDetail";
 import DecorativeFloorsDetail from "./pages/DecorativeFloorsDetail";
+import GaragesParkingDetail from "./pages/GaragesParkingDetail";
+import TechnicalSpecialDetail from "./pages/TechnicalSpecialDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
@@ -33,6 +35,8 @@ const App = () => (
             <Route path="/services/business-industrial" element={<BusinessIndustrialDetail />} />
             <Route path="/services/food-production" element={<FoodProductionDetail />} />
             <Route path="/services/decorative-floors" element={<DecorativeFloorsDetail />} />
+            <Route path="/services/garages-parking" element={<GaragesParkingDetail />} />
+            <Route path="/services/technical-specialized" element={<TechnicalSpecialDetail />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
