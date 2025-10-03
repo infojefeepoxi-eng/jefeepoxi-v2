@@ -15,6 +15,7 @@ const AiFloorVisualizer = () => {
   const [prompt, setPrompt] = useState<string>('Piso epoxi metalizado gris con acabado satinado');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [resultImage, setResultImage] = useState<string | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const roomInputRef = useRef<HTMLInputElement | null>(null);
   const refInputRef = useRef<HTMLInputElement | null>(null);
@@ -42,6 +43,7 @@ const AiFloorVisualizer = () => {
   const generatePreview = async () => {
     if (!roomImage) return;
     setIsLoading(true);
+    setErrorMsg(null);
     try {
       const res = await fetch('/.netlify/functions/ai-visualizer', {
         method: 'POST',
@@ -52,10 +54,18 @@ const AiFloorVisualizer = () => {
           prompt
         })
       });
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || `Request failed: ${res.status}`);
+      }
       const data = await res.json();
       if (data?.image_base64) {
         setResultImage(`data:image/png;base64,${data.image_base64}`);
+      } else {
+        throw new Error('No image_base64 in response');
       }
+    } catch (e: any) {
+      setErrorMsg(e?.message || 'Error generating image');
     } finally {
       setIsLoading(false);
     }
@@ -145,6 +155,10 @@ const AiFloorVisualizer = () => {
                     <Wand2 className="w-4 h-4 mr-2" /> {isLoading ? 'Generando…' : 'Generar vista previa'}
                   </Button>
                 </div>
+
+                {errorMsg && (
+                  <div className="mt-4 text-sm text-red-600">{errorMsg}</div>
+                )}
 
                 {resultImage && (
                   <div className="mt-6">

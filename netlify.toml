@@ -3,6 +3,10 @@
   publish = "."
   functions = "netlify/functions"
 
+# Dev proxy to Vite (port must match vite.config.ts server.port)
+[dev]
+  targetPort = 8080
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -51,11 +55,4 @@
 📧 Sistema de gestión de leads v2.1
     """
 
-# Security headers
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+# Security headers are better configured at CDN; remove from netlify.toml to avoid redirect parser confusion
