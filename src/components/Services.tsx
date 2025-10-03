@@ -179,7 +179,7 @@ const Services = () => {
                     className="w-full group"
                     asChild
                   >
-                    <Link to={service.id === 'food-production' ? '/services/food-production' : service.id === 'business-industrial' ? '/services/business-industrial' : service.id === 'decorative-floors' ? '/services/decorative-floors' : service.id === 'garages-parking' ? '/services/garages-parking' : service.id === 'technical-specialized' ? '/services/technical-specialized' : `/services/${service.id}`}>
+                    <Link to={service.id === 'food-production' ? '/services/food-production' : service.id === 'business-industrial' ? '/services/business-industrial' : service.id === 'decorative-floors' ? '/services/decorative-floors' : service.id === 'garages-parking' ? '/services/garages-parking' : service.id === 'technical-specialized' ? '/services/technical-specialized' : service.id === 'fast-urgent' ? '/services/fast-urgent' : service.id === 'repair-restoration' ? '/services/repair-restoration' : service.id === 'painting-protective' ? '/services/painting-protective' : service.id === 'wet-areas' ? '/services/wet-areas' : service.id === 'vip-individual' ? '/services/vip-individual' : service.id === 'components-materials' ? '/services/components-materials' : `/services/${service.id}`}>
                       Más información
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>

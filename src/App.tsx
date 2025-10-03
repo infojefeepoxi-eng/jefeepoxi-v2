@@ -15,6 +15,12 @@ import FoodProductionDetail from "./pages/FoodProductionDetail";
 import DecorativeFloorsDetail from "./pages/DecorativeFloorsDetail";
 import GaragesParkingDetail from "./pages/GaragesParkingDetail";
 import TechnicalSpecialDetail from "./pages/TechnicalSpecialDetail";
+import UrgentWorkDetail from "./pages/UrgentWorkDetail";
+import RepairRestorationDetail from "./pages/RepairRestorationDetail";
+import PaintProtectiveDetail from "./pages/PaintProtectiveDetail";
+import WetAreasDetail from "./pages/WetAreasDetail";
+import VipIndividualDetail from "./pages/VipIndividualDetail";
+import ComponentsMaterialsDetail from "./pages/ComponentsMaterialsDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
@@ -37,6 +43,12 @@ const App = () => (
             <Route path="/services/decorative-floors" element={<DecorativeFloorsDetail />} />
             <Route path="/services/garages-parking" element={<GaragesParkingDetail />} />
             <Route path="/services/technical-specialized" element={<TechnicalSpecialDetail />} />
+            <Route path="/services/fast-urgent" element={<UrgentWorkDetail />} />
+            <Route path="/services/repair-restoration" element={<RepairRestorationDetail />} />
+            <Route path="/services/painting-protective" element={<PaintProtectiveDetail />} />
+            <Route path="/services/wet-areas" element={<WetAreasDetail />} />
+            <Route path="/services/vip-individual" element={<VipIndividualDetail />} />
+            <Route path="/services/components-materials" element={<ComponentsMaterialsDetail />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
