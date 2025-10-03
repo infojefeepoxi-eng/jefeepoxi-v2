@@ -179,7 +179,7 @@ const Services = () => {
                     className="w-full group"
                     asChild
                   >
-                    <Link to={`/services/${service.id}`}>
+                    <Link to={service.id === 'food-production' ? '/services/food-production' : service.id === 'business-industrial' ? '/services/business-industrial' : service.id === 'decorative-floors' ? '/services/decorative-floors' : `/services/${service.id}`}>
                       Más información
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
