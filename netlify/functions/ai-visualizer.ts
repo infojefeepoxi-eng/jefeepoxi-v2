@@ -29,8 +29,6 @@ export const handler: Handler = async (event) => {
       return { statusCode: 400, headers, body: JSON.stringify({ error: 'roomImageBase64 and prompt are required' }) };
     }
 
-    console.log('🎨 AI Visualizer: Starting with gpt-image-1');
-
     // Convert base64 to Buffer
     const roomBuffer = Buffer.from(roomImageBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64');
 
@@ -44,23 +42,51 @@ export const handler: Handler = async (event) => {
       fullPrompt += ` Match the floor style and texture from the reference image provided.`;
     }
 
-    console.log('📤 Sending to OpenAI images.edit...');
+    let imageBase64: string | undefined;
+    let modelUsed = 'gpt-image-1';
 
-    // Use images.edit with gpt-image-1 - only accepts single image
-    const result = await client.images.edit({
-      model: 'gpt-image-1',
-      image: roomFile,
-      prompt: fullPrompt,
-      size: '1024x1024'
-    } as any);
+    try {
+      console.log('🎨 Trying gpt-image-1...');
+      
+      // Try gpt-image-1 first
+      const result = await client.images.edit({
+        model: 'gpt-image-1',
+        image: roomFile,
+        prompt: fullPrompt,
+        size: '1024x1024'
+      } as any);
 
-    const imageBase64 = result.data?.[0]?.b64_json;
+      imageBase64 = result.data?.[0]?.b64_json;
+      console.log('✅ Image generated with gpt-image-1');
+      
+    } catch (error: any) {
+      // If 403 (not verified), fallback to dall-e-2
+      if (error?.status === 403 || error?.message?.includes('must be verified')) {
+        console.log('⚠️ gpt-image-1 not available (403), falling back to dall-e-2...');
+        modelUsed = 'dall-e-2';
+        
+        const fallbackResult = await client.images.edit({
+          model: 'dall-e-2',
+          image: roomFile,
+          prompt: fullPrompt,
+          size: '1024x1024',
+          n: 1,
+          response_format: 'b64_json'
+        });
+
+        imageBase64 = fallbackResult.data?.[0]?.b64_json;
+        console.log('✅ Image generated with dall-e-2 (fallback)');
+      } else {
+        // If other error, throw it
+        throw error;
+      }
+    }
 
     if (!imageBase64) {
       return { statusCode: 500, headers, body: JSON.stringify({ error: 'No image generated' }) };
     }
 
-    console.log('✅ Image generated successfully');
+    console.log(`✅ Image generated successfully with ${modelUsed}`);
 
     return {
       statusCode: 200,
