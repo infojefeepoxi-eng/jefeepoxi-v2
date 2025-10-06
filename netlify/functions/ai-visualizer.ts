@@ -1,5 +1,6 @@
 import type { Handler } from '@netlify/functions';
 import OpenAI from 'openai';
+import { File } from 'buffer';
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -33,6 +34,9 @@ export const handler: Handler = async (event) => {
     // Convert base64 to Buffer
     const roomBuffer = Buffer.from(roomImageBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64');
 
+    // Create File object from Buffer (required by OpenAI SDK)
+    const roomFile = new File([roomBuffer], 'room.png', { type: 'image/png' });
+
     // Build prompt with reference if provided
     let fullPrompt = `Replace the floor in the room with: ${prompt}. Keep all other elements (walls, furniture, lighting) exactly unchanged. Photorealistic interior photography, professional quality.`;
     
@@ -40,10 +44,12 @@ export const handler: Handler = async (event) => {
       fullPrompt += ` Match the floor style and texture from the reference image provided.`;
     }
 
+    console.log('📤 Sending to OpenAI images.edit...');
+
     // Use images.edit with gpt-image-1 - only accepts single image
     const result = await client.images.edit({
       model: 'gpt-image-1',
-      image: roomBuffer,
+      image: roomFile,
       prompt: fullPrompt,
       size: '1024x1024'
     } as any);
