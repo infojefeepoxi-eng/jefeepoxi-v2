@@ -45,9 +45,7 @@ export const handler: Handler = async (event) => {
       model: 'gpt-image-1',
       image: roomBuffer,
       prompt: fullPrompt,
-      quality: 'high',
-      size: '1024x1024',
-      response_format: 'b64_json'
+      size: '1024x1024'
     } as any);
 
     const imageBase64 = result.data?.[0]?.b64_json;
