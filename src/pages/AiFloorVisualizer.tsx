@@ -23,7 +23,36 @@ const AiFloorVisualizer = () => {
     const reader = new FileReader();
     reader.onload = (e) => {
       if (e.target && typeof e.target.result === 'string') {
-        setter(e.target.result);
+        // Convert to PNG and resize if needed
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          
+          // Resize if too large (max 1024x1024 for dall-e-2)
+          const maxSize = 1024;
+          if (width > maxSize || height > maxSize) {
+            if (width > height) {
+              height = (height / width) * maxSize;
+              width = maxSize;
+            } else {
+              width = (width / height) * maxSize;
+              height = maxSize;
+            }
+          }
+          
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, width, height);
+            // Convert to PNG with compression
+            const pngDataUrl = canvas.toDataURL('image/png', 0.8);
+            setter(pngDataUrl);
+          }
+        };
+        img.src = e.target.result;
       }
     };
     reader.readAsDataURL(file);
