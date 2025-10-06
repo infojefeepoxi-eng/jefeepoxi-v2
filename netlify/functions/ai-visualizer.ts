@@ -32,24 +32,22 @@ export const handler: Handler = async (event) => {
 
     // Convert base64 to Buffer
     const roomBuffer = Buffer.from(roomImageBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64');
-    const referenceBuffer = referenceImageBase64
-      ? Buffer.from(referenceImageBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64')
-      : null;
 
-    // Prepare images array
-    const images: Buffer[] = [roomBuffer];
-    if (referenceBuffer) {
-      images.push(referenceBuffer);
+    // Build prompt with reference if provided
+    let fullPrompt = `Replace the floor in the room with: ${prompt}. Keep all other elements (walls, furniture, lighting) exactly unchanged. Photorealistic interior photography, professional quality.`;
+    
+    if (referenceImageBase64) {
+      fullPrompt += ` Match the floor style and texture from the reference image provided.`;
     }
 
-    // Use images.edit with gpt-image-1
+    // Use images.edit with gpt-image-1 - only accepts single image
     const result = await client.images.edit({
       model: 'gpt-image-1',
-      image: images,
-      prompt: `Replace the floor in the room with ${prompt}. Keep all other elements unchanged. Match the style if reference provided. Photorealistic interior photography.`,
+      image: roomBuffer,
+      prompt: fullPrompt,
       quality: 'high',
       size: '1024x1024',
-      output_format: 'png'
+      response_format: 'b64_json'
     } as any);
 
     const imageBase64 = result.data?.[0]?.b64_json;
