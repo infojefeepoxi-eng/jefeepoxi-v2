@@ -60,22 +60,25 @@ export const handler: Handler = async (event) => {
       console.log('✅ Image generated with gpt-image-1');
       
     } catch (error: any) {
-      // If 403 (not verified), fallback to dall-e-2
+      // If 403 (not verified), fallback to dall-e-3 generation (better than dall-e-2 edit)
       if (error?.status === 403 || error?.message?.includes('must be verified')) {
-        console.log('⚠️ gpt-image-1 not available (403), falling back to dall-e-2...');
-        modelUsed = 'dall-e-2';
+        console.log('⚠️ gpt-image-1 not available (403), falling back to dall-e-3 generation...');
+        modelUsed = 'dall-e-3';
         
-        const fallbackResult = await client.images.edit({
-          model: 'dall-e-2',
-          image: roomFile,
-          prompt: fullPrompt,
+        // Use images.generate instead of edit for dall-e-3 (better results)
+        const generationPrompt = `A photorealistic interior room with ${prompt} floor. Professional architectural photography, high quality, realistic lighting and shadows. The room should have modern furniture and good natural lighting.`;
+        
+        const fallbackResult = await client.images.generate({
+          model: 'dall-e-3',
+          prompt: generationPrompt,
           size: '1024x1024',
+          quality: 'standard',
           n: 1,
           response_format: 'b64_json'
         });
 
         imageBase64 = fallbackResult.data?.[0]?.b64_json;
-        console.log('✅ Image generated with dall-e-2 (fallback)');
+        console.log('✅ Image generated with dall-e-3 (fallback generation)');
       } else {
         // If other error, throw it
         throw error;
