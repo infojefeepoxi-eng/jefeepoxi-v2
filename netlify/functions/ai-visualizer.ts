@@ -32,26 +32,42 @@ export const handler: Handler = async (event) => {
     // Convert base64 to Buffer
     const roomBuffer = Buffer.from(roomImageBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64');
 
-    // Create File object from Buffer (required by OpenAI SDK)
+    // Create File objects from Buffer (required by OpenAI SDK)
     const roomFile = new File([roomBuffer], 'room.png', { type: 'image/png' });
-
-    // Build prompt with reference if provided
-    let fullPrompt = `Replace the floor in the room with: ${prompt}. Keep all other elements (walls, furniture, lighting) exactly unchanged. Photorealistic interior photography, professional quality.`;
     
+    // Prepare images array for gpt-image-1
+    const images: any[] = [roomFile];
+    
+    // Add reference image if provided
     if (referenceImageBase64) {
-      fullPrompt += ` Match the floor style and texture from the reference image provided.`;
+      const refBuffer = Buffer.from(referenceImageBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64');
+      const refFile = new File([refBuffer], 'reference.png', { type: 'image/png' });
+      images.push(refFile);
     }
+
+    // Build comprehensive prompt
+    let fullPrompt = `Task: Replace ONLY the floor in the first image with the epoxy floor style described below.
+
+Floor description: ${prompt}
+
+${referenceImageBase64 ? 'Reference: Use the second image as a style reference for the floor texture, color, and finish.' : ''}
+
+Requirements:
+- Keep ALL other elements unchanged (walls, furniture, lighting, windows, doors)
+- The floor should look realistic and professionally installed
+- Match lighting and perspective of the original room
+- Maintain photorealistic quality`;
 
     let imageBase64: string | undefined;
     let modelUsed = 'gpt-image-1';
 
     try {
-      console.log('🎨 Trying gpt-image-1...');
+      console.log(`🎨 Generating with gpt-image-1 (${images.length} image${images.length > 1 ? 's' : ''})...`);
       
-      // Try gpt-image-1 first
+      // Use gpt-image-1 with multiple images if reference provided
       const result = await client.images.edit({
         model: 'gpt-image-1',
-        image: roomFile,
+        image: images,
         prompt: fullPrompt,
         size: '1024x1024'
       } as any);
