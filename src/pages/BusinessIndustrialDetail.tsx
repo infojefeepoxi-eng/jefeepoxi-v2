@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -473,6 +474,13 @@ const BusinessIndustrialDetailContent = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Pavimentos Industriales Epoxy Valencia | Naves y Almacenes"
+        description="Sistemas de pavimentos epoxy para naves industriales en Valencia. Alta resistencia química y mecánica. Certificados ISO 9001. Presupuesto gratuito ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/business-industrial"
+        keywords="pavimentos industriales valencia, suelos epoxy naves industriales, pavimentos epoxy almacenes, resina epoxy industrial, pavimentos logística valencia, suelos antipolvo, pavimentos naves"
+        ogType="website"
+      />
       <Header />
       <main className="pt-20">
         {/* Header Section */}

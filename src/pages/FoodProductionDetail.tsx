@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -615,6 +616,13 @@ const FoodProductionDetailContent = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Pavimentos Epoxy Alimentarios Valencia | Industria Alimentaria HACCP"
+        description="Sistemas de pavimentos epoxy higiénicos para industria alimentaria. Certificación HACCP, FDA. Tecnología antimicrobiana EscudoBio. Presupuesto gratuito ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/food-production"
+        keywords="pavimentos alimentarios valencia, suelos epoxy industria alimentaria, pavimentos HACCP, revestimientos higiénicos, pavimentos antimicrobianos, suelos FDA certificados"
+        ogType="website"
+      />
       <Header />
       <main className="pt-20">
         {/* Header Section */}

@@ -1,30 +1,25 @@
 ﻿import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Clock, ArrowRight, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import vlogHeroImage from '@/assets/vlog-epoxy-hero.jpg';
+import { blogArticles } from '@/lib/blogData';
 
 const BlogContent = () => {
   const { t } = useLanguage();
 
-  // Mock articles data - in a real app, this would come from a CMS or database
-  const articles = [
-    {
-      id: 'why-Epoxi-wins',
-      title: t('vlog.title'),
-      excerpt: t('vlog.subtitle'),
-      image: vlogHeroImage,
-      publishedAt: '2024-01-15',
-      readTime: 5,
-      category: 'Technical'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Blog Pavimentos Epoxy | Guías, Consejos y Novedades"
+        description="Artículos sobre pavimentos epoxy: guías técnicas, consejos de mantenimiento, comparativas, casos de éxito. Información profesional actualizada por expertos en Valencia."
+        canonical="https://jefeepoxi.com/blog"
+        keywords="blog pavimentos epoxy, guías epoxy, consejos suelos industriales, mantenimiento pavimentos, artículos técnicos epoxy"
+        ogType="website"
+      />
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
@@ -51,12 +46,12 @@ const BlogContent = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {articles.map((article) => (
+              {blogArticles.map((article) => (
                 <Card key={article.id} className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
                   <div className="aspect-video overflow-hidden">
                     <img 
                       src={article.image} 
-                      alt={article.title}
+                      alt={t(article.titleKey)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
@@ -71,12 +66,12 @@ const BlogContent = () => {
                       </div>
                     </div>
                     <h2 className="text-xl font-semibold text-foreground line-clamp-2">
-                      {article.title}
+                      {t(article.titleKey)}
                     </h2>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground line-clamp-3">
-                      {article.excerpt}
+                      {t(article.excerptKey)}
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">

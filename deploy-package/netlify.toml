@@ -1,0 +1,58 @@
+# For manual deployment - no build command needed
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Dev proxy to Vite (port must match vite.config.ts server.port)
+[dev]
+  targetPort = 8080
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Form handling
+[[forms]]
+  name = "contact-quote"
+  
+[forms.settings]
+  # Email notifications
+  [forms.settings.email]
+    to = ["infojefeepoxi@gmail.com", "jefeepoxi@gmail.com"]
+    subject = "🏗️ Nueva solicitud de presupuesto - {{name}}"
+    template = """
+🏗️ NUEVA SOLICITUD DE PRESUPUESTO EPOXI M²
+==========================================
+
+👤 DATOS DEL CLIENTE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Nombre completo: {{name}}
+• Email: {{email}}
+• Teléfono: {{phone}}
+• Dirección del proyecto: {{address}}
+
+🏭 DETALLES DEL PROYECTO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Superficie estimada: {{surface}} m²
+• Tipo de acabado deseado: {{finish-type}}
+• Descripción del proyecto:
+{{message}}
+
+📅 INFORMACIÓN DE LA SOLICITUD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Origen: Formulario web www.jefeepoxi.com
+
+💼 PRÓXIMOS PASOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Contactar al cliente en 24 horas
+2. Evaluar el proyecto y tipo de sistema Epoxi M²
+3. Preparar presupuesto personalizado
+4. Programar visita técnica si es necesario
+
+---
+🌐 Generado automáticamente por JefeEpoxi.com
+📧 Sistema de gestión de leads v2.1
+    """
+
+# Security headers are better configured at CDN; remove from netlify.toml to avoid redirect parser confusion
