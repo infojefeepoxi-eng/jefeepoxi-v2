@@ -74,7 +74,12 @@ const AiFloorVisualizer = () => {
     setErrorMsg(null);
     
     try {
-      const res = await fetch('/.netlify/functions/ai-visualizer', {
+      // Use Hetzner VPS for AI generation (no timeout limits)
+      const API_URL = import.meta.env.PROD 
+        ? 'https://ai.pocketbasemax.cc/api/ai-visualizer'  // Production: Hetzner VPS via Cloudflare
+        : '/.netlify/functions/ai-visualizer';             // Development: Netlify local
+      
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
