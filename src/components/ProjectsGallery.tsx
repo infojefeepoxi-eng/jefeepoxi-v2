@@ -529,7 +529,7 @@ const ProjectsGallery = () => {
             {t('projects.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Explore nuestros proyectos más destacados en España
+            {language === 'es' ? 'Explore nuestros proyectos más destacados en España' : 'Explore our most outstanding projects in Spain'}
           </p>
 
           {/* Filter Buttons */}
@@ -621,7 +621,7 @@ const ProjectsGallery = () => {
                     });
                   }}
                 >
-                  Ver detalles
+                  {language === 'es' ? 'Ver detalles' : 'View details'}
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
