@@ -26,7 +26,7 @@ const Hero = () => {
           {/* Subtitle Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
             <span className="text-primary text-sm font-medium">
-              Valencia, España • {t('footer.location')}
+              Valencia, España
             </span>
           </div>
 
@@ -91,7 +91,7 @@ const Hero = () => {
               <div className="text-muted-foreground">Años de experiencia</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">30+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">70+</div>
               <div className="text-muted-foreground">Proyectos entregados</div>
             </div>
             <div className="text-center">

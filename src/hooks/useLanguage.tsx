@@ -21,7 +21,7 @@ const translations = {
     'nav.faq': 'FAQ',
     
     'hero.title': 'Pavimentos Epoxi profesionales en Valencia',
-    'hero.subtitle': 'Más de 5 años de experiencia. 30 proyectos entregados en España y Europa.',
+    'hero.subtitle': 'Más de 5 años de experiencia. 70 proyectos entregados. Trabajamos en toda España.',
     'hero.cta.primary': 'Solicitar presupuesto',
     'hero.cta.secondary': 'Ver proyectos',
     'hero.cta.ai': 'Visualizar con IA',
