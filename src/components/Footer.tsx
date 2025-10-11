@@ -1,9 +1,17 @@
-﻿import { Phone, MessageCircle, Mail, MapPin } from 'lucide-react';
+﻿import { useState } from 'react';
+import { Phone, MessageCircle, Mail, MapPin, X } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import jefeepoxi_logo from '@/assets/jefeepoxi-logo.png';
 
 const Footer = () => {
   const { t } = useLanguage();
+  const [isMapOpen, setIsMapOpen] = useState(false);
 
   const currentYear = new Date().getFullYear();
 
@@ -49,9 +57,9 @@ const Footer = () => {
               <li><a href="/#about" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
               <li><a href="/#projects" className="hover:text-primary transition-colors">{t('nav.projects')}</a></li>
               <li><a href="/blog" className="hover:text-primary transition-colors">{t('nav.blog')}</a></li>
-              <li><a href="/#contact" className="hover:text-primary transition-colors">{t('nav.legal')}</a></li>
-              <li><a href="/#contact" className="hover:text-primary transition-colors">{t('nav.privacy')}</a></li>
-              <li><a href="/#contact" className="hover:text-primary transition-colors">{t('nav.cookies')}</a></li>
+              <li><a href="/legal-notice" className="hover:text-primary transition-colors">{t('nav.legal')}</a></li>
+              <li><a href="/privacy-policy" className="hover:text-primary transition-colors">{t('nav.privacy')}</a></li>
+              <li><a href="/cookies-policy" className="hover:text-primary transition-colors">{t('nav.cookies')}</a></li>
             </ul>
           </div>
 
@@ -85,27 +93,77 @@ const Footer = () => {
                 infojefeEpoxi@gmail.com
               </a>
               
-              <div className="flex items-center text-sm text-muted-foreground">
+              <button
+                onClick={() => setIsMapOpen(true)}
+                className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              >
                 <MapPin className="w-4 h-4 mr-2" />
                 Valencia, España
-              </div>
+              </button>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-border mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>
               © {currentYear} JefeEpoxi. Todos los derechos reservados.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <span>CIF: B12345678</span>
-              <span>Registro Mercantil de Valencia</span>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <a href="/legal-notice" className="hover:text-primary transition-colors">{t('nav.legal')}</a>
+              <a href="/privacy-policy" className="hover:text-primary transition-colors">{t('nav.privacy')}</a>
+              <a href="/cookies-policy" className="hover:text-primary transition-colors">{t('nav.cookies')}</a>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Map Dialog */}
+      <Dialog open={isMapOpen} onOpenChange={setIsMapOpen}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-primary" />
+              Nuestra Ubicación - Valencia, España
+            </DialogTitle>
+          </DialogHeader>
+          <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-border">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195887.67542142313!2d-0.5755543841796875!3d39.469906899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf0efb06f%3A0xb4a351011f7f1d39!2sValencia%2C%20Spain!5e0!3m2!1sen!2s!4v1649876543210!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="JefeEpoxi Location - Valencia"
+            />
+          </div>
+          <div className="flex flex-col gap-2 pt-4">
+            <p className="text-sm text-muted-foreground flex items-center gap-2">
+              <Phone className="w-4 h-4" />
+              <a href="tel:+34622313855" className="hover:text-primary transition-colors">
+                +34 622 313 855
+              </a>
+            </p>
+            <p className="text-sm text-muted-foreground flex items-center gap-2">
+              <Mail className="w-4 h-4" />
+              <a href="mailto:infojefeEpoxi@gmail.com" className="hover:text-primary transition-colors">
+                infojefeEpoxi@gmail.com
+              </a>
+            </p>
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Valencia+Spain"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 text-sm text-primary hover:underline"
+            >
+              Abrir en Google Maps →
+            </a>
+          </div>
+        </DialogContent>
+      </Dialog>
     </footer>
   );
 };

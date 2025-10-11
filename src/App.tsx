@@ -24,6 +24,8 @@ import VipIndividualDetail from "./pages/VipIndividualDetail";
 import ComponentsMaterialsDetail from "./pages/ComponentsMaterialsDetail";
 import AiFloorVisualizer from "./pages/AiFloorVisualizer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import LegalNotice from "./pages/LegalNotice";
+import CookiesPolicy from "./pages/CookiesPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,6 +57,8 @@ const App = () => (
             <Route path="/services/components-materials" element={<ComponentsMaterialsDetail />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/legal-notice" element={<LegalNotice />} />
+            <Route path="/cookies-policy" element={<CookiesPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
