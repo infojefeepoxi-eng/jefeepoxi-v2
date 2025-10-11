@@ -47,6 +47,8 @@ const translations = {
     'projects.filter.food': 'Alimentario',
     'projects.filter.decorative': 'Decorativo',
     'projects.filter.parking': 'Parking',
+    'projects.loadMore': 'Ver más proyectos',
+    'projects.remaining': 'restantes',
     
     'contact.title': 'Contacto',
     'contact.phone': 'Teléfono',
@@ -208,6 +210,8 @@ const translations = {
     'projects.filter.food': 'Food',
     'projects.filter.decorative': 'Decorative',
     'projects.filter.parking': 'Parking',
+    'projects.loadMore': 'Load more projects',
+    'projects.remaining': 'remaining',
     
     'contact.title': 'Contact',
     'contact.phone': 'Phone',

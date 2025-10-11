@@ -50,6 +50,7 @@ const ProjectsGallery = () => {
   const { language, t } = useLanguage();
   const location = useLocation();
   const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [visibleCount, setVisibleCount] = useState<number>(9);
 
   const projects: Project[] = [
     {
@@ -507,6 +508,18 @@ const ProjectsGallery = () => {
     ? projects 
     : projects.filter(project => project.type === activeFilter);
 
+  const visibleProjects = filteredProjects.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredProjects.length;
+
+  const handleLoadMore = () => {
+    setVisibleCount(prevCount => prevCount + 9);
+  };
+
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter);
+    setVisibleCount(9); // Reset to 9 when changing filter
+  };
+
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
@@ -525,7 +538,7 @@ const ProjectsGallery = () => {
                 key={filter.key}
                 variant={activeFilter === filter.key ? "default" : "outline"}
                 size="sm"
-                onClick={() => setActiveFilter(filter.key)}
+                onClick={() => handleFilterChange(filter.key)}
                 className="transition-all duration-200"
               >
                 {t(filter.labelKey)}
@@ -536,7 +549,7 @@ const ProjectsGallery = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {visibleProjects.map((project) => (
             <Card key={project.id} className="group overflow-hidden bg-gradient-card border-border/50 hover:shadow-card transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
@@ -611,6 +624,19 @@ const ProjectsGallery = () => {
             </Card>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {hasMore && (
+          <div className="flex justify-center mt-12">
+            <Button
+              onClick={handleLoadMore}
+              size="lg"
+              className="px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              {t('projects.loadMore')} ({filteredProjects.length - visibleCount} {t('projects.remaining')})
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
