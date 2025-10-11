@@ -73,66 +73,162 @@ const Services = () => {
     {
       id: 'garages-parking',
       icon: Car,
-      title: 'Pisos para Garajes y Parkings',
-      subtitle: 'Para: Garajes residenciales, parkings de varios pisos, talleres, lavaderos',
-      description: 'Sistemas EpoxiCubierta M² para parkings, cubiertas transitables e impermeabilización',
-      features: ['Recubrimientos resistentes a aceites y gasolina para garajes', 'Impermeabilización de parkings en cubiertas', 'Sistemas de montaje rápido para parkings (con mínimo cierre)', 'Recubrimientos antideslizantes para rampas de acceso', 'Pisos resistentes para talleres y autoservicios', 'Garantía vitalicia impermeabilización']
+      title: {
+        es: 'Pisos para Garajes y Parkings',
+        en: 'Garage and Parking Floors'
+      },
+      subtitle: {
+        es: 'Para: Garajes residenciales, parkings de varios pisos, talleres, lavaderos',
+        en: 'For: Residential garages, multi-level parking, workshops, car washes'
+      },
+      description: {
+        es: 'Sistemas EpoxiCubierta M² para parkings, cubiertas transitables e impermeabilización',
+        en: 'EpoxiCubierta M² systems for parkings, walkable roofs and waterproofing'
+      },
+      features: {
+        es: ['Recubrimientos resistentes a aceites y gasolina para garajes', 'Impermeabilización de parkings en cubiertas', 'Sistemas de montaje rápido para parkings (con mínimo cierre)', 'Recubrimientos antideslizantes para rampas de acceso', 'Pisos resistentes para talleres y autoservicios', 'Garantía vitalicia impermeabilización'],
+        en: ['Oil and gasoline resistant coatings for garages', 'Waterproofing for roof parkings', 'Quick installation systems for parkings (with minimal closure)', 'Non-slip coatings for access ramps', 'Durable floors for workshops and car services', 'Lifetime waterproofing guarantee']
+      }
     },
     {
       id: 'technical-specialized',
       icon: Zap,
-      title: 'Pisos Técnicos Especiales',
-      subtitle: 'Para: Laboratorios, fábricas electrónicas, hospitales, producciones high-tech',
-      description: 'Pavimentos ESD, conductivos y químico-resistentes para industrias exigentes',
-      features: ['Pisos antiestáticos para electrónica (protección contra estática)', 'Recubrimientos químico-resistentes para laboratorios', 'Pisos para altas temperaturas (hornos, calderas)', 'Recubrimientos antideslizantes para seguridad en producción', 'Soluciones especializadas personalizadas', 'Certificación ISO 61340 / IEC']
+      title: {
+        es: 'Pisos Técnicos Especiales',
+        en: 'Special Technical Floors'
+      },
+      subtitle: {
+        es: 'Para: Laboratorios, fábricas electrónicas, hospitales, producciones high-tech',
+        en: 'For: Laboratories, electronic factories, hospitals, high-tech production'
+      },
+      description: {
+        es: 'Pavimentos ESD, conductivos y químico-resistentes para industrias exigentes',
+        en: 'ESD, conductive and chemical-resistant floors for demanding industries'
+      },
+      features: {
+        es: ['Pisos antiestáticos para electrónica (protección contra estática)', 'Recubrimientos químico-resistentes para laboratorios', 'Pisos para altas temperaturas (hornos, calderas)', 'Recubrimientos antideslizantes para seguridad en producción', 'Soluciones especializadas personalizadas', 'Certificación ISO 61340 / IEC'],
+        en: ['Anti-static floors for electronics (static protection)', 'Chemical-resistant coatings for laboratories', 'High-temperature floors (ovens, boilers)', 'Non-slip coatings for production safety', 'Custom specialized solutions', 'ISO 61340 / IEC certification']
+      }
     },
     {
       id: 'fast-urgent',
       icon: Clock,
-      title: 'Trabajos Rápidos y Urgentes',
-      subtitle: 'Para: Objetos con tiempo limitado, situaciones de emergencia, proyectos urgentes',
-      description: 'Sistemas de curado ultra rápido para proyectos urgentes y emergencias',
-      features: ['Reparación express de pisos en 1-2 días', 'Sistemas rápidos con curado acelerado', 'Trabajos en clima frío (desde -5°C)', 'Reparaciones de emergencia y restauración', 'Mínima parada de producción', 'Servicio 24/7 disponible']
+      title: {
+        es: 'Trabajos Rápidos y Urgentes',
+        en: 'Fast and Urgent Works'
+      },
+      subtitle: {
+        es: 'Para: Objetos con tiempo limitado, situaciones de emergencia, proyectos urgentes',
+        en: 'For: Time-limited projects, emergency situations, urgent projects'
+      },
+      description: {
+        es: 'Sistemas de curado ultra rápido para proyectos urgentes y emergencias',
+        en: 'Ultra-fast curing systems for urgent projects and emergencies'
+      },
+      features: {
+        es: ['Reparación express de pisos en 1-2 días', 'Sistemas rápidos con curado acelerado', 'Trabajos en clima frío (desde -5°C)', 'Reparaciones de emergencia y restauración', 'Mínima parada de producción', 'Servicio 24/7 disponible'],
+        en: ['Express floor repair in 1-2 days', 'Quick systems with accelerated curing', 'Cold weather work (from -5°C)', 'Emergency repairs and restoration', 'Minimal production downtime', '24/7 service available']
+      }
     },
     {
       id: 'repair-restoration',
       icon: Wrench,
-      title: 'Reparación y Restauración',
-      subtitle: 'Para: Cualquier objeto con pisos dañados',
-      description: 'Soluciones de restauración, autonivelado e impermeabilización',
-      features: ['Reparación de grietas y baches', 'Restauración de recubrimientos antiguos', 'Reemplazo de áreas dañadas', 'Sellado de juntas y conexiones', 'Imprimación de superficies débiles', 'Renovación completa de pisos']
+      title: {
+        es: 'Reparación y Restauración',
+        en: 'Repair and Restoration'
+      },
+      subtitle: {
+        es: 'Para: Cualquier objeto con pisos dañados',
+        en: 'For: Any facility with damaged floors'
+      },
+      description: {
+        es: 'Soluciones de restauración, autonivelado e impermeabilización',
+        en: 'Restoration, self-leveling and waterproofing solutions'
+      },
+      features: {
+        es: ['Reparación de grietas y baches', 'Restauración de recubrimientos antiguos', 'Reemplazo de áreas dañadas', 'Sellado de juntas y conexiones', 'Imprimación de superficies débiles', 'Renovación completa de pisos'],
+        en: ['Crack and pothole repair', 'Restoration of old coatings', 'Replacement of damaged areas', 'Sealing of joints and connections', 'Priming of weak surfaces', 'Complete floor renovation']
+      }
     },
     {
       id: 'painting-protective',
       icon: Sparkles,
-      title: 'Pintura y Recubrimientos Protectores',
-      subtitle: 'Para: Objetos pequeños, proyectos económicos, renovación de pisos',
-      description: 'Recubrimientos de laca y protectores para proyectos económicos',
-      features: ['Recubrimientos de laca para protección del hormigón', 'Pintura de pisos en garajes y almacenes', 'Recubrimientos protectores para metal', 'Renovación rápida de pisos antiguos', 'Soluciones económicas para áreas pequeñas', 'Kits DIY disponibles']
+      title: {
+        es: 'Pintura y Recubrimientos Protectores',
+        en: 'Paint and Protective Coatings'
+      },
+      subtitle: {
+        es: 'Para: Objetos pequeños, proyectos económicos, renovación de pisos',
+        en: 'For: Small facilities, budget projects, floor renovation'
+      },
+      description: {
+        es: 'Recubrimientos de laca y protectores para proyectos económicos',
+        en: 'Lacquer and protective coatings for budget projects'
+      },
+      features: {
+        es: ['Recubrimientos de laca para protección del hormigón', 'Pintura de pisos en garajes y almacenes', 'Recubrimientos protectores para metal', 'Renovación rápida de pisos antiguos', 'Soluciones económicas para áreas pequeñas', 'Kits DIY disponibles'],
+        en: ['Lacquer coatings for concrete protection', 'Floor painting in garages and warehouses', 'Protective coatings for metal', 'Quick renovation of old floors', 'Budget solutions for small areas', 'DIY kits available']
+      }
     },
     {
       id: 'wet-areas',
       icon: Droplets,
-      title: 'Pisos para Áreas Húmedas',
-      subtitle: 'Para: Lavaderos de autos, piscinas, duchas, baños, lavanderías',
-      description: 'Recubrimientos impermeables y antideslizantes para áreas húmedas',
-      features: ['Recubrimientos impermeables', 'Pisos antideslizantes para seguridad', 'Recubrimientos para esquinas redondeadas', 'Selladores especiales para juntas', 'Resistentes a productos de limpieza', 'Certificación R11-R13']
+      title: {
+        es: 'Pisos para Áreas Húmedas',
+        en: 'Floors for Wet Areas'
+      },
+      subtitle: {
+        es: 'Para: Lavaderos de autos, piscinas, duchas, baños, lavanderías',
+        en: 'For: Car washes, pools, showers, bathrooms, laundries'
+      },
+      description: {
+        es: 'Recubrimientos impermeables y antideslizantes para áreas húmedas',
+        en: 'Waterproof and non-slip coatings for wet areas'
+      },
+      features: {
+        es: ['Recubrimientos impermeables', 'Pisos antideslizantes para seguridad', 'Recubrimientos para esquinas redondeadas', 'Selladores especiales para juntas', 'Resistentes a productos de limpieza', 'Certificación R11-R13'],
+        en: ['Waterproof coatings', 'Non-slip floors for safety', 'Coatings for rounded corners', 'Special sealers for joints', 'Resistant to cleaning products', 'R11-R13 certification']
+      }
     },
     {
       id: 'vip-individual',
       icon: Crown,
-      title: 'Proyectos Individuales y VIP',
-      subtitle: 'Para: Objetos exclusivos, soluciones no estándar',
-      description: 'Diseños exclusivos y soluciones personalizadas para proyectos únicos',
-      features: ['Diseño de recubrimientos únicos personalizados', 'Combinación de diferentes sistemas', 'Colores y efectos no estándar', 'Consultas técnicas y desarrollo de soluciones', 'Sistemas complejos multicapa', 'Proyectos desde 20.000€']
+      title: {
+        es: 'Proyectos Individuales y VIP',
+        en: 'Individual and VIP Projects'
+      },
+      subtitle: {
+        es: 'Para: Objetos exclusivos, soluciones no estándar',
+        en: 'For: Exclusive facilities, non-standard solutions'
+      },
+      description: {
+        es: 'Diseños exclusivos y soluciones personalizadas para proyectos únicos',
+        en: 'Exclusive designs and custom solutions for unique projects'
+      },
+      features: {
+        es: ['Diseño de recubrimientos únicos personalizados', 'Combinación de diferentes sistemas', 'Colores y efectos no estándar', 'Consultas técnicas y desarrollo de soluciones', 'Sistemas complejos multicapa', 'Proyectos desde 20.000€'],
+        en: ['Custom unique coating design', 'Combination of different systems', 'Non-standard colors and effects', 'Technical consultations and solution development', 'Complex multi-layer systems', 'Projects from €20,000']
+      }
     },
     {
       id: 'components-materials',
       icon: Package,
-      title: 'Componentes y Materiales',
-      subtitle: 'Para: Contratistas, maestros, entusiastas DIY, distribuidores',
-      description: 'Materiales y componentes Epoxi M² para venta por separado',
-      features: ['Pigmentos en polvo para coloración (8 colores)', 'Agregados de cuarzo de diferentes granulometrías', 'Selladores para juntas y conexiones', 'Imprimaciones para preparación de superficies', 'Aceleradores para curado rápido', 'Kits DIY completos con soporte técnico']
+      title: {
+        es: 'Componentes y Materiales',
+        en: 'Components and Materials'
+      },
+      subtitle: {
+        es: 'Para: Contratistas, maestros, entusiastas DIY, distribuidores',
+        en: 'For: Contractors, professionals, DIY enthusiasts, distributors'
+      },
+      description: {
+        es: 'Materiales y componentes Epoxi M² para venta por separado',
+        en: 'Epoxi M² materials and components for separate sale'
+      },
+      features: {
+        es: ['Pigmentos en polvo para coloración (8 colores)', 'Agregados de cuarzo de diferentes granulometrías', 'Selladores para juntas y conexiones', 'Imprimaciones para preparación de superficies', 'Aceleradores para curado rápido', 'Kits DIY completos con soporte técnico'],
+        en: ['Powder pigments for coloring (8 colors)', 'Quartz aggregates of different grain sizes', 'Sealers for joints and connections', 'Primers for surface preparation', 'Accelerators for fast curing', 'Complete DIY kits with technical support']
+      }
     }
   ];
 
@@ -165,18 +261,18 @@ const Services = () => {
                     <IconComponent className="w-8 h-8 text-primary" />
                   </div>
                   <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors duration-300">
-                    {typeof service.title === 'object' ? service.title.es : service.title}
+                    {typeof service.title === 'object' ? service.title[language] : service.title}
                   </CardTitle>
                   <p className="text-sm text-primary/80 font-medium mt-2">
-                    {typeof service.subtitle === 'object' ? service.subtitle.es : service.subtitle}
+                    {typeof service.subtitle === 'object' ? service.subtitle[language] : service.subtitle}
                   </p>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4 text-center text-sm">
-                    {typeof service.description === 'object' ? service.description.es : service.description}
+                    {typeof service.description === 'object' ? service.description[language] : service.description}
                   </p>
                   <ul className="space-y-2 mb-6">
-                    {(Array.isArray(service.features) ? service.features : (typeof service.features === 'object' ? service.features.es : [])).map((feature, featureIndex) => (
+                    {(Array.isArray(service.features) ? service.features : (typeof service.features === 'object' ? service.features[language] : [])).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
                         <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
                         {feature}

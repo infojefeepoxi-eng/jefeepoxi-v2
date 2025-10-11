@@ -4,18 +4,26 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Phone, MessageCircle, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Clock, X } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useToast } from '@/hooks/use-toast';
 import { trackQuoteRequest, trackFormSubmission, trackPhoneCall, trackWhatsAppClick } from '@/lib/analytics';
 import { sendQuoteEmail, initEmailJS } from '@/lib/emailService';
 import { useLocation } from 'react-router-dom';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const ContactForm = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
   const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showAllCities, setShowAllCities] = useState(false);
+  const [isMapOpen, setIsMapOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -296,7 +304,12 @@ const ContactForm = () => {
                     <MapPin className="w-5 h-5 text-primary mr-3" />
                     <div>
                       <p className="text-foreground font-medium">Ubicación</p>
-                      <p className="text-muted-foreground">Valencia, España</p>
+                      <button
+                        onClick={() => setIsMapOpen(true)}
+                        className="text-muted-foreground hover:text-primary transition-colors cursor-pointer underline decoration-dotted"
+                      >
+                        Valencia, España
+                      </button>
                     </div>
                   </div>
 
@@ -319,7 +332,7 @@ const ContactForm = () => {
                 <p className="text-muted-foreground mb-4">
                   {t('contact.coverage')}
                 </p>
-                <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
+                <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground mb-4">
                   <div>• Madrid</div>
                   <div>• Barcelona</div>
                   <div>• Valencia</div>
@@ -328,52 +341,113 @@ const ContactForm = () => {
                   <div>• Málaga</div>
                   <div>• Murcia</div>
                   <div>• Palma de Mallorca</div>
-                  <div>• Las Palmas</div>
-                  <div>• Bilbao</div>
                   <div>• Alicante</div>
-                  <div>• Córdoba</div>
-                  <div>• Valladolid</div>
-                  <div>• Vigo</div>
-                  <div>• Gijón</div>
-                  <div>• Granada</div>
-                  <div>• Oviedo</div>
-                  <div>• Santa Cruz de Tenerife</div>
-                  <div>• Pamplona</div>
-                  <div>• Almería</div>
-                  <div>• San Sebastián</div>
-                  <div>• Santander</div>
-                  <div>• Burgos</div>
-                  <div>• Albacete</div>
-                  <div>• Castellón</div>
-                  <div>• A Coruña</div>
-                  <div>• Salamanca</div>
-                  <div>• Logroño</div>
-                  <div>• Badajoz</div>
-                  <div>• Huelva</div>
-                  <div>• Tarragona</div>
-                  <div>• Lleida</div>
-                  <div>• Marbella</div>
-                  <div>• León</div>
-                  <div>• Cádiz</div>
-                  <div>• Jaén</div>
-                  <div>• Ourense</div>
-                  <div>• Pontevedra</div>
-                  <div>• Vitoria-Gasteiz</div>
-                  <div>• Toledo</div>
-                  <div>• Guadalajara</div>
-                  <div>• Cuenca</div>
-                  <div>• Segovia</div>
-                  <div>• Ávila</div>
-                  <div>• Girona</div>
-                  <div>• Huesca</div>
-                  <div>• Teruel</div>
-                  <div>• Soria</div>
+                  <div>• Bilbao</div>
+                  {showAllCities && (
+                    <>
+                      <div>• Las Palmas</div>
+                      <div>• Córdoba</div>
+                      <div>• Valladolid</div>
+                      <div>• Vigo</div>
+                      <div>• Gijón</div>
+                      <div>• Granada</div>
+                      <div>• Oviedo</div>
+                      <div>• Santa Cruz de Tenerife</div>
+                      <div>• Pamplona</div>
+                      <div>• Almería</div>
+                      <div>• San Sebastián</div>
+                      <div>• Santander</div>
+                      <div>• Burgos</div>
+                      <div>• Albacete</div>
+                      <div>• Castellón</div>
+                      <div>• A Coruña</div>
+                      <div>• Salamanca</div>
+                      <div>• Logroño</div>
+                      <div>• Badajoz</div>
+                      <div>• Huelva</div>
+                      <div>• Tarragona</div>
+                      <div>• Lleida</div>
+                      <div>• Marbella</div>
+                      <div>• León</div>
+                      <div>• Cádiz</div>
+                      <div>• Jaén</div>
+                      <div>• Ourense</div>
+                      <div>• Pontevedra</div>
+                      <div>• Vitoria-Gasteiz</div>
+                      <div>• Toledo</div>
+                      <div>• Guadalajara</div>
+                      <div>• Cuenca</div>
+                      <div>• Segovia</div>
+                      <div>• Ávila</div>
+                      <div>• Girona</div>
+                      <div>• Huesca</div>
+                      <div>• Teruel</div>
+                      <div>• Soria</div>
+                    </>
+                  )}
                 </div>
+                {!showAllCities && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowAllCities(true)}
+                    className="w-full text-primary hover:text-primary/80"
+                  >
+                    Ver más ciudades (+38)
+                  </Button>
+                )}
               </CardContent>
             </Card>
           </div>
         </div>
       </div>
+
+      {/* Map Dialog */}
+      <Dialog open={isMapOpen} onOpenChange={setIsMapOpen}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-primary" />
+              Nuestra Ubicación - Valencia, España
+            </DialogTitle>
+          </DialogHeader>
+          <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-border">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195887.67542142313!2d-0.5755543841796875!3d39.469906899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf0efb06f%3A0xb4a351011f7f1d39!2sValencia%2C%20Spain!5e0!3m2!1sen!2s!4v1649876543210!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Valencia, España - JefeEpoxi Location"
+            ></iframe>
+          </div>
+          <div className="flex flex-col gap-3 mt-4">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Phone className="w-4 h-4 text-primary" />
+              <a href="tel:+34622313855" className="hover:text-primary transition-colors">
+                +34 622 313 855
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Mail className="w-4 h-4 text-primary" />
+              <a href="mailto:infojefeEpoxi@gmail.com" className="hover:text-primary transition-colors">
+                infojefeEpoxi@gmail.com
+              </a>
+            </div>
+            <a
+              href="https://www.google.com/maps/place/Valencia,+Spain/@39.4699075,-0.5755544,11z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 font-medium flex items-center gap-2 mt-2"
+            >
+              <MapPin className="w-4 h-4" />
+              Abrir en Google Maps →
+            </a>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
