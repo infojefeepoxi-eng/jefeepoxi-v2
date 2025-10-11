@@ -203,7 +203,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
             <div className="max-w-5xl mx-auto">
               <Link to="/blog" className="text-primary hover:underline flex items-center text-sm">
                 <ArrowLeft className="w-4 h-4 mr-1" />
-                Volver a Noticias
+                {t('blog.backToNews')}
               </Link>
             </div>
           </div>
@@ -226,7 +226,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
               </div>
 
               <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic mb-12 text-center">
-                Planta baja de una nave industrial en la que se ha aplicado suelo de resina epoxi.
+                {t('blog.article2.imgCaption1')}
               </figcaption>
             </div>
           </div>
@@ -245,7 +245,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                 <p className="text-gray-800 dark:text-foreground">{t('blog.article2.intro.p2')}</p>
                 <p className="text-gray-800 dark:text-foreground">{t('blog.article2.intro.p3')}</p>
                 <p className="text-gray-800 dark:text-foreground italic">
-                  Pero, ¿en qué consiste exactamente un suelo epoxi? A continuación os damos las claves de un pavimento continuo con enormes posibilidades y excelentes prestaciones técnicas.
+                  {t('blog.article2.intro.p4')}
                 </p>
               </div>
 
@@ -268,7 +268,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                     className="w-full h-auto"
                   />
                   <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
-                    Planta baja de una nave industrial en la que se ha aplicado suelo de resina epoxi.
+                    {t('blog.article2.imgCaption1')}
                   </figcaption>
                 </div>
               </section>
@@ -280,7 +280,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                 </h2>
                 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                  El suelo epoxi presenta <strong>importantes beneficios, pero también algún que otro inconveniente.</strong> Factores que hay que evaluar para determinar si es el tipo de pavimento que se está buscando y si se adapta o no a los gustos y necesidades. A continuación desarrollamos los principales:
+                  {t('blog.article2.char.intro')}
                 </p>
 
                 <div className="space-y-8">
@@ -349,7 +349,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                   className="w-full h-auto"
                 />
                 <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
-                  Un par de operarios aplicando suelo de resina epoxi en un almacén.
+                  {t('blog.article2.imgCaption2')}
                 </figcaption>
               </div>
 
@@ -405,7 +405,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                   className="w-full h-auto"
                 />
                 <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
-                  Amplio pasillo de oficina cuyo suelo se ha recubierto con pintura epoxi.
+                  {t('blog.article2.imgCaption3')}
                 </figcaption>
               </div>
 
@@ -416,7 +416,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                 </h2>
                 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Un suelo de resina epoxi puede instalarse casi sobre cualquier superficie. Su bajo espesor permite un mantenimiento muy rápido del mismo. Ahora bien, hay algunos lugares donde su uso es más frecuente que otros. A continuación, vamos a desarrollar los principales ámbitos en los que encontramos este pavimento continuo.
+                  {t('blog.article2.uses.intro')}
                 </p>
 
                 <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -435,7 +435,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                   className="w-full h-auto"
                 />
                 <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
-                  Pequeña cocina abierta al salón en forma de L con suelo de resina epoxi.
+                  {t('blog.article2.imgCaption4')}
                 </figcaption>
               </div>
 
@@ -448,7 +448,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">{t('blog.article2.price.intro')}</p>
                 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                  En definitiva, el precio por m2 de un suelo de resina epoxi está sujeto a los siguientes factores:
+                  {t('blog.article2.price.summary')}
                 </p>
                 
                 <div className="space-y-3 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -468,7 +468,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                   className="w-full h-auto"
                 />
                 <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
-                  Concesionario de coches con suelo de resina epoxi en todo el pavimento.
+                  {t('blog.article2.imgCaption5')}
                 </figcaption>
               </div>
 
@@ -479,11 +479,11 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                 </h2>
                 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  Seguro que te has fijado en esos originales muebles y suelos de madera encapsulados en resina epoxi. Si te gusta este rompedor acabado decorativo y te preguntas cómo hacerlo, estás en el lugar correcto.
+                  {t('blog.article2.wood.intro')}
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                  Desarrollamos las principales cualidades que hacen de la resina epoxi el gran aliado de los suelos de madera. ¡Atención!
+                  {t('blog.article2.wood.intro2')}
                 </p>
 
                 <div className="space-y-3 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -502,7 +502,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                   className="w-full h-auto"
                 />
                 <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
-                  Amplia fábrica en la que se ha aplicado suelo de resina epoxi.
+                  {t('blog.article2.imgCaption6')}
                 </figcaption>
               </div>
 
@@ -513,28 +513,28 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                 </h2>
                 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                  Ha quedado sobradamente claro que por las particularidades de los suelos epoxi, son pavimentos que se mueven en el ámbito industrial y comercial. Ahora, ha llegado el momento de exponer los motivos por los que últimamente se ha disparado su uso en los hogares. Cinco son las razones principales del boom del suelo de resina epoxi en la vivienda.
+                  {t('blog.article2.home.intro')}
                 </p>
 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">1. Suelo de resina epoxi en la vivienda: estética novedosa</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">{t('blog.article2.home.section1')}</h3>
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{t('blog.article2.home.aesthetic')}</p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">2. La gran compatibilidad del suelo epoxi</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">{t('blog.article2.home.section2')}</h3>
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{t('blog.article2.home.compatibility')}</p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">3. Impermeabilidad 100%</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">{t('blog.article2.home.section3')}</h3>
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{t('blog.article2.home.waterproof')}</p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">4. El suelo epoxi es antideslizante</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">{t('blog.article2.home.section4')}</h3>
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{t('blog.article2.home.antislip')}</p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">5. Limpieza y mantenimiento mínimo</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">{t('blog.article2.home.section5')}</h3>
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{t('blog.article2.home.maintenance')}</p>
                   </div>
                 </div>
@@ -548,7 +548,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                   className="w-full h-auto"
                 />
                 <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
-                  Operario aplicando suelo de resina epoxi en la planta principal de una fábrica.
+                  {t('blog.article2.imgCaption7')}
                 </figcaption>
               </div>
 
@@ -559,15 +559,15 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                 </h2>
                 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  El amarilleamiento es uno de los principales inconvenientes de utilizar un suelo de resina epoxi en el exterior, ya que es un pavimento sensible a los rayos solares y a las inclemencias atmosféricas. De ahí, que su uso predominante sea como revestimiento continuo interior y no sea muy popular para exterior.
+                  {t('blog.article2.exterior.p1')}
                 </p>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  No obstante, esto no significa que no pueda hacerse de ninguna de las maneras. Con un correcto tratamiento se puede solventar el handicap del amarilleamiento y apostar por un suelo de resina epoxi en el exterior. Si estás convencido en servirte de este pavimento para terrazas, presta atención.
+                  {t('blog.article2.exterior.p2')}
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-4">
-                  Cómo sellar el suelo de resina epoxi para poder aplicarlo en exterior
+                  {t('blog.article2.exterior.sealTitle')}
                 </h3>
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   {t('blog.article2.exterior.text')}
@@ -578,10 +578,10 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
               <section className="text-center border-t border-gray-200 dark:border-gray-700 pt-12 mt-12">
                 <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-xl p-10">
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-foreground mb-4">
-                    ¿Necesitas asesoramiento profesional?
+                    {t('blog.article2.cta.title')}
                   </h3>
                   <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Nuestro equipo de expertos está listo para ayudarte a elegir el mejor sistema de pavimento epoxi para tu proyecto industrial, comercial o residencial.
+                    {t('blog.article2.cta.description')}
                   </p>
                   <Button 
                     size="lg" 
@@ -589,7 +589,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                     asChild
                   >
                     <Link to="/#contact">
-                      Solicitar presupuesto gratuito
+                      {t('blog.article2.cta.button')}
                     </Link>
                   </Button>
                 </div>
@@ -599,7 +599,7 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
               <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <Link to="/blog" className="text-primary hover:underline flex items-center text-lg font-semibold">
                   <ArrowLeft className="w-5 h-5 mr-2" />
-                  Volver a todas las noticias
+                  {t('blog.article2.backToAll')}
                 </Link>
               </div>
             </div>

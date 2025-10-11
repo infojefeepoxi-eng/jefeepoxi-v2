@@ -19,21 +19,6 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
-    id: 'why-epoxi-wins',
-    titleKey: 'vlog.title',
-    excerptKey: 'vlog.subtitle',
-    image: vlogHeroImage,
-    publishedAt: '2024-01-15',
-    readTime: 5,
-    category: 'Technical',
-    contentKey: 'vlog',
-    seo: {
-      title: 'Por qué la resina Epoxi es superior a otros pavimentos',
-      description: 'Descubre las ventajas técnicas y estéticas que hacen del Epoxi la mejor opción para pavimentos industriales y decorativos.',
-      keywords: 'resina epoxi, pavimentos epoxi, suelos industriales, durabilidad, resistencia química'
-    }
-  },
-  {
     id: 'suelo-resina-epoxi-completo',
     titleKey: 'blog.article2.title',
     excerptKey: 'blog.article2.excerpt',
