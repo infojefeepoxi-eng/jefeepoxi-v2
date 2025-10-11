@@ -13,6 +13,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Warehouse, Factory, Truck, Building, ChevronDown, ChevronUp, Star, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import almacenesImage from '@/assets/almacenes-industrial.png';
+import fabricasImage from '@/assets/fabricas-industrial.png';
+import logisticosImage from '@/assets/logisticos-industrial.png';
+import produccionImage from '@/assets/produccion-industrial.png';
 
 const BusinessIndustrialDetailContent = () => {
   const { t } = useLanguage();
@@ -162,7 +166,7 @@ const BusinessIndustrialDetailContent = () => {
       icon: Warehouse,
       title: 'Pisos para Almacenes',
       subtitle: 'Sistemas para centros de almacenamiento y distribución',
-      image: '/assets/project-warehouse-before-after.jpg',
+      image: almacenesImage,
       description: 'Pisos resistentes para almacenes con movimiento constante de equipos pesados (montacargas, apiladores)',
       problems: [
         'Movimiento constante de equipos pesados (montacargas, apiladores)',
@@ -247,7 +251,7 @@ const BusinessIndustrialDetailContent = () => {
       icon: Factory,
       title: 'Pisos para Fábricas',
       subtitle: 'Sistemas para plantas industriales y químicas',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: fabricasImage,
       description: 'Pisos químico-resistentes para fábricas con sustancias agresivas y cargas mecánicas constantes',
       problems: [
         'Sustancias químicas agresivas (ácidos, álcalis, disolventes)',
@@ -321,7 +325,7 @@ const BusinessIndustrialDetailContent = () => {
       icon: Truck,
       title: 'Centros Logísticos',
       subtitle: 'Sistemas para centros de distribución automatizados',
-      image: '/assets/project-industrial-yellow.jpg',
+      image: logisticosImage,
       description: 'Pisos para centros logísticos con trabajo 24/7 y sistemas automatizados de almacenamiento',
       problems: [
         'Trabajo 24/7 - no se puede parar',
@@ -401,7 +405,7 @@ const BusinessIndustrialDetailContent = () => {
       icon: Building,
       title: 'Naves de Producción',
       subtitle: 'Sistemas para talleres y áreas de manufactura',
-      image: '/assets/project-metallic-garage.jpg',
+      image: produccionImage,
       description: 'Pisos universales para diferentes tipos de producciones con diversos requisitos',
       problems: [
         'Diferentes tipos de producciones - diferentes requisitos',
@@ -559,7 +563,7 @@ const BusinessIndustrialDetailContent = () => {
                       <ul className="space-y-2">
                         {product.problems.map((problem, idx) => (
                           <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                            <div className="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-primary/70 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                             {problem}
                           </li>
                         ))}

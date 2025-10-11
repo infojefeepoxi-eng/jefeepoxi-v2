@@ -667,7 +667,7 @@ const WetAreasDetailContent = () => {
                       <ul className="space-y-2">
                         {product.problems?.map((problem, idx) => (
                           <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                            <div className="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-primary/70 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                             {problem}
                           </li>
                         ))}
