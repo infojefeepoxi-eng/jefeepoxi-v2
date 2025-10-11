@@ -1,4 +1,5 @@
-﻿import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+﻿import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Factory, Utensils, Zap, Car, Sparkles, Wrench, ArrowRight, Clock, Droplets, Crown, Package } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -6,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t, language } = useLanguage();
+  const [visibleCount, setVisibleCount] = useState<number>(6);
 
   const services = [
     {
@@ -134,6 +136,13 @@ const Services = () => {
     }
   ];
 
+  const visibleServices = services.slice(0, visibleCount);
+  const hasMore = visibleCount < services.length;
+
+  const handleLoadMore = () => {
+    setVisibleCount(services.length);
+  };
+
   return (
     <section id="services" className="py-20 bg-card/30">
       <div className="container mx-auto px-4">
@@ -147,7 +156,7 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
+          {visibleServices.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <Card key={index} className="bg-gradient-card border-border/50 hover:shadow-card transition-all duration-300 group">
@@ -189,6 +198,19 @@ const Services = () => {
             );
           })}
         </div>
+
+        {/* Load More Button */}
+        {hasMore && (
+          <div className="flex justify-center mt-12">
+            <Button
+              onClick={handleLoadMore}
+              size="lg"
+              className="px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Ver más servicios ({services.length - visibleCount} restantes)
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

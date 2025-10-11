@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Warehouse, Factory, Truck, Wrench, ArrowRight } from 'lucide-react';
+import { Warehouse, Factory, Truck, Wrench } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 // Importar imágenes
@@ -173,17 +173,6 @@ const IndustrialSolutions = () => {
                       ))}
                     </div>
                   </div>
-
-                  {/* CTA Button */}
-                  <Link to={solution.link}>
-                    <Button 
-                      className="w-full group/btn"
-                      variant="default"
-                    >
-                      Ver Detalles Completos
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
                 </CardContent>
               </Card>
             );

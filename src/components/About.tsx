@@ -13,7 +13,7 @@ const About = () => {
     },
     {
       icon: <Award className="w-8 h-8 text-primary" />,
-      number: "30+",
+      number: "70+",
       label: "Proyectos completados"
     },
     {
@@ -23,8 +23,8 @@ const About = () => {
     },
     {
       icon: <Target className="w-8 h-8 text-primary" />,
-      number: "15",
-      label: "Países de Europa"
+      number: "2",
+      label: "Países europeos"
     }
   ];
 
@@ -42,8 +42,8 @@ const About = () => {
       description: "Desde el diseño hasta el mantenimiento, ofrecemos un servicio completo para cada proyecto."
     },
     {
-      title: "Compromiso Europeo",
-      description: "Desplazamiento por toda Europa con los mismos estándares de calidad y puntualidad."
+      title: "Compromiso de Calidad",
+      description: "Desplazamiento por toda España con los mismos estándares de calidad y puntualidad."
     }
   ];
 
@@ -57,7 +57,7 @@ const About = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Especialistas en pavimentos Epoxi con más de 5 años de experiencia transformando espacios industriales, 
-            comerciales y residenciales en toda Europa. Nuestro compromiso es ofrecer soluciones de pavimentación 
+            comerciales y residenciales. Nuestro compromiso es ofrecer soluciones de pavimentación 
             que combinen durabilidad, estética y funcionalidad.
           </p>
         </div>
@@ -95,7 +95,7 @@ const About = () => {
               </p>
               <p>
                 Con el tiempo, nuestra reputación de excelencia y compromiso nos ha llevado a expandir 
-                nuestros servicios por toda España y Europa, manteniendo siempre los más altos estándares 
+                nuestros servicios por toda España, manteniendo siempre los más altos estándares 
                 de calidad en cada proyecto.
               </p>
               <p>

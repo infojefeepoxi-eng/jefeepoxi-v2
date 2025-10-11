@@ -27,7 +27,7 @@ const translations = {
     'hero.cta.ai': 'Visualizar con IA',
     
     'services.title': 'Nuestros Servicios',
-    'services.subtitle': 'Sistemas certificados Epoxi M² para industria alimentaria, logística, parkings y aplicaciones especializadas en toda Europa',
+    'services.subtitle': 'Sistemas certificados Epoxi M² para industria alimentaria, logística, parkings y aplicaciones especializadas en España',
     'services.food.title': 'Industria Alimentaria',
     'services.food.desc': 'Sistemas EpoxiLimpio M² con EscudoBio™ para máxima higiene y seguridad alimentaria',
     'services.industrial.title': 'Pavimentos Industriales',
@@ -53,7 +53,7 @@ const translations = {
     'contact.title': 'Contacto',
     'contact.phone': 'Teléfono',
     'contact.whatsapp': 'WhatsApp',
-    'contact.coverage': 'Desplazamiento por toda Europa',
+    'contact.coverage': 'Desplazamiento por toda España',
     
     'footer.company': 'JefeEpoxi - Pavimentos Epoxi profesionales',
     'footer.location': 'Valencia, España',

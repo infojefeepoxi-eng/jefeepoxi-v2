@@ -194,7 +194,7 @@ const StructuredData = () => {
           "name": "¿Trabajáis en toda España?",
           "acceptedAnswer": {
             "@type": "Answer", 
-            "text": "Sí, realizamos proyectos en toda España y Europa, con base en Valencia para un mejor servicio en la Comunidad Valenciana."
+            "text": "Sí, realizamos proyectos en toda España, con base en Valencia para un mejor servicio en la Comunidad Valenciana."
           }
         }
       ]

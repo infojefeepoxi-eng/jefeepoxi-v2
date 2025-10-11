@@ -529,7 +529,7 @@ const ProjectsGallery = () => {
             {t('projects.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Explore nuestros proyectos más destacados en toda España y Europa
+            Explore nuestros proyectos más destacados en España
           </p>
 
           {/* Filter Buttons */}
