@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -9,17 +9,14 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { useToast } from '@/hooks/use-toast';
 import { trackQuoteRequest, trackFormSubmission, trackPhoneCall, trackWhatsAppClick } from '@/lib/analytics';
 import { sendQuoteEmail, initEmailJS } from '@/lib/emailService';
-import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const ContactForm = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
+  const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize EmailJS on component mount
-  useEffect(() => {
-    initEmailJS();
-  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,6 +27,31 @@ const ContactForm = () => {
     message: '',
     gdprConsent: false
   });
+
+  // Initialize EmailJS and handle project data from navigation
+  useEffect(() => {
+    initEmailJS();
+    
+    // Check if we have project data from navigation
+    if (location.state && location.state.projectData) {
+      const { title, description, location: projectLocation, surface } = location.state.projectData;
+      
+      // Auto-fill the form with project information
+      setFormData(prev => ({
+        ...prev,
+        message: `Estoy interesado en un proyecto similar a: "${title}"\n\n${description}\n\nUbicación del proyecto de referencia: ${projectLocation}\nSuperficie de referencia: ${surface} m²`,
+        surface: surface ? surface.toString() : ''
+      }));
+
+      // Scroll to the form
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.state]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

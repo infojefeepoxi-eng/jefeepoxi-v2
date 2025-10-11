@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, MapPin, Calendar, Square, Euro } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { Link, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 // Import project images
 import projectIndustrialBlueGray from '@/assets/project-industrial-blue-gray.jpg';
@@ -48,6 +48,7 @@ interface Project {
 
 const ProjectsGallery = () => {
   const { language, t } = useLanguage();
+  const navigate = useNavigate();
   const location = useLocation();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [visibleCount, setVisibleCount] = useState<number>(9);
@@ -605,20 +606,23 @@ const ProjectsGallery = () => {
                   variant="ghost" 
                   size="sm" 
                   className="mt-4 w-full group-hover:bg-primary/10"
-                  asChild
-                >
-                  <Link 
-                    to={location.pathname === '/' ? '#contact' : '/#contact'}
-                    onClick={(e) => {
-                      if (location.pathname === '/') {
-                        e.preventDefault();
-                        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                  onClick={() => {
+                    // Navigate to home page with project data
+                    navigate('/', {
+                      state: {
+                        projectData: {
+                          title: project.title[language],
+                          description: project.description[language],
+                          location: project.location,
+                          surface: project.surface,
+                          price: project.price
+                        }
                       }
-                    }}
-                  >
-                    Ver detalles
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Link>
+                    });
+                  }}
+                >
+                  Ver detalles
+                  <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
             </Card>
