@@ -125,7 +125,9 @@ const ContactForm = () => {
             {t('contact.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Solicita tu presupuesto personalizado sin compromiso
+            {language === 'es' 
+              ? 'Solicita tu presupuesto personalizado sin compromiso' 
+              : 'Request your personalized quote without commitment'}
           </p>
         </div>
 
@@ -134,7 +136,7 @@ const ContactForm = () => {
           <Card className="bg-gradient-card border-border/50">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground">
-                Solicitar Presupuesto
+                {language === 'es' ? 'Solicitar Presupuesto' : 'Request Quote'}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -142,7 +144,7 @@ const ContactForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
-                      Nombre completo *
+                      {language === 'es' ? 'Nombre completo *' : 'Full name *'}
                     </label>
                     <Input
                       value={formData.name}
@@ -168,7 +170,7 @@ const ContactForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
-                      Teléfono *
+                      {language === 'es' ? 'Teléfono *' : 'Phone *'}
                     </label>
                     <Input
                       type="tel"
@@ -180,13 +182,13 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
-                      Superficie estimada (m²)
+                      {language === 'es' ? 'Superficie estimada (m²)' : 'Estimated area (m²)'}
                     </label>
                     <Input
                       type="number"
                       value={formData.surface}
                       onChange={(e) => handleInputChange('surface', e.target.value)}
-                      placeholder="ej. 150"
+                      placeholder={language === 'es' ? 'ej. 150' : 'e.g. 150'}
                       className="bg-background/50"
                     />
                   </div>
@@ -194,36 +196,36 @@ const ContactForm = () => {
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
-                    Dirección del proyecto
+                    {language === 'es' ? 'Dirección del proyecto' : 'Project address'}
                   </label>
                   <Input
                     value={formData.address}
                     onChange={(e) => handleInputChange('address', e.target.value)}
-                    placeholder="Ciudad, provincia"
+                    placeholder={language === 'es' ? 'Ciudad, provincia' : 'City, province'}
                     className="bg-background/50"
                   />
                 </div>
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
-                    Tipo de acabado deseado
+                    {language === 'es' ? 'Tipo de acabado deseado' : 'Desired finish type'}
                   </label>
                   <Input
                     value={formData.finishType}
                     onChange={(e) => handleInputChange('finishType', e.target.value)}
-                    placeholder="ej. Industrial, decorativo, antideslizante..."
+                    placeholder={language === 'es' ? 'ej. Industrial, decorativo, antideslizante...' : 'e.g. Industrial, decorative, non-slip...'}
                     className="bg-background/50"
                   />
                 </div>
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
-                    Descripción del proyecto
+                    {language === 'es' ? 'Descripción del proyecto' : 'Project description'}
                   </label>
                   <Textarea
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
-                    placeholder="Cuéntanos más detalles sobre tu proyecto..."
+                    placeholder={language === 'es' ? 'Cuéntanos más detalles sobre tu proyecto...' : 'Tell us more details about your project...'}
                     rows={4}
                     className="bg-background/50"
                   />
@@ -236,11 +238,10 @@ const ContactForm = () => {
                     onCheckedChange={(checked) => handleInputChange('gdprConsent', checked as boolean)}
                   />
                   <label htmlFor="gdpr" className="text-sm text-muted-foreground leading-relaxed">
-                    Acepto la{' '}
-                    <a href="/#contact" className="text-primary hover:underline">
-                      política de privacidad
-                    </a>{' '}
-                    y consiento el tratamiento de mis datos para recibir información comercial de JefeEpoxi.
+                    {language === 'es' 
+                      ? <>Acepto la{' '}<a href="/#contact" className="text-primary hover:underline">política de privacidad</a>{' '}y consiento el tratamiento de mis datos para recibir información comercial de JefeEpoxi.</>
+                      : <>I accept the{' '}<a href="/#contact" className="text-primary hover:underline">privacy policy</a>{' '}and consent to the processing of my data to receive commercial information from JefeEpoxi.</>
+                    }
                   </label>
                 </div>
 
@@ -250,7 +251,9 @@ const ContactForm = () => {
                   size="lg"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Enviando...' : 'Solicitar Presupuesto'}
+                  {isSubmitting 
+                    ? (language === 'es' ? 'Enviando...' : 'Sending...') 
+                    : (language === 'es' ? 'Solicitar Presupuesto' : 'Request Quote')}
                 </Button>
               </form>
             </CardContent>
@@ -261,14 +264,14 @@ const ContactForm = () => {
             <Card className="bg-gradient-card border-border/50">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-6">
-                  Información de Contacto
+                  {language === 'es' ? 'Información de Contacto' : 'Contact Information'}
                 </h3>
                 
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Phone className="w-5 h-5 text-primary mr-3" />
                     <div>
-                      <p className="text-foreground font-medium">Teléfono</p>
+                      <p className="text-foreground font-medium">{language === 'es' ? 'Teléfono' : 'Phone'}</p>
                       <a href="tel:+34622313855" className="text-muted-foreground hover:text-primary">
                         +34 622 313 855
                       </a>
@@ -303,7 +306,7 @@ const ContactForm = () => {
                   <div className="flex items-center">
                     <MapPin className="w-5 h-5 text-primary mr-3" />
                     <div>
-                      <p className="text-foreground font-medium">Ubicación</p>
+                      <p className="text-foreground font-medium">{language === 'es' ? 'Ubicación' : 'Location'}</p>
                       <button
                         onClick={() => setIsMapOpen(true)}
                         className="text-muted-foreground hover:text-primary transition-colors cursor-pointer underline decoration-dotted"
@@ -316,8 +319,8 @@ const ContactForm = () => {
                   <div className="flex items-center">
                     <Clock className="w-5 h-5 text-primary mr-3" />
                     <div>
-                      <p className="text-foreground font-medium">Horario</p>
-                      <p className="text-muted-foreground">Lun - Vie: 8:00 - 18:00</p>
+                      <p className="text-foreground font-medium">{language === 'es' ? 'Horario' : 'Schedule'}</p>
+                      <p className="text-muted-foreground">{language === 'es' ? 'Lun - Vie: 8:00 - 18:00' : 'Mon - Fri: 8:00 - 18:00'}</p>
                     </div>
                   </div>
                 </div>
@@ -327,7 +330,7 @@ const ContactForm = () => {
             <Card className="bg-gradient-card border-border/50">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Cobertura de Servicio
+                  {language === 'es' ? 'Cobertura de Servicio' : 'Service Coverage'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
                   {t('contact.coverage')}
@@ -393,7 +396,7 @@ const ContactForm = () => {
                     onClick={() => setShowAllCities(true)}
                     className="w-full text-primary hover:text-primary/80"
                   >
-                    Ver más ciudades (+38)
+                    {language === 'es' ? 'Ver más ciudades (+38)' : 'See more cities (+38)'}
                   </Button>
                 )}
               </CardContent>
@@ -408,7 +411,7 @@ const ContactForm = () => {
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-primary" />
-              Nuestra Ubicación - Valencia, España
+              {language === 'es' ? 'Nuestra Ubicación - Valencia, España' : 'Our Location - Valencia, Spain'}
             </DialogTitle>
           </DialogHeader>
           <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-border">
@@ -443,7 +446,7 @@ const ContactForm = () => {
               className="text-primary hover:text-primary/80 font-medium flex items-center gap-2 mt-2"
             >
               <MapPin className="w-4 h-4" />
-              Abrir en Google Maps →
+              {language === 'es' ? 'Abrir en Google Maps →' : 'Open in Google Maps →'}
             </a>
           </div>
         </DialogContent>

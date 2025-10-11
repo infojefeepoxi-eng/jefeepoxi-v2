@@ -10,7 +10,7 @@ import {
 import jefeepoxi_logo from '@/assets/jefeepoxi-logo.png';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isMapOpen, setIsMapOpen] = useState(false);
 
   const currentYear = new Date().getFullYear();
@@ -39,20 +39,20 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold">Servicios</h3>
+            <h3 className="text-foreground font-semibold">{language === 'es' ? 'Servicios' : 'Services'}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/#services" className="hover:text-primary transition-colors">Pavimentos Industriales</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Industria Alimentaria</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Pavimentos ESD</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Parkings y Talleres</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Pavimentos Decorativos</a></li>
-              <li><a href="/#services" className="hover:text-primary transition-colors">Reparaciones</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">{language === 'es' ? 'Pavimentos Industriales' : 'Industrial Flooring'}</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">{language === 'es' ? 'Industria Alimentaria' : 'Food Industry'}</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">{language === 'es' ? 'Pavimentos ESD' : 'ESD Flooring'}</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">{language === 'es' ? 'Parkings y Talleres' : 'Parking & Workshops'}</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">{language === 'es' ? 'Pavimentos Decorativos' : 'Decorative Flooring'}</a></li>
+              <li><a href="/#services" className="hover:text-primary transition-colors">{language === 'es' ? 'Reparaciones' : 'Repairs'}</a></li>
             </ul>
           </div>
 
           {/* Links */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold">Enlaces</h3>
+            <h3 className="text-foreground font-semibold">{language === 'es' ? 'Enlaces' : 'Links'}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/#about" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
               <li><a href="/#projects" className="hover:text-primary transition-colors">{t('nav.projects')}</a></li>
@@ -65,7 +65,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold">Contacto</h3>
+            <h3 className="text-foreground font-semibold">{language === 'es' ? 'Contacto' : 'Contact'}</h3>
             <div className="space-y-3">
               <a 
                 href="tel:+34622313855" 
@@ -108,7 +108,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>
-              © {currentYear} JefeEpoxi. Todos los derechos reservados.
+              © {currentYear} JefeEpoxi. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
             </p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               <a href="/legal-notice" className="hover:text-primary transition-colors">{t('nav.legal')}</a>
@@ -125,7 +125,7 @@ const Footer = () => {
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-primary" />
-              Nuestra Ubicación - Valencia, España
+              {language === 'es' ? 'Nuestra Ubicación - Valencia, España' : 'Our Location - Valencia, Spain'}
             </DialogTitle>
           </DialogHeader>
           <div className="relative w-full h-[400px] rounded-lg overflow-hidden border border-border">
@@ -159,7 +159,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="mt-2 text-sm text-primary hover:underline"
             >
-              Abrir en Google Maps →
+              {language === 'es' ? 'Abrir en Google Maps →' : 'Open in Google Maps →'}
             </a>
           </div>
         </DialogContent>
