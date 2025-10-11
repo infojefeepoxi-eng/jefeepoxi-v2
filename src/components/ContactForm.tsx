@@ -320,14 +320,54 @@ const ContactForm = () => {
                   {t('contact.coverage')}
                 </p>
                 <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                  <div>• Valencia</div>
                   <div>• Madrid</div>
                   <div>• Barcelona</div>
+                  <div>• Valencia</div>
                   <div>• Sevilla</div>
                   <div>• Zaragoza</div>
+                  <div>• Málaga</div>
+                  <div>• Murcia</div>
+                  <div>• Palma de Mallorca</div>
+                  <div>• Las Palmas</div>
                   <div>• Bilbao</div>
-                  <div>• Portugal</div>
-                  <div>• Francia</div>
+                  <div>• Alicante</div>
+                  <div>• Córdoba</div>
+                  <div>• Valladolid</div>
+                  <div>• Vigo</div>
+                  <div>• Gijón</div>
+                  <div>• Granada</div>
+                  <div>• Oviedo</div>
+                  <div>• Santa Cruz de Tenerife</div>
+                  <div>• Pamplona</div>
+                  <div>• Almería</div>
+                  <div>• San Sebastián</div>
+                  <div>• Santander</div>
+                  <div>• Burgos</div>
+                  <div>• Albacete</div>
+                  <div>• Castellón</div>
+                  <div>• A Coruña</div>
+                  <div>• Salamanca</div>
+                  <div>• Logroño</div>
+                  <div>• Badajoz</div>
+                  <div>• Huelva</div>
+                  <div>• Tarragona</div>
+                  <div>• Lleida</div>
+                  <div>• Marbella</div>
+                  <div>• León</div>
+                  <div>• Cádiz</div>
+                  <div>• Jaén</div>
+                  <div>• Ourense</div>
+                  <div>• Pontevedra</div>
+                  <div>• Vitoria-Gasteiz</div>
+                  <div>• Toledo</div>
+                  <div>• Guadalajara</div>
+                  <div>• Cuenca</div>
+                  <div>• Segovia</div>
+                  <div>• Ávila</div>
+                  <div>• Girona</div>
+                  <div>• Huesca</div>
+                  <div>• Teruel</div>
+                  <div>• Soria</div>
                 </div>
               </CardContent>
             </Card>

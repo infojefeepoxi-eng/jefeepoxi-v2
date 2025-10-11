@@ -32,7 +32,16 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <Link 
+            to="/" 
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            onClick={(e) => {
+              if (location.pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
             <img 
               src="/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png" 
               alt="JefeEpoxi logo" 
@@ -46,7 +55,7 @@ const Header = () => {
             {navItems.map((item) => (
               <Link
                 key={item.key}
-                to={item.anchor && location.pathname === '/' ? item.anchor : item.href}
+                to={item.anchor ? (location.pathname === '/' ? item.anchor : `${item.href}${item.anchor}`) : item.href}
                 className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 onClick={(e) => {
                   if (item.anchor && location.pathname === '/') {
@@ -136,7 +145,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.key}
-                  to={item.anchor && location.pathname === '/' ? item.anchor : item.href}
+                  to={item.anchor ? (location.pathname === '/' ? item.anchor : `${item.href}${item.anchor}`) : item.href}
                   className="text-muted-foreground hover:text-primary transition-colors duration-200 px-2 py-1"
                   onClick={(e) => {
                     if (item.anchor && location.pathname === '/') {
