@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import SEOHead from '@/components/SEOHead';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -624,6 +625,12 @@ const VipIndividualDetailContent = () => {
       <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
+        <div className="container mx-auto px-4 pt-4">
+          <Breadcrumbs items={[
+            { label: 'Servicios', href: '/#services' },
+            { label: 'Proyectos VIP' }
+          ]} />
+        </div>
         {/* Header Section */}
         <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10">
           <div className="container mx-auto px-4">

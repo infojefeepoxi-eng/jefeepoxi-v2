@@ -3,6 +3,7 @@ import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -631,6 +632,12 @@ const FoodProductionDetailContent = () => {
       />
       <Header />
       <main className="pt-20">
+        <div className="container mx-auto px-4 pt-4">
+          <Breadcrumbs items={[
+            { label: 'Servicios', href: '/#services' },
+            { label: 'Producción Alimentaria' }
+          ]} />
+        </div>
         {/* Header Section */}
         <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10">
           <div className="container mx-auto px-4">
