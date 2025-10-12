@@ -157,7 +157,7 @@ const AiFloorVisualizer = () => {
                   <div className="border-2 border-dashed rounded-lg p-6 text-center">
                     {roomImage ? (
                       <div className="space-y-3">
-                        <img src={roomImage} alt="room" className="max-w-full h-auto rounded-md mx-auto" style={{maxHeight: '300px'}} />
+                        <img src={roomImage} alt="room" className="max-w-full h-auto rounded-md mx-auto" style={{maxHeight: '300px'}} loading="lazy" decoding="async" />
                         <Button variant="outline" size="sm" onClick={() => setRoomImage(null)}>
                           {language === 'es' ? 'Cambiar imagen' : 'Change image'}
                         </Button>
@@ -185,7 +185,7 @@ const AiFloorVisualizer = () => {
                   <div className="border-2 border-dashed rounded-lg p-4 text-center">
                     {referenceImage ? (
                       <div className="space-y-3">
-                        <img src={referenceImage} alt="reference" className="max-w-full h-auto rounded-md mx-auto" style={{maxHeight: '200px'}} />
+                        <img src={referenceImage} alt="reference" className="max-w-full h-auto rounded-md mx-auto" style={{maxHeight: '200px'}} loading="lazy" decoding="async" />
                         <Button variant="outline" size="sm" onClick={() => setReferenceImage(null)}>
                           {language === 'es' ? 'Quitar referencia' : 'Remove reference'}
                         </Button>
@@ -235,7 +235,7 @@ const AiFloorVisualizer = () => {
                 {resultImage && (
                   <div className="mt-6">
                     <Label className="mb-3 block text-lg">{language === 'es' ? 'Resultado' : 'Result'}</Label>
-                    <img src={resultImage} alt="result" className="rounded-lg shadow-lg w-full" />
+                    <img src={resultImage} alt="result" className="rounded-lg shadow-lg w-full" loading="lazy" decoding="async" />
                   </div>
                 )}
 

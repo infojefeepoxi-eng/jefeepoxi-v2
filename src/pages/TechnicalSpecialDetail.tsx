@@ -658,6 +658,8 @@ const TechnicalSpecialDetailContent = () => {
                       src={product.image} 
                       alt={product.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute top-4 left-4">
                       <div className="bg-primary/90 text-primary-foreground p-2 rounded-full">

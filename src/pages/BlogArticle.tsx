@@ -93,6 +93,8 @@ const WhyEpoxiWinsArticle = ({ article }: { article: any }) => {
                   src={article.image} 
                   alt={t(article.titleKey)}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -233,6 +235,8 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                   src={article.image} 
                   alt={t(article.titleKey)}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -277,6 +281,8 @@ const SueloResinaEpoxiCompleto = ({ article }: { article: any }) => {
                     src={articleIndustrialFloor} 
                     alt="Suelo de resina epoxi en nave industrial"
                     className="w-full h-auto"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <figcaption className="text-sm text-gray-500 dark:text-muted-foreground italic p-4 bg-gray-50 dark:bg-card text-center">
                     {t('blog.article2.imgCaption1')}
@@ -672,6 +678,8 @@ const EpoxiVsTradicionalArticle = ({ article }: { article: any }) => {
                   src={article.image} 
                   alt="Suelos de resina epoxi modernos"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
