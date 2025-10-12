@@ -51,7 +51,7 @@ const StructuredData = (props: StructuredDataProps) => {
       "@type": "LocalBusiness",
       "name": props.name || "JefeEpoxi - Pavimentos Epoxy Valencia",
       "description": props.description || "Especialistas en pavimentos de resina epoxi en Valencia. Más de 5 años de experiencia en suelos industriales, alimentarios, decorativos y técnicos.",
-      "image": "https://jefeepoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png",
+      "image": "https://jefeepoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.webp",
       "telephone": props.telephone || "+34622313855",
       "email": props.email || "contacto@jefeepoxi.com",
       "address": props.address || {

@@ -17,7 +17,7 @@ const SEOHead = ({
   title,
   description,
   canonical,
-  ogImage = 'https://jefeepoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png',
+  ogImage = 'https://jefeepoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.webp',
   ogType = 'website',
   keywords,
   author = 'JefeEpoxi',
