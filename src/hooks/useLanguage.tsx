@@ -89,7 +89,7 @@ const translations = {
     'blog.readTime': 'min de lectura',
 
     // Blog Article 2: Suelo de resina epoxi completo
-    'blog.article2.title': 'Suelos de Resina Epoxi: Guía Completa 2024',
+    'blog.article2.title': 'Suelos de Resina Epoxi: Guía Completa 2025',
     'blog.article2.excerpt': 'Todo lo que necesitas saber sobre suelos de resina epoxi: composición, tipos, aplicaciones, ventajas, inconvenientes y precios. Guía informativa completa.',
     
     'blog.article2.intro.p1': 'El suelo de resina epoxi es un pavimento continuo que revolucionó la industria de recubrimientos gracias a sus prestaciones excepcionales. Se trata de un revestimiento sin juntas de dilatación que puede aplicarse directamente sobre pavimentos existentes, evitando obras y escombros. Su uso se extiende desde grandes naves industriales y parkings hasta viviendas particulares y oficinas modernas.',
@@ -189,6 +189,10 @@ const translations = {
     'blog.article2.cta.description': 'Nuestro equipo de expertos está listo para ayudarte a elegir el mejor sistema de pavimento epoxi para tu proyecto industrial, comercial o residencial.',
     'blog.article2.cta.button': 'Solicitar presupuesto gratuito',
     'blog.article2.backToAll': 'Volver a todas las noticias',
+
+    // Blog Article 3: Suelos de resina epoxi - ventajas completas
+    'blog.article3.title': 'Suelos de Resina Epoxi: Todo lo que Necesitas Saber en 2025',
+    'blog.article3.excerpt': 'Guía completa sobre pavimentos de resina epoxi: qué son, cómo funcionan, sus increíbles ventajas y por qué se han convertido en la solución preferida para suelos industriales, comerciales y residenciales modernos.',
     
     // Cookie Consent
     'cookies.title': '🍪 Cookies y Privacidad',
@@ -281,7 +285,7 @@ const translations = {
     'blog.readTime': 'min read',
 
     // Blog Article 2: Complete epoxy resin floor
-    'blog.article2.title': 'Epoxy Resin Flooring: Complete 2024 Guide',
+    'blog.article2.title': 'Epoxy Resin Flooring: Complete 2025 Guide',
     'blog.article2.excerpt': 'Everything you need to know about epoxy resin floors: composition, types, applications, advantages, disadvantages and prices. Complete informative guide.',
     'blog.article2.intro.p1': 'Epoxy resin flooring is a continuous floor that revolutionized the coatings industry thanks to its exceptional performance. It\'s a seamless coating that can be applied directly over existing floors, avoiding construction work and debris. Its use extends from large industrial warehouses and parking lots to private homes and modern offices.',
     'blog.article2.intro.p2': 'The versatility of this material allows renovating spaces of any size with very reduced execution times. Surfaces thus coated guarantee superior durability, exceptional mechanical resistances and minimal maintenance. Although originally conceived for industrial environments, its technical and aesthetic evolution has expanded its use to practically any type of building.',
@@ -371,6 +375,10 @@ const translations = {
     'blog.article2.cta.description': 'Our team of experts is ready to help you choose the best epoxy flooring system for your industrial, commercial or residential project.',
     'blog.article2.cta.button': 'Request free quote',
     'blog.article2.backToAll': 'Back to all news',
+
+    // Blog Article 3: Complete epoxy resin advantages
+    'blog.article3.title': 'Epoxy Resin Flooring: Everything You Need to Know in 2025',
+    'blog.article3.excerpt': 'Complete guide about epoxy resin flooring: what they are, how they work, their incredible advantages and why they have become the preferred solution for modern industrial, commercial and residential floors.',
     
     // Cookie Consent
     'cookies.title': '🍪 Cookies & Privacy',
