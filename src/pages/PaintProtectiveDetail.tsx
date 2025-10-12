@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -570,7 +571,15 @@ const PaintProtectiveDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Pintura y Recubrimientos Protectores Epoxi Valencia | Económico"
+        description="Pintura epoxi y recubrimientos protectores para garajes, almacenes y áreas pequeñas en Valencia. Soluciones económicas y duraderas ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/painting-protective"
+        keywords="pintura epoxi valencia, recubrimientos protectores, pintura garajes económica, laca epoxi, protección hormigón, pintura industrial"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1204,7 +1213,8 @@ const PaintProtectiveDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

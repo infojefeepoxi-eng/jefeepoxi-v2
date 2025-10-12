@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -496,7 +497,15 @@ const RepairRestorationDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Reparación y Restauración Pavimentos Epoxi Valencia"
+        description="Reparación profesional de pavimentos epoxi en Valencia. Restauración de grietas, baches y recubrimientos dañados. Presupuesto gratuito ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/repair-restoration"
+        keywords="reparación pavimentos valencia, restauración suelos epoxi, reparar grietas pavimento, renovación pisos industriales, sellado juntas"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1125,7 +1134,8 @@ const RepairRestorationDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

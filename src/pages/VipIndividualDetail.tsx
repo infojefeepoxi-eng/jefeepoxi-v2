@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -612,7 +613,15 @@ const VipIndividualDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Proyectos VIP y Diseños Exclusivos Epoxi Valencia | Premium"
+        description="Proyectos VIP y diseños exclusivos de pavimentos epoxi en Valencia. Soluciones personalizadas para hoteles de lujo, mansiones y proyectos únicos ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/vip-individual"
+        keywords="pavimentos VIP valencia, diseños exclusivos epoxi, suelos lujo, pavimentos hoteles premium, proyectos personalizados, pavimentos mansiones"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1291,7 +1300,8 @@ const VipIndividualDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

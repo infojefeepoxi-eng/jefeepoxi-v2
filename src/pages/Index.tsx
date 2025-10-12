@@ -7,6 +7,7 @@ import ProjectsGallery from '@/components/ProjectsGallery';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
+import StructuredData from '@/components/StructuredData';
 
 const Index = () => {
   return (
@@ -17,6 +18,14 @@ const Index = () => {
         canonical="https://jefeepoxi.com/"
         keywords="pavimentos epoxy valencia, suelos epoxy valencia, resina epoxy valencia, pavimentos industriales valencia, suelos industriales, pavimentos alimentarios, suelos decorativos epoxy, aplicadores epoxy valencia"
         ogType="website"
+      />
+      <StructuredData
+        type="LocalBusiness"
+        name="JefeEpoxi - Pavimentos Epoxy Valencia"
+        description="Especialistas en pavimentos de resina epoxi en Valencia. Más de 5 años de experiencia en suelos industriales, alimentarios, decorativos y técnicos."
+        telephone="+34622313855"
+        email="contacto@jefeepoxi.com"
+        priceRange="€€"
       />
       <Header />
       <main>

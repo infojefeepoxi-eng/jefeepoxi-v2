@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -668,7 +669,15 @@ const GaragesParkingDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Pavimentos para Garajes y Parkings Valencia | Resina Epoxi"
+        description="Suelos epoxi para garajes residenciales, parkings comerciales y talleres en Valencia. Resistentes a aceites, gasolina y tráfico intenso. Certificados ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/garages-parking"
+        keywords="pavimentos garajes valencia, suelos parking epoxi, resina garajes, pavimentos talleres, impermeabilización parkings, suelos antideslizantes garajes"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1344,7 +1353,8 @@ const GaragesParkingDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

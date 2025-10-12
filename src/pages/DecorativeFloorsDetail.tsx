@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -657,7 +658,15 @@ const DecorativeFloorsDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Pavimentos Decorativos Epoxi Valencia | Tiendas, Hoteles, Oficinas"
+        description="Suelos decorativos de resina epoxi para tiendas, hoteles, oficinas y viviendas exclusivas en Valencia. Diseños personalizados y acabados premium. Presupuesto gratuito ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/decorative-floors"
+        keywords="pavimentos decorativos valencia, suelos epoxi decorativos, resina epoxi tiendas, pavimentos hoteles, suelos oficinas modernos, pavimentos residenciales, diseño suelos epoxi"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1442,7 +1451,8 @@ const DecorativeFloorsDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

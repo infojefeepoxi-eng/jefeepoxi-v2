@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -581,7 +582,15 @@ const ComponentsMaterialsDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Materiales y Componentes Epoxi Valencia | Venta Profesional"
+        description="Venta de materiales y componentes epoxi en Valencia: pigmentos, cuarzos, selladores e imprimaciones. Para profesionales y particulares ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/components-materials"
+        keywords="materiales epoxi valencia, componentes resina, pigmentos epoxi, cuarzo pavimentos, selladores juntas, venta epoxi profesional"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1070,7 +1079,8 @@ const ComponentsMaterialsDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -579,7 +580,15 @@ const UrgentWorkDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Trabajos Urgentes Pavimentos Epoxi 24h Valencia | Rápido"
+        description="Instalación express de pavimentos epoxi en 1-2 días en Valencia. Sistemas de curado rápido para proyectos urgentes. Servicio 24/7 disponible ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/fast-urgent"
+        keywords="pavimentos urgentes valencia, suelos epoxi rápidos, instalación express, pavimentos emergencia, curado rápido, trabajos 24h valencia"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1344,7 +1353,8 @@ const UrgentWorkDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

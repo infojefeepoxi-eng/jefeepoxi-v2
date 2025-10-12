@@ -24,10 +24,28 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxi.com/blog?lang=en" />
   </url>
 
-  <!-- Blog Article -->
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://jefeepoxi.com/blog/epoxi-vs-tradicional-comparativa</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxi.com/blog/epoxi-vs-tradicional-comparativa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxi.com/blog/epoxi-vs-tradicional-comparativa?lang=en" />
+  </url>
+  
+  <url>
+    <loc>https://jefeepoxi.com/blog/suelo-resina-epoxi-completo</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxi.com/blog/suelo-resina-epoxi-completo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jefeepoxi.com/blog/suelo-resina-epoxi-completo?lang=en" />
+  </url>
+  
   <url>
     <loc>https://jefeepoxi.com/blog/why-epoxy-wins</loc>
-    <lastmod>2025-10-06</lastmod>
+    <lastmod>2024-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://jefeepoxi.com/blog/why-epoxy-wins" />

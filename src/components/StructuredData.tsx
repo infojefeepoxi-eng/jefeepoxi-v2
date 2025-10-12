@@ -1,224 +1,143 @@
-﻿import { useEffect } from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
+﻿import { Helmet } from 'react-helmet-async';
 
-const StructuredData = () => {
-  const { language } = useLanguage();
+interface LocalBusinessProps {
+  type: 'LocalBusiness';
+  name?: string;
+  description?: string;
+  telephone?: string;
+  email?: string;
+  address?: {
+    streetAddress: string;
+    addressLocality: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  geo?: {
+    latitude: number;
+    longitude: number;
+  };
+  openingHours?: string[];
+  priceRange?: string;
+}
 
-  useEffect(() => {
-    // Remove existing structured data
-    const existingScript = document.getElementById('structured-data');
-    if (existingScript) {
-      existingScript.remove();
-    }
+interface ServiceProps {
+  type: 'Service';
+  name: string;
+  description: string;
+  provider: {
+    name: string;
+    telephone: string;
+  };
+  areaServed: string;
+  serviceType: string;
+}
 
-    // JefeEpoxi Business Schema
-    const businessSchema = {
+interface FAQProps {
+  type: 'FAQPage';
+  questions: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+type StructuredDataProps = LocalBusinessProps | ServiceProps | FAQProps;
+
+const StructuredData = (props: StructuredDataProps) => {
+  let schemaData: any;
+
+  if (props.type === 'LocalBusiness') {
+    schemaData = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://jefeEpoxi.com/#business",
-      "name": "JefeEpoxi",
-      "alternateName": "Jefe Epoxi Valencia",
-      "description": language === 'es' 
-        ? "Especialistas en pavimentos Epoxi en Valencia. Más de 5 años de experiencia en suelos industriales, alimentarios y decorativos. Presupuesto gratuito."
-        : "Epoxi flooring specialists in Valencia. Over 5 years of experience in industrial, food-grade and decorative floors. Free quote.",
-      "url": "https://jefeEpoxi.com",
-      "logo": "https://jefeEpoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png",
-      "image": [
-        "https://jefeEpoxi.com/src/assets/hero-Epoxi-warehouse.jpg",
-        "https://jefeEpoxi.com/src/assets/project-industrial-blue-gray.jpg",
-        "https://jefeEpoxi.com/src/assets/project-decorative-metallic-gray.jpg"
-      ],
-      "telephone": "+34622313855",
-      "email": "info@jefeEpoxi.com",
-      "address": {
+      "name": props.name || "JefeEpoxi - Pavimentos Epoxy Valencia",
+      "description": props.description || "Especialistas en pavimentos de resina epoxi en Valencia. Más de 5 años de experiencia en suelos industriales, alimentarios, decorativos y técnicos.",
+      "image": "https://jefeepoxi.com/lovable-uploads/7d37393f-2fae-4f03-9555-2b30aa15fccb.png",
+      "telephone": props.telephone || "+34622313855",
+      "email": props.email || "contacto@jefeepoxi.com",
+      "address": props.address || {
         "@type": "PostalAddress",
+        "streetAddress": "Calle Principal",
         "addressLocality": "Valencia",
-        "addressRegion": "Comunidad Valenciana",
-        "addressCountry": "ES",
-        "streetAddress": "Valencia, España"
+        "postalCode": "46000",
+        "addressCountry": "ES"
       },
-      "geo": {
+      "geo": props.geo ? {
         "@type": "GeoCoordinates",
-        "latitude": "39.4699",
-        "longitude": "-0.3763"
+        "latitude": props.geo.latitude,
+        "longitude": props.geo.longitude
+      } : {
+        "@type": "GeoCoordinates",
+        "latitude": 39.4699,
+        "longitude": -0.3763
       },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Valencia"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Comunidad Valenciana"
-        },
-        {
-          "@type": "Country",
-          "name": "España"
-        }
-      ],
-      "serviceArea": {
+      "url": "https://jefeepoxi.com",
+      "priceRange": props.priceRange || "€€",
+      "openingHours": props.openingHours || ["Mo-Fr 08:00-18:00", "Sa 09:00-14:00"],
+      "areaServed": {
         "@type": "GeoCircle",
         "geoMidpoint": {
           "@type": "GeoCoordinates",
-          "latitude": "39.4699",
-          "longitude": "-0.3763"
+          "latitude": 39.4699,
+          "longitude": -0.3763
         },
         "geoRadius": "100000"
       },
-      "priceRange": "€€€",
-      "openingHours": "Mo-Fr 08:00-18:00",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-      "currenciesAccepted": "EUR",
-      "foundingDate": "2019",
-      "numberOfEmployees": "2-10",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "30",
-        "bestRating": "5",
-        "worstRating": "4"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Carlos Martinez"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          },
-          "reviewBody": "Excelente trabajo en nuestro almacén. Pavimento Epoxi de alta calidad y servicio profesional."
-        }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de Pavimentos Epoxi",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Pavimentos Industriales",
-              "description": "Soluciones para naves industriales y logística"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Pavimentos Alimentarios",
-              "description": "Pavimentos higiénicos certificados para industria alimentaria"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service", 
-              "name": "Pavimentos Decorativos",
-              "description": "Efectos metálicos y diseños únicos para espacios comerciales"
-            }
-          }
-        ]
-      },
       "sameAs": [
-        "https://www.facebook.com/jefeEpoxi",
-        "https://www.instagram.com/jefeEpoxi", 
-        "https://wa.me/34622313855"
+        "https://www.facebook.com/jefeepoxi",
+        "https://www.instagram.com/jefeepoxi"
       ]
     };
-
-    // Service Schema for main services
-    const servicesSchema = {
+  } else if (props.type === 'Service') {
+    schemaData = {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "JefeEpoxi - Pavimentos Epoxi Valencia",
-      "serviceType": "Epoxi Flooring Installation",
+      "@type": "Service",
+      "name": props.name,
+      "description": props.description,
       "provider": {
-        "@id": "https://jefeEpoxi.com/#business"
+        "@type": "LocalBusiness",
+        "name": props.provider.name,
+        "telephone": props.provider.telephone,
+        "url": "https://jefeepoxi.com"
       },
       "areaServed": {
         "@type": "City",
-        "name": "Valencia, España"
+        "name": props.areaServed
       },
+      "serviceType": props.serviceType,
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Servicios Especializados",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Pavimentos ESD Anti-estáticos",
-              "category": "Industrial Flooring",
-              "description": "Cumplimiento ISO 61340, DIN EN 61340, ASTM D2737"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service", 
-              "name": "Reparaciones y Autonivelantes",
-              "category": "Maintenance",
-              "description": "Soluciones de mantenimiento integral"
-            }
+        "name": props.name,
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": props.name
           }
-        ]
+        }]
       }
     };
-
-    // FAQ Schema
-    const faqSchema = {
+  } else if (props.type === 'FAQPage') {
+    schemaData = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Cuánto dura un pavimento Epoxi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Un pavimento Epoxi profesional puede durar entre 15-20 años con el mantenimiento adecuado, siendo superior a otros tipos de suelos industriales."
-          }
-        },
-        {
-          "@type": "Question", 
-          "name": "¿Cuál es el precio por metro cuadrado?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "El precio varía según el tipo de acabado y preparación necesaria. Contacta con nosotros para un presupuesto personalizado gratuito."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Trabajáis en toda España?",
-          "acceptedAnswer": {
-            "@type": "Answer", 
-            "text": "Sí, realizamos proyectos en toda España, con base en Valencia para un mejor servicio en la Comunidad Valenciana."
-          }
+      "mainEntity": props.questions.map(q => ({
+        "@type": "Question",
+        "name": q.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.answer
         }
-      ]
+      }))
     };
+  }
 
-    // Combine all schemas
-    const combinedSchema = {
-      "@context": "https://schema.org",
-      "@graph": [businessSchema, servicesSchema, faqSchema]
-    };
-
-    // Create and append script
-    const script = document.createElement('script');
-    script.id = 'structured-data';
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(combinedSchema, null, 2);
-    document.head.appendChild(script);
-
-    console.log('🔍 Structured Data (Schema.org) loaded for JefeEpoxi');
-  }, [language]);
-
-  return null; // This component doesn't render anything
+  return (
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
+    </Helmet>
+  );
 };
 
 export default StructuredData;
-
-

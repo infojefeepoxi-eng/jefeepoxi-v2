@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -593,7 +594,15 @@ const TechnicalSpecialDetailContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Pavimentos Técnicos Especializados Valencia | Antiestáticos ESD"
+        description="Pavimentos técnicos ESD antiestáticos para laboratorios, fábricas electrónicas y salas limpias en Valencia. Certificación ISO 61340 ☎️ +34 622 313 855"
+        canonical="https://jefeepoxi.com/services/technical-specialized"
+        keywords="pavimentos antiestáticos valencia, suelos ESD, pavimentos laboratorios, resina epoxi técnica, suelos sala limpia, pavimentos conductivos"
+        ogType="website"
+      />
+      <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
         {/* Header Section */}
@@ -1267,7 +1276,8 @@ const TechnicalSpecialDetailContent = () => {
 
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
