@@ -12,12 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Cpu, FlaskConical, Hospital, Flame, Microscope, Zap, ChevronDown, ChevronUp, Star, Thermometer } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import fabricasElectronicasImage from '@/assets/fabricas-electronicas.png';
-import laboratoriosImage from '@/assets/laboratorios-quimicos.png';
-import altasTemperaturasImage from '@/assets/altas-temperaturas.png';
-import hospitalesImage from '@/assets/hospitales-medicos.png';
-import salasLimpiasImage from '@/assets/salas-limpias.png';
-import centrosInvestigacionImage from '@/assets/centros-investigacion.png';
+import fabricasElectronicasImage from '@/assets/fabricas-electronicas.webp';
+import laboratoriosImage from '@/assets/centros-investigacion.webp';
+import altasTemperaturasImage from '@/assets/altas-temperaturas.webp';
+import hospitalesImage from '@/assets/hospitales-medicos.webp';
+import salasLimpiasImage from '@/assets/salas-limpias.webp';
+import centrosInvestigacionImage from '@/assets/centros-investigacion.webp';
 
 const TechnicalSpecialDetailContent = () => {
   const { t } = useLanguage();

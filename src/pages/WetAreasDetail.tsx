@@ -12,11 +12,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Droplets, Waves, Bath, Shirt, Sparkles, Car, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import lavaderosAutosImage from '@/assets/lavaderos-autos-detailing.png';
-import piscinasAquaparquesImage from '@/assets/piscinas-aquaparques.png';
-import duchasVestuariosImage from '@/assets/duchas-vestuarios.png';
-import lavanderiasImage from '@/assets/lavanderias-tintorerias.png';
-import banosPrivadosImage from '@/assets/banos-privados-residenciales.png';
+import lavaderosAutosImage from '@/assets/lavaderos-autos-detailing.webp';
+import piscinasAquaparquesImage from '@/assets/piscinas-aquaparques.webp';
+import duchasVestuariosImage from '@/assets/duchas-vestuarios.webp';
+import lavanderiasImage from '@/assets/lavanderias-tintorerias.webp';
+import banosPrivadosImage from '@/assets/banos-privados-residenciales.webp';
 
 const WetAreasDetailContent = () => {
   const { t } = useLanguage();

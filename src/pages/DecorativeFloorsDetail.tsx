@@ -12,12 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Store, Car, Hotel, Building, Home, Anchor, ChevronDown, ChevronUp, Star, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import tiendasImage from '@/assets/tiendas-boutiques.png';
-import autosalonesImage from '@/assets/autosalones.png';
-import hotelesImage from '@/assets/hoteles-restaurantes.png';
-import oficinasImage from '@/assets/oficinas.png';
-import viviendasImage from '@/assets/viviendas-exclusivas.png';
-import yatesImage from '@/assets/yates-marinos.png';
+import tiendasImage from '@/assets/tiendas-boutiques.webp';
+import autosalonesImage from '@/assets/autosalones.webp';
+import hotelesImage from '@/assets/hoteles-restaurantes.webp';
+import oficinasImage from '@/assets/oficinas.webp';
+import viviendasImage from '@/assets/viviendas-exclusivas.webp';
+import yatesImage from '@/assets/yates-marinos.webp';
 
 const DecorativeFloorsDetailContent = () => {
   const { t } = useLanguage();

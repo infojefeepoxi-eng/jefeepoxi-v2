@@ -13,12 +13,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Beef, Milk, Cookie, Wine, ChefHat, Snowflake, ChevronDown, ChevronUp, Star, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import mataderosImage from '@/assets/mataderos-carnicos.png';
-import lacteosImage from '@/assets/lacteos-queserias.png';
-import panaderiasImage from '@/assets/panaderias-confiterias.png';
-import cerveceriasImage from '@/assets/cervecerias-bodegas.png';
-import restaurantesImage from '@/assets/restaurantes-cocinas.png';
-import camarasImage from '@/assets/camaras-frigorificas.png';
+import mataderosImage from '@/assets/mataderos-carnicos.webp';
+import lacteosImage from '@/assets/camaras-frigorificas.webp';
+import panaderiasImage from '@/assets/panaderias-confiterias.webp';
+import cerveceriasImage from '@/assets/cervecerias-bodegas.webp';
+import restaurantesImage from '@/assets/restaurantes-cocinas.webp';
+import camarasImage from '@/assets/camaras-frigorificas.webp';
 
 const FoodProductionDetailContent = () => {
   const { t } = useLanguage();

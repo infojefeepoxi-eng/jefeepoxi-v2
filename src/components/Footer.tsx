@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import jefeepoxi_logo from '@/assets/jefeepoxi-logo.png';
+import jefeepoxi_logo from '@/assets/jefeepoxi-logo.webp';
 
 const Footer = () => {
   const { t, language } = useLanguage();

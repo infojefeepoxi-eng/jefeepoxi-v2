@@ -8,13 +8,13 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { getBlogArticle } from '@/lib/blogData';
 
 // Article images
-import articleIndustrialFloor from '@/assets/article-industrial-floor.png';
-import articleWarehouseFloor from '@/assets/article-warehouse-floor.png';
-import articleFactoryFloor from '@/assets/article-factory-floor.png';
-import articleKitchenFloor from '@/assets/article-kitchen-floor.png';
-import articleShowroomFloor from '@/assets/article-showroom-floor.png';
-import articleLogisticsFloor from '@/assets/article-logistics-floor.png';
-import articleLastFloor from '@/assets/article-last-floor.png';
+import articleIndustrialFloor from '@/assets/article-industrial-floor.webp';
+import articleWarehouseFloor from '@/assets/article-warehouse-floor.webp';
+import articleFactoryFloor from '@/assets/article-factory-floor.webp';
+import articleKitchenFloor from '@/assets/article-kitchen-floor.webp';
+import articleShowroomFloor from '@/assets/article-showroom-floor.webp';
+import articleLogisticsFloor from '@/assets/article-logistics-floor.webp';
+import articleLastFloor from '@/assets/article-last-floor.webp';
 
 const BlogArticleContent = () => {
   const { t } = useLanguage();

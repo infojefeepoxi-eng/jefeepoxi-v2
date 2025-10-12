@@ -12,10 +12,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Package, Palette, Mountain, Settings, Zap, Hammer, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import pigmentosPolvoImage from '@/assets/pigmentos-polvo-coloracion.png';
-import agregadosCuarzoImage from '@/assets/agregados-cuarzo.png';
-import selladoresJuntasImage from '@/assets/selladores-juntas.png';
-import componentesEspecialesImage from '@/assets/componentes-especiales.png';
+import pigmentosPolvoImage from '@/assets/pigmentos-polvo-coloracion.webp';
+import agregadosCuarzoImage from '@/assets/agregados-cuarzo.webp';
+import selladoresJuntasImage from '@/assets/selladores-juntas.webp';
+import componentesEspecialesImage from '@/assets/componentes-especiales.webp';
 
 const ComponentsMaterialsDetailContent = () => {
   const { t } = useLanguage();

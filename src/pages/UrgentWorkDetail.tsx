@@ -12,12 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Zap, Clock, AlertTriangle, Snowflake, Wrench, Hospital, ChevronDown, ChevronUp, Star, Timer } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hospitalesUrgentesImage from '@/assets/hospitales-urgentes.png';
-import produccionesUrgentesImage from '@/assets/producciones-urgentes.png';
-import trabajosFrioImage from '@/assets/trabajos-frio.png';
-import reparacionesEmergenciaImage from '@/assets/reparaciones-emergencia.png';
-import parkingsUrgentesImage from '@/assets/parkings-urgentes.png';
-import situacionesEmergenciaImage from '@/assets/situaciones-emergencia.png';
+import hospitalesUrgentesImage from '@/assets/hospitales-urgentes.webp';
+import produccionesUrgentesImage from '@/assets/producciones-urgentes.webp';
+import trabajosFrioImage from '@/assets/trabajos-frio.webp';
+import reparacionesEmergenciaImage from '@/assets/reparaciones-emergencia.webp';
+import parkingsUrgentesImage from '@/assets/parkings-urgentes.webp';
+import situacionesEmergenciaImage from '@/assets/situaciones-emergencia.webp';
 
 const UrgentWorkDetailContent = () => {
   const { t } = useLanguage();

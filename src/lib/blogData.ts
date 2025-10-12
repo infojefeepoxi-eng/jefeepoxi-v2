@@ -1,7 +1,7 @@
 // Blog Articles Data
 import vlogHeroImage from '@/assets/vlog-epoxy-hero.jpg';
-import blogEpoxiModernImage from '@/assets/blog-epoxi-modern.png';
-import blogEpoxiGuideImage from '@/assets/blog-epoxi-guide.png';
+import blogEpoxiModernImage from '@/assets/blog-epoxi-modern.webp';
+import blogEpoxiGuideImage from '@/assets/blog-epoxi-guide.webp';
 
 export interface BlogArticle {
   id: string;

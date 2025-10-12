@@ -12,11 +12,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Paintbrush, Home, Building, Warehouse, Shield, Hammer, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import objetosPequenosImage from '@/assets/objetos-pequenos.png';
-import oficinasAlmacenesImage from '@/assets/oficinas-almacenes-ligeros.png';
-import talleresGarajesImage from '@/assets/talleres-garajes-domesticos.png';
-import proteccionMetalImage from '@/assets/proteccion-metal.png';
-import sotanosLocalesImage from '@/assets/sotanos-locales-tecnicos.png';
+import objetosPequenosImage from '@/assets/objetos-pequenos.webp';
+import oficinasAlmacenesImage from '@/assets/oficinas-almacenes-ligeros.webp';
+import talleresGarajesImage from '@/assets/talleres-garajes-domesticos.webp';
+import proteccionMetalImage from '@/assets/proteccion-metal.webp';
+import sotanosLocalesImage from '@/assets/sotanos-locales-tecnicos.webp';
 
 const PaintProtectiveDetailContent = () => {
   const { t } = useLanguage();

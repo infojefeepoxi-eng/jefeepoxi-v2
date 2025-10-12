@@ -12,12 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Crown, Building, Palette, Hotel, Gem, Star as StarIcon, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import objetosExclusivosImage from '@/assets/objetos-exclusivos-luxury.png';
-import viviendasEliteImage from '@/assets/viviendas-elite-mansiones.png';
-import corporacionesFlagshipImage from '@/assets/corporaciones-flagship.png';
-import proyectosArtisticosImage from '@/assets/proyectos-artisticos-culturales.png';
-import joyeriasLuxuryImage from '@/assets/joyerias-luxury-boutiques.png';
-import hotelesExclusivosImage from '@/assets/hoteles-exclusivos-resorts.png';
+import objetosExclusivosImage from '@/assets/objetos-exclusivos-luxury.webp';
+import viviendasEliteImage from '@/assets/viviendas-elite-mansiones.webp';
+import corporacionesFlagshipImage from '@/assets/corporaciones-flagship.webp';
+import proyectosArtisticosImage from '@/assets/proyectos-artisticos-culturales.webp';
+import joyeriasLuxuryImage from '@/assets/joyerias-luxury-boutiques.webp';
+import hotelesExclusivosImage from '@/assets/hoteles-exclusivos-resorts.webp';
 
 const VipIndividualDetailContent = () => {
   const { t } = useLanguage();

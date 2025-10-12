@@ -13,10 +13,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Warehouse, Factory, Truck, Building, ChevronDown, ChevronUp, Star, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import almacenesImage from '@/assets/almacenes-industrial.png';
-import fabricasImage from '@/assets/fabricas-industrial.png';
-import logisticosImage from '@/assets/logisticos-industrial.png';
-import produccionImage from '@/assets/produccion-industrial.png';
+import almacenesImage from '@/assets/almacenes-industrial.webp';
+import fabricasImage from '@/assets/fabricas-industrial.webp';
+import logisticosImage from '@/assets/logisticos-industrial.webp';
+import produccionImage from '@/assets/produccion-industrial.webp';
 
 const BusinessIndustrialDetailContent = () => {
   const { t } = useLanguage();

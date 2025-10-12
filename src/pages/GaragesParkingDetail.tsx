@@ -12,12 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Car, Building, Wrench, Droplets, ChevronDown, ChevronUp, Star, Home, ParkingCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import garajesImage from '@/assets/garajes-residenciales.png';
-import parkingsVariosImage from '@/assets/parkings-varios-pisos.png';
-import talleresImage from '@/assets/talleres-autoservicios.png';
-import autolavadosImage from '@/assets/autolavados.png';
-import parkingsSubterImage from '@/assets/parkings-subterraneos.png';
-import parkingsComercialesImage from '@/assets/parkings-comerciales.png';
+import garajesImage from '@/assets/garajes-residenciales.webp';
+import parkingsVariosImage from '@/assets/parkings-varios-pisos.webp';
+import talleresImage from '@/assets/talleres-autoservicios.webp';
+import autolavadosImage from '@/assets/autolavados.webp';
+import parkingsSubterImage from '@/assets/parkings-subterraneos.webp';
+import parkingsComercialesImage from '@/assets/parkings-comerciales.webp';
 
 const GaragesParkingDetailContent = () => {
   const { t } = useLanguage();

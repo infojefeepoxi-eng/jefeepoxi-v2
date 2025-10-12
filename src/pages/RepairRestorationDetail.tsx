@@ -12,11 +12,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Wrench, Building, Home, Factory, Hammer, Settings, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import reparacionGrietasImage from '@/assets/reparacion-grietas-baches.png';
-import restauracionRecubrimientosImage from '@/assets/restauracion-recubrimientos.png';
-import selladoJuntasImage from '@/assets/sellado-juntas.png';
-import renovacionGarajesImage from '@/assets/renovacion-garajes.png';
-import renovacionPisosComercialesImage from '@/assets/renovacion-pisos-comerciales.png';
+import reparacionGrietasImage from '@/assets/reparacion-grietas-baches.webp';
+import restauracionRecubrimientosImage from '@/assets/restauracion-recubrimientos.webp';
+import selladoJuntasImage from '@/assets/sellado-juntas.webp';
+import renovacionGarajesImage from '@/assets/renovacion-garajes.webp';
+import renovacionPisosComercialesImage from '@/assets/renovacion-pisos-comerciales.webp';
 
 const RepairRestorationDetailContent = () => {
   const { t } = useLanguage();
