@@ -12,6 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Zap, Clock, AlertTriangle, Snowflake, Wrench, Hospital, ChevronDown, ChevronUp, Star, Timer } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import hospitalesUrgentesImage from '@/assets/hospitales-urgentes.png';
+import produccionesUrgentesImage from '@/assets/producciones-urgentes.png';
+import trabajosFrioImage from '@/assets/trabajos-frio.png';
+import reparacionesEmergenciaImage from '@/assets/reparaciones-emergencia.png';
+import parkingsUrgentesImage from '@/assets/parkings-urgentes.png';
+import situacionesEmergenciaImage from '@/assets/situaciones-emergencia.png';
 
 const UrgentWorkDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +167,7 @@ const UrgentWorkDetailContent = () => {
       icon: AlertTriangle,
       title: 'Situaciones de Emergencia',
       subtitle: 'Sistemas ultra rápidos para emergencias críticas',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: situacionesEmergenciaImage,
       description: 'Soluciones express para emergencias que requieren reparación inmediata en 4-8 horas',
       problems: [
         'Filtraciones emergencia (parkings, almacenes)',
@@ -249,7 +255,7 @@ const UrgentWorkDetailContent = () => {
       icon: Clock,
       title: 'Parkings Urgentes',
       subtitle: 'Trabajos rápidos en parkings con mínimo cierre',
-      image: '/assets/project-warehouse-before-after.jpg',
+      image: parkingsUrgentesImage,
       description: 'Sistemas express para parkings que no se pueden cerrar mucho tiempo',
       problems: [
         'Parking no se puede cerrar mucho tiempo',
@@ -304,7 +310,7 @@ const UrgentWorkDetailContent = () => {
       icon: Zap,
       title: 'Producciones Urgentes',
       subtitle: 'Express para fábricas con paradas limitadas',
-      image: '/assets/project-industrial-yellow.jpg',
+      image: produccionesUrgentesImage,
       description: 'Sistemas express para fábricas que no pueden parar producción mucho tiempo',
       problems: [
         'Producción no se puede parar (pérdidas millones)',
@@ -379,7 +385,7 @@ const UrgentWorkDetailContent = () => {
       icon: Snowflake,
       title: 'Trabajos en Frío',
       subtitle: 'Sistemas para clima frío desde -5°C',
-      image: '/assets/project-metallic-garage.jpg',
+      image: trabajosFrioImage,
       description: 'Sistemas especiales que funcionan en clima frío cuando otros sistemas no pueden',
       problems: [
         'Sistemas normales no funcionan a +5°C',
@@ -436,7 +442,7 @@ const UrgentWorkDetailContent = () => {
       icon: Wrench,
       title: 'Reparaciones de Emergencia',
       subtitle: 'Restauración rápida después de averías',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: reparacionesEmergenciaImage,
       description: 'Sistemas de reparación estructural para restauración rápida después de averías',
       problems: [
         'Daños emergencia (explosión, incendio, inundación)',
@@ -518,7 +524,7 @@ const UrgentWorkDetailContent = () => {
       icon: Hospital,
       title: 'Hospitales Urgentes',
       subtitle: 'Trabajos express en centros médicos',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: hospitalesUrgentesImage,
       description: 'Sistemas rápidos para hospitales que no se pueden cerrar',
       problems: [
         'Hospital no se puede cerrar',

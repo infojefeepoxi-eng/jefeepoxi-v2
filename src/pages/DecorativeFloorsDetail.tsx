@@ -12,6 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Store, Car, Hotel, Building, Home, Anchor, ChevronDown, ChevronUp, Star, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import tiendasImage from '@/assets/tiendas-boutiques.png';
+import autosalonesImage from '@/assets/autosalones.png';
+import hotelesImage from '@/assets/hoteles-restaurantes.png';
+import oficinasImage from '@/assets/oficinas.png';
+import viviendasImage from '@/assets/viviendas-exclusivas.png';
+import yatesImage from '@/assets/yates-marinos.png';
 
 const DecorativeFloorsDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +167,7 @@ const DecorativeFloorsDetailContent = () => {
       icon: Store,
       title: 'Tiendas y Boutiques',
       subtitle: 'Sistemas decorativos para espacios comerciales',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: tiendasImage,
       description: 'Pisos decorativos con efecto WOW para tiendas que quieren destacar y crear una experiencia única',
       problems: [
         'Potreба у WOW-ефекті для клієнтів',
@@ -245,7 +251,7 @@ const DecorativeFloorsDetailContent = () => {
       icon: Car,
       title: 'Autosalones',
       subtitle: 'Sistemas premium para showrooms automotrices',
-      image: '/assets/project-metallic-garage.jpg',
+      image: autosalonesImage,
       description: 'Pisos decorativos con efecto espejo que hacen que los vehículos se vean más lujosos y atractivos',
       problems: [
         'Necesidad de aspecto premium (vendemos autos caros)',
@@ -330,7 +336,7 @@ const DecorativeFloorsDetailContent = () => {
       icon: Hotel,
       title: 'Hoteles y Restaurantes',
       subtitle: 'Sistemas elegantes para espacios de hospitalidad',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: hotelesImage,
       description: 'Pisos decorativos de lujo que crean la primera impresión perfecta y soportan alto tráfico',
       problems: [
         'Necesidad de diseño exquisito',
@@ -422,7 +428,7 @@ const DecorativeFloorsDetailContent = () => {
       icon: Building,
       title: 'Oficinas',
       subtitle: 'Sistemas modernos para espacios corporativos',
-      image: '/assets/project-decorative-metallic-gray.jpg',
+      image: oficinasImage,
       description: 'Pisos decorativos profesionales que crean un ambiente de trabajo moderno y productivo',
       problems: [
         'Necesidad de aspecto moderno',
@@ -508,7 +514,7 @@ const DecorativeFloorsDetailContent = () => {
       icon: Home,
       title: 'Viviendas Exclusivas',
       subtitle: 'Sistemas únicos para hogares de lujo',
-      image: '/assets/project-decorative-wood-marble.jpg',
+      image: viviendasImage,
       description: 'Pisos decorativos exclusivos que convierten su hogar en una obra de arte única',
       problems: [
         'Diseño único (no como todos)',
@@ -600,7 +606,7 @@ const DecorativeFloorsDetailContent = () => {
       icon: Anchor,
       title: 'Yates y Marinos',
       subtitle: 'Sistemas certificados para entornos marinos',
-      image: '/assets/hero-epoxy-warehouse.jpg',
+      image: yatesImage,
       description: 'Pisos decorativos marinos con certificación MED para yates y objetos costeros',
       problems: [
         'Contacto constante con agua marina',

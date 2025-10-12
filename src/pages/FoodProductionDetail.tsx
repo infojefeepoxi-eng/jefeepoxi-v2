@@ -13,6 +13,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Beef, Milk, Cookie, Wine, ChefHat, Snowflake, ChevronDown, ChevronUp, Star, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import mataderosImage from '@/assets/mataderos-carnicos.png';
+import lacteosImage from '@/assets/lacteos-queserias.png';
+import panaderiasImage from '@/assets/panaderias-confiterias.png';
+import cerveceriasImage from '@/assets/cervecerias-bodegas.png';
+import restaurantesImage from '@/assets/restaurantes-cocinas.png';
+import camarasImage from '@/assets/camaras-frigorificas.png';
 
 const FoodProductionDetailContent = () => {
   const { t } = useLanguage();
@@ -162,7 +168,7 @@ const FoodProductionDetailContent = () => {
       icon: Beef,
       title: 'Mataderos y Cárnicos',
       subtitle: 'Sistemas higiénicos para procesamiento de carne',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: mataderosImage,
       description: 'Pisos antibacteriales para mataderos con contacto constante con sangre, grasas y proteínas',
       problems: [
         'Contacto constante con sangre, grasas y proteínas',
@@ -239,7 +245,7 @@ const FoodProductionDetailContent = () => {
       icon: Milk,
       title: 'Lácteos y Queserías',
       subtitle: 'Sistemas para máxima higiene alimentaria',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: lacteosImage,
       description: 'Pisos higiénicos para lácteos con resistencia al ácido láctico y limpieza con vapor',
       problems: [
         'Ácido láctico y productos alcalinos de limpieza',
@@ -316,7 +322,7 @@ const FoodProductionDetailContent = () => {
       icon: Cookie,
       title: 'Panaderías y Confiterías',
       subtitle: 'Sistemas para producción de pan y repostería',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: panaderiasImage,
       description: 'Pisos antibacteriales para panaderías resistentes a harinas, azúcares y grasas',
       problems: [
         'Polvo de harina por todas partes',
@@ -390,7 +396,7 @@ const FoodProductionDetailContent = () => {
       icon: Wine,
       title: 'Cervecerías y Bodegas',
       subtitle: 'Sistemas resistentes a ácidos y alcoholes',
-      image: '/assets/project-industrial-yellow.jpg',
+      image: cerveceriasImage,
       description: 'Pisos resistentes a ácidos orgánicos y alcoholes para cervecerías y bodegas',
       problems: [
         'Ácidos (láctico, acético)',
@@ -462,7 +468,7 @@ const FoodProductionDetailContent = () => {
       icon: ChefHat,
       title: 'Restaurantes y Cocinas',
       subtitle: 'Sistemas para cocinas profesionales',
-      image: '/assets/project-decorative-wood-marble.jpg',
+      image: restaurantesImage,
       description: 'Pisos antibacteriales para cocinas profesionales con máxima seguridad e higiene',
       problems: [
         'Grasas y aceites de cocción',
@@ -538,7 +544,7 @@ const FoodProductionDetailContent = () => {
       icon: Snowflake,
       title: 'Cámaras Frigoríficas',
       subtitle: 'Sistemas para temperaturas extremas',
-      image: '/assets/project-metallic-garage.jpg',
+      image: camarasImage,
       description: 'Pisos especiales para cámaras frigoríficas que curan a bajas temperaturas',
       problems: [
         'Temperaturas extremadamente bajas (-40°C)',

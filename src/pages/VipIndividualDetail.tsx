@@ -12,6 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Crown, Building, Palette, Hotel, Gem, Star as StarIcon, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import objetosExclusivosImage from '@/assets/objetos-exclusivos-luxury.png';
+import viviendasEliteImage from '@/assets/viviendas-elite-mansiones.png';
+import corporacionesFlagshipImage from '@/assets/corporaciones-flagship.png';
+import proyectosArtisticosImage from '@/assets/proyectos-artisticos-culturales.png';
+import joyeriasLuxuryImage from '@/assets/joyerias-luxury-boutiques.png';
+import hotelesExclusivosImage from '@/assets/hoteles-exclusivos-resorts.png';
 
 const VipIndividualDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +167,7 @@ const VipIndividualDetailContent = () => {
       icon: Crown,
       title: 'Objetos Exclusivos (Luxury)',
       subtitle: 'Soluciones 100% únicas para segmento luxury',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: objetosExclusivosImage,
       description: 'Sistemas completamente personalizados para objetos exclusivos con máximas exigencias',
       problems: [
         'Necesidad 100% unicidad (no como todos)',
@@ -237,7 +243,7 @@ const VipIndividualDetailContent = () => {
       icon: Building,
       title: 'Viviendas Elite y Mansiones',
       subtitle: 'Diseños exclusivos para residencias de lujo',
-      image: '/assets/project-decorative-wood-marble.jpg',
+      image: viviendasEliteImage,
       description: 'Sistemas exclusivos para residencias de lujo como en hoteles caros del mundo',
       problems: [
         'Quieren como en hoteles caros del mundo',
@@ -310,7 +316,7 @@ const VipIndividualDetailContent = () => {
       icon: Building,
       title: 'Corporaciones Flagship',
       subtitle: 'Soluciones corporativas para empresas líderes',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: corporacionesFlagshipImage,
       description: 'Sistemas corporativos que reflejan el estatus de la empresa',
       problems: [
         'Necesidad reflejar estatus empresa',
@@ -387,7 +393,7 @@ const VipIndividualDetailContent = () => {
       icon: Palette,
       title: 'Proyectos Artísticos y Culturales',
       subtitle: 'Integración del arte en arquitectura',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: proyectosArtisticosImage,
       description: 'Sistemas artísticos para galerías, museos y espacios culturales',
       problems: [
         'Necesidad expresión artística',
@@ -461,7 +467,7 @@ const VipIndividualDetailContent = () => {
       icon: Gem,
       title: 'Joyerías y Luxury Boutiques',
       subtitle: 'Pisos que realzan el lujo de los productos',
-      image: '/assets/project-decorative-metallic-gray.jpg',
+      image: joyeriasLuxuryImage,
       description: 'Sistemas exclusivos para joyerías que realzan el lujo y valor de los productos',
       problems: [
         'Piso debe subrayar lujo productos',
@@ -534,7 +540,7 @@ const VipIndividualDetailContent = () => {
       icon: Hotel,
       title: 'Hoteles Exclusivos y Resorts',
       subtitle: 'Signature look para hoteles de lujo',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: hotelesExclusivosImage,
       description: 'Sistemas exclusivos para hoteles que compiten con cadenas mundiales',
       problems: [
         'Competencia con cadenas hoteleras mundiales',

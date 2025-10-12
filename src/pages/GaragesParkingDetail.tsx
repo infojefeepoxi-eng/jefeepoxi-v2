@@ -12,6 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Car, Building, Wrench, Droplets, ChevronDown, ChevronUp, Star, Home, ParkingCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import garajesImage from '@/assets/garajes-residenciales.png';
+import parkingsVariosImage from '@/assets/parkings-varios-pisos.png';
+import talleresImage from '@/assets/talleres-autoservicios.png';
+import autolavadosImage from '@/assets/autolavados.png';
+import parkingsSubterImage from '@/assets/parkings-subterraneos.png';
+import parkingsComercialesImage from '@/assets/parkings-comerciales.png';
 
 const GaragesParkingDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +167,7 @@ const GaragesParkingDetailContent = () => {
       icon: Home,
       title: 'Garajes Residenciales',
       subtitle: 'Sistemas para garajes domésticos y privados',
-      image: '/assets/project-metallic-garage.jpg',
+      image: garajesImage,
       description: 'Pisos económicos para garajes domésticos que eliminan el polvo y resisten aceites',
       problems: [
         'Pil del piso de hormigón (coche siempre gris)',
@@ -239,7 +245,7 @@ const GaragesParkingDetailContent = () => {
       icon: Building,
       title: 'Parkings de Varios Pisos',
       subtitle: 'Sistemas para parkings comerciales en cubiertas',
-      image: '/assets/project-warehouse-before-after.jpg',
+      image: parkingsVariosImage,
       description: 'Sistemas impermeables para parkings en cubiertas con garantía vitalicia',
       problems: [
         'Filtración de agua a pisos inferiores',
@@ -322,7 +328,7 @@ const GaragesParkingDetailContent = () => {
       icon: Wrench,
       title: 'Talleres y Autoservicios',
       subtitle: 'Sistemas para talleres mecánicos y cambio de aceite',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: talleresImage,
       description: 'Pisos resistentes para talleres con equipos pesados y derrames constantes de aceites',
       problems: [
         'Manchas constantes de aceite, gasolina, lubricantes',
@@ -424,7 +430,7 @@ const GaragesParkingDetailContent = () => {
       icon: Droplets,
       title: 'Autolavados',
       subtitle: 'Sistemas para lavaderos de coches y autolavados',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: autolavadosImage,
       description: 'Pisos antideslizantes para autolavados con agua constante y productos químicos',
       problems: [
         'Agua constante y productos de limpieza',
@@ -507,7 +513,7 @@ const GaragesParkingDetailContent = () => {
       icon: Building,
       title: 'Parkings Subterráneos',
       subtitle: 'Sistemas para parkings de comunidades residenciales',
-      image: '/assets/project-industrial-yellow.jpg',
+      image: parkingsSubterImage,
       description: 'Soluciones económicas para parkings subterráneos que eliminan polvo y mejoran iluminación',
       problems: [
         'Humedad y ambiente húmedo',
@@ -584,7 +590,7 @@ const GaragesParkingDetailContent = () => {
       icon: ParkingCircle,
       title: 'Parkings Comerciales Grandes',
       subtitle: 'Sistemas para parkings de centros comerciales y grandes superficies',
-      image: '/assets/project-warehouse-before-after.jpg',
+      image: parkingsComercialesImage,
       description: 'Sistemas de montaje rápido por zonas para parkings comerciales de gran superficie',
       problems: [
         'Áreas grandes (5,000-20,000+ m²)',

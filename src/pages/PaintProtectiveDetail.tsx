@@ -12,6 +12,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Paintbrush, Home, Building, Warehouse, Shield, Hammer, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import objetosPequenosImage from '@/assets/objetos-pequenos.png';
+import oficinasAlmacenesImage from '@/assets/oficinas-almacenes-ligeros.png';
+import talleresGarajesImage from '@/assets/talleres-garajes-domesticos.png';
+import proteccionMetalImage from '@/assets/proteccion-metal.png';
+import sotanosLocalesImage from '@/assets/sotanos-locales-tecnicos.png';
 
 const PaintProtectiveDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +166,7 @@ const PaintProtectiveDetailContent = () => {
       icon: Home,
       title: 'Objetos Pequeños (Soluciones Económicas)',
       subtitle: 'Recubrimientos accesibles para áreas pequeñas',
-      image: '/assets/project-metallic-garage.jpg',
+      image: objetosPequenosImage,
       description: 'Soluciones económicas para objetos pequeños con presupuesto limitado',
       problems: [
         'Presupuesto limitado - sistemas caros no al alcance',
@@ -244,7 +249,7 @@ const PaintProtectiveDetailContent = () => {
       icon: Building,
       title: 'Oficinas y Almacenes Ligeros',
       subtitle: 'Recubrimientos premium para espacios comerciales',
-      image: '/assets/project-decorative-wood-marble.jpg',
+      image: oficinasAlmacenesImage,
       description: 'Recubrimientos tipo laca para oficinas y almacenes con carga ligera',
       problems: [
         'Necesidad renovación rápida',
@@ -328,7 +333,7 @@ const PaintProtectiveDetailContent = () => {
       icon: Hammer,
       title: 'Talleres y Garajes Domésticos',
       subtitle: 'Soluciones DIY para talleres caseros',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: talleresGarajesImage,
       description: 'Recubrimientos para talleres domésticos con posibilidad de aplicación DIY',
       problems: [
         'Necesita protección pero no muy caro',
@@ -403,7 +408,7 @@ const PaintProtectiveDetailContent = () => {
       icon: Shield,
       title: 'Protección Estructuras Metal',
       subtitle: 'Recubrimientos anticorrosión para metal',
-      image: '/assets/project-industrial-yellow.jpg',
+      image: proteccionMetalImage,
       description: 'Recubrimientos protectores para estructuras metálicas contra corrosión',
       problems: [
         'Corrosión pisos metálicos y plataformas',
@@ -483,7 +488,7 @@ const PaintProtectiveDetailContent = () => {
       icon: Warehouse,
       title: 'Sótanos y Locales Técnicos',
       subtitle: 'Protección contra humedad y consolidación',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: sotanosLocalesImage,
       description: 'Sistemas de protección contra humedad y consolidación para sótanos',
       problems: [
         'Humedad y ambiente húmedo',

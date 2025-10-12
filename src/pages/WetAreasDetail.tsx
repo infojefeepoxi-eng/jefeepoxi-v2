@@ -12,6 +12,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Droplets, Waves, Bath, Shirt, Sparkles, Car, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import lavaderosAutosImage from '@/assets/lavaderos-autos-detailing.png';
+import piscinasAquaparquesImage from '@/assets/piscinas-aquaparques.png';
+import duchasVestuariosImage from '@/assets/duchas-vestuarios.png';
+import lavanderiasImage from '@/assets/lavanderias-tintorerias.png';
+import banosPrivadosImage from '@/assets/banos-privados-residenciales.png';
 
 const WetAreasDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +166,7 @@ const WetAreasDetailContent = () => {
       icon: Car,
       title: 'Lavaderos de Autos y Detailing',
       subtitle: 'Sistemas antideslizantes para autolavados',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: lavaderosAutosImage,
       description: 'Pisos antideslizantes especiales para autolavados con agua constante y química agresiva',
       problems: [
         'Agua constante mezclada con champús y química',
@@ -244,7 +249,7 @@ const WetAreasDetailContent = () => {
       icon: Waves,
       title: 'Piscinas y Aquaparques',
       subtitle: 'Sistemas resistentes al cloro para zonas de piscinas',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: piscinasAquaparquesImage,
       description: 'Pisos especiales para piscinas resistentes al cloro con máxima antideslizante',
       problems: [
         'Cloro destruye recubrimientos normales',
@@ -328,7 +333,7 @@ const WetAreasDetailContent = () => {
       icon: Bath,
       title: 'Duchas y Vestuarios',
       subtitle: 'Recubrimientos sin juntas para duchas',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: duchasVestuariosImage,
       description: 'Sistemas sin juntas para duchas que eliminan el moho y mejoran la higiene',
       problems: [
         'Humedad constante y vapor',
@@ -411,7 +416,7 @@ const WetAreasDetailContent = () => {
       icon: Shirt,
       title: 'Lavanderías y Tintorerías',
       subtitle: 'Sistemas resistentes a detergentes y disolventes',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: lavanderiasImage,
       description: 'Pisos resistentes a detergentes agresivos y disolventes para lavanderías',
       problems: [
         'Detergentes agresivos y disolventes',
@@ -489,7 +494,7 @@ const WetAreasDetailContent = () => {
       icon: Bath,
       title: 'Baños Privados y Residenciales',
       subtitle: 'Alternativa moderna a las baldosas',
-      image: '/assets/project-decorative-wood-marble.jpg',
+      image: banosPrivadosImage,
       description: 'Baños sin juntas como alternativa moderna a las baldosas tradicionales',
       problems: [
         'Baldosas ducha constantemente con moho en juntas',

@@ -12,6 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Cpu, FlaskConical, Hospital, Flame, Microscope, Zap, ChevronDown, ChevronUp, Star, Thermometer } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import fabricasElectronicasImage from '@/assets/fabricas-electronicas.png';
+import laboratoriosImage from '@/assets/laboratorios-quimicos.png';
+import altasTemperaturasImage from '@/assets/altas-temperaturas.png';
+import hospitalesImage from '@/assets/hospitales-medicos.png';
+import salasLimpiasImage from '@/assets/salas-limpias.png';
+import centrosInvestigacionImage from '@/assets/centros-investigacion.png';
 
 const TechnicalSpecialDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +167,7 @@ const TechnicalSpecialDetailContent = () => {
       icon: Cpu,
       title: 'Fábricas Electrónicas',
       subtitle: 'Sistemas antiestáticos ESD para protección de componentes',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: fabricasElectronicasImage,
       description: 'Pisos antiestáticos certificados para fábricas de electrónica que protegen contra descargas electrostáticas',
       problems: [
         'Electricidad estática destruye microchips y placas',
@@ -252,7 +258,7 @@ const TechnicalSpecialDetailContent = () => {
       icon: FlaskConical,
       title: 'Laboratorios Químicos',
       subtitle: 'Sistemas químico-resistentes para laboratorios analíticos',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: laboratoriosImage,
       description: 'Pisos con máxima resistencia química para laboratorios con ácidos, álcalis y disolventes',
       problems: [
         'Derrames de ácidos, álcalis, disolventes',
@@ -334,7 +340,7 @@ const TechnicalSpecialDetailContent = () => {
       icon: Hospital,
       title: 'Hospitales y Centros Médicos',
       subtitle: 'Sistemas higiénicos para instalaciones médicas',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: hospitalesImage,
       description: 'Pisos antibacteriales para hospitales con máxima higiene y resistencia a desinfectantes',
       problems: [
         'Necesidad de esterilidad',
@@ -392,7 +398,7 @@ const TechnicalSpecialDetailContent = () => {
       icon: Flame,
       title: 'Altas Temperaturas',
       subtitle: 'Sistemas para hornos, calderas y fundiciones',
-      image: '/assets/project-industrial-yellow.jpg',
+      image: altasTemperaturasImage,
       description: 'Pisos refractarios para producciones de alta temperatura que resisten hasta 1000°C',
       problems: [
         'Recubrimientos normales se derriten/queman',
@@ -456,7 +462,7 @@ const TechnicalSpecialDetailContent = () => {
       icon: Microscope,
       title: 'Salas Limpias (Cleanrooms)',
       subtitle: 'Sistemas para ambientes controlados ISO 14644',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: salasLimpiasImage,
       description: 'Pisos perfectamente lisos para salas limpias con cero generación de polvo',
       problems: [
         'Clases limpieza ISO 14644 (clase 1-9)',
@@ -534,7 +540,7 @@ const TechnicalSpecialDetailContent = () => {
       icon: Microscope,
       title: 'Centros de Investigación',
       subtitle: 'Sistemas universales para centros de I+D',
-      image: '/assets/project-decorative-wood-marble.jpg',
+      image: centrosInvestigacionImage,
       description: 'Pisos versátiles para centros de investigación con diferentes tipos de estudios',
       problems: [
         'Diferentes tipos de investigaciones - diferentes requisitos',

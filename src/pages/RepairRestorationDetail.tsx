@@ -12,6 +12,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Wrench, Building, Home, Factory, Hammer, Settings, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import reparacionGrietasImage from '@/assets/reparacion-grietas-baches.png';
+import restauracionRecubrimientosImage from '@/assets/restauracion-recubrimientos.png';
+import selladoJuntasImage from '@/assets/sellado-juntas.png';
+import renovacionGarajesImage from '@/assets/renovacion-garajes.png';
+import renovacionPisosComercialesImage from '@/assets/renovacion-pisos-comerciales.png';
 
 const RepairRestorationDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +166,7 @@ const RepairRestorationDetailContent = () => {
       icon: Hammer,
       title: 'Reparación de Grietas y Baches',
       subtitle: 'Reparación estructural de daños en hormigón',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: reparacionGrietasImage,
       description: 'Reparación duradera de grietas y baches con sistemas más fuertes que el hormigón original',
       problems: [
         'Grietas en piso hormigón (por asentamiento, cargas)',
@@ -221,7 +226,7 @@ const RepairRestorationDetailContent = () => {
       icon: Building,
       title: 'Restauración de Recubrimientos Antiguos',
       subtitle: 'Renovación sobre recubrimientos existentes',
-      image: '/assets/project-decorative-white-black.jpg',
+      image: restauracionRecubrimientosImage,
       description: 'Renovación económica de recubrimientos antiguos sin demolición completa',
       problems: [
         'Recubrimiento epoxi viejo se descascara',
@@ -302,7 +307,7 @@ const RepairRestorationDetailContent = () => {
       icon: Settings,
       title: 'Sellado de Juntas y Conexiones',
       subtitle: 'Sellado elástico de juntas de dilatación',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: selladoJuntasImage,
       description: 'Sellado profesional de juntas de dilatación y conexiones con materiales elásticos',
       problems: [
         'Juntas dilatación se separaron',
@@ -388,7 +393,7 @@ const RepairRestorationDetailContent = () => {
       icon: Home,
       title: 'Renovación Garajes Residenciales',
       subtitle: 'Renovación completa de garajes domésticos',
-      image: '/assets/project-metallic-garage.jpg',
+      image: renovacionGarajesImage,
       description: 'Renovación completa de garajes domésticos eliminando manchas y daños',
       problems: [
         'Manchas aceite absorbidas durante años',
@@ -443,7 +448,7 @@ const RepairRestorationDetailContent = () => {
       icon: Factory,
       title: 'Renovación Pisos Comerciales',
       subtitle: 'Renovación rápida de oficinas y comercios',
-      image: '/assets/project-decorative-wood-marble.jpg',
+      image: renovacionPisosComercialesImage,
       description: 'Renovación rápida de pisos comerciales sin cerrar el negocio',
       problems: [
         'Desgaste en zonas alto tráfico',

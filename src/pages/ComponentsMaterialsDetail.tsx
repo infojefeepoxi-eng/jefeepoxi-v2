@@ -12,6 +12,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft, CheckCircle, Phone, MessageCircle, Package, Palette, Mountain, Settings, Zap, Hammer, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import pigmentosPolvoImage from '@/assets/pigmentos-polvo-coloracion.png';
+import agregadosCuarzoImage from '@/assets/agregados-cuarzo.png';
+import selladoresJuntasImage from '@/assets/selladores-juntas.png';
+import componentesEspecialesImage from '@/assets/componentes-especiales.png';
 
 const ComponentsMaterialsDetailContent = () => {
   const { t } = useLanguage();
@@ -161,7 +165,7 @@ const ComponentsMaterialsDetailContent = () => {
       icon: Palette,
       title: 'Pigmentos en Polvo para Coloración',
       subtitle: '8 colores estándar para todos los sistemas',
-      image: '/assets/project-decorative-gold-black.jpg',
+      image: pigmentosPolvoImage,
       description: 'Pigmentos en polvo compatibles con todos los sistemas Epoxi M² para coloración personalizada',
       problems: [
         'Necesidad color concreto para proyecto',
@@ -275,7 +279,7 @@ const ComponentsMaterialsDetailContent = () => {
       icon: Mountain,
       title: 'Agregados de Cuarzo',
       subtitle: 'Rellenos para refuerzo y efectos antideslizantes',
-      image: '/assets/project-decorative-metallic-gray.jpg',
+      image: agregadosCuarzoImage,
       description: 'Agregados de cuarzo para refuerzo de resistencia y creación de superficies antideslizantes',
       problems: [
         'Necesidad refuerzo resistencia recubrimiento',
@@ -376,7 +380,7 @@ const ComponentsMaterialsDetailContent = () => {
       icon: Settings,
       title: 'Selladores para Juntas',
       subtitle: 'Selladores elásticos para juntas de dilatación',
-      image: '/assets/project-industrial-blue-gray.jpg',
+      image: selladoresJuntasImage,
       description: 'Selladores especializados para juntas de dilatación y conexiones flexibles',
       problems: [
         'Juntas dilatación necesitan sellado',
@@ -463,7 +467,7 @@ const ComponentsMaterialsDetailContent = () => {
       icon: Zap,
       title: 'Componentes Especiales',
       subtitle: 'Aceleradores, imprimaciones y componentes técnicos',
-      image: '/assets/project-industrial-yellow.jpg',
+      image: componentesEspecialesImage,
       description: 'Componentes especiales para condiciones complejas y necesidades técnicas específicas',
       problems: [
         'Condiciones aplicación complejas',
