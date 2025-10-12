@@ -1032,10 +1032,10 @@ const FoodProductionDetailContent = () => {
                   </CardContent>
                 </Card>
 
-                {/* Warranty and Service */}
+                {/* Quality and Service */}
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Garantía</CardTitle>
+                    <CardTitle className="text-lg text-primary">Calidad y Certificación</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">

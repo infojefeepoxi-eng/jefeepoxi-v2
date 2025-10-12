@@ -917,7 +917,7 @@ const WetAreasDetailContent = () => {
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Garantía vitalicia impermeabilización
+                        Impermeabilización de máxima calidad
                       </li>
                     </ul>
                   </CardContent>
@@ -954,24 +954,24 @@ const WetAreasDetailContent = () => {
                   </CardContent>
                 </Card>
 
-                {/* Maintenance and Warranty */}
+                {/* Maintenance and Service */}
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Mantenimiento y Garantía</CardTitle>
+                    <CardTitle className="text-lg text-primary">Mantenimiento y Servicio</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Garantía impermeabilización vitalicia
+                        Impermeabilización de máxima calidad
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Garantía antideslizante 10 años
+                        Superficie antideslizante certificada
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Esquinas redondeadas 15 años garantía
+                        Esquinas redondeadas de calidad premium
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />

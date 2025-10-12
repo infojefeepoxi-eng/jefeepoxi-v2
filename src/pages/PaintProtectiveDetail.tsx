@@ -971,7 +971,7 @@ const PaintProtectiveDetailContent = () => {
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Garantía material 5-8 años
+                        Materiales de calidad profesional
                       </li>
                     </ul>
                   </CardContent>

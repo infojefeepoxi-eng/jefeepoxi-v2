@@ -454,7 +454,7 @@ const UrgentWorkDetailContent = () => {
       solutions: [
         'Restauración rápida = menos pérdidas',
         'Documentación completa',
-        'Garantía en restauración',
+        'Restauración profesional',
         'Materiales certificados'
       ],
       systems: [
@@ -473,7 +473,7 @@ const UrgentWorkDetailContent = () => {
           whyBest: [
             'Restauración rápida = menos pérdidas',
             'Documentación completa',
-            'Garantía en restauración',
+            'Restauración profesional',
             'Materiales certificados'
           ],
           finish: 'Mortero estructural reparación',
@@ -957,7 +957,7 @@ const UrgentWorkDetailContent = () => {
                 {/* Guarantees */}
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Nuestras Garantías Express</CardTitle>
+                    <CardTitle className="text-lg text-primary">Nuestro Servicio Express</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">
@@ -975,7 +975,7 @@ const UrgentWorkDetailContent = () => {
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Garantía - completa como sistemas normales
+                        Calidad profesional garantizada
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />

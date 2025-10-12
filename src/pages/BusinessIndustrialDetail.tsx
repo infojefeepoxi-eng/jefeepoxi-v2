@@ -883,16 +883,16 @@ const BusinessIndustrialDetailContent = () => {
                   </CardContent>
                 </Card>
 
-                {/* Warranty and Service */}
+                {/* Quality and Service */}
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Garantía y Servicio</CardTitle>
+                    <CardTitle className="text-lg text-primary">Calidad y Servicio</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Hasta 15 años de garantía
+                        Sistemas de máxima durabilidad
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />

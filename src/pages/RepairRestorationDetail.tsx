@@ -217,7 +217,7 @@ const RepairRestorationDetailContent = () => {
             'Nivelación nivel piso',
             'Recubrimiento sistema principal (si necesario)'
           ],
-          warranty: '10 años reparación (¡más que garantía edificio!)'
+          durability: 'Reparación de larga duración'
         }
       ]
     },
@@ -439,7 +439,7 @@ const RepairRestorationDetailContent = () => {
             'Listo: ¡Garaje como nuevo!'
           ],
           time: '2-3 días reparación',
-          warranty: '5 años'
+          durability: 'Sistema duradero'
         }
       ]
     },
@@ -530,7 +530,7 @@ const RepairRestorationDetailContent = () => {
                   ✓ Más fuerte que hormigón original
                 </div>
                 <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
-                  ✓ Garantía hasta 10 años
+                  ✓ Reparación duradera
                 </div>
                 <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">
                   ✓ Sin demolición completa
@@ -843,7 +843,7 @@ const RepairRestorationDetailContent = () => {
                 {/* Quality Guarantee */}
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Garantía de Calidad</CardTitle>
+                    <CardTitle className="text-lg text-primary">Control de Calidad</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">
@@ -857,7 +857,7 @@ const RepairRestorationDetailContent = () => {
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Garantía reparación - hasta 10 años
+                        Reparación de máxima durabilidad
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />

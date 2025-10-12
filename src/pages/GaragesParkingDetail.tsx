@@ -246,7 +246,7 @@ const GaragesParkingDetailContent = () => {
       title: 'Parkings de Varios Pisos',
       subtitle: 'Sistemas para parkings comerciales en cubiertas',
       image: parkingsVariosImage,
-      description: 'Sistemas impermeables para parkings en cubiertas con garantía vitalicia',
+      description: 'Sistemas impermeables para parkings en cubiertas con máxima durabilidad',
       problems: [
         'Filtración de agua a pisos inferiores',
         'Deterioro del hormigón por sal en invierno',
@@ -705,7 +705,7 @@ const GaragesParkingDetailContent = () => {
                   ✓ Montaje rápido
                 </div>
                 <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">
-                  ✓ Garantía vitalicia
+                  ✓ Máxima durabilidad
                 </div>
               </div>
             </div>
@@ -1029,22 +1029,22 @@ const GaragesParkingDetailContent = () => {
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Garantía vitalicia impermeabilización
+                        Impermeabilización de máxima calidad
                       </li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                {/* Maintenance and Warranty */}
+                {/* Maintenance and Support */}
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Garantía y Mantenimiento</CardTitle>
+                    <CardTitle className="text-lg text-primary">Servicio y Mantenimiento</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Hasta 15 años garantía sistema
+                        Sistema de máxima durabilidad
                       </li>
                       <li className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -1194,7 +1194,7 @@ const GaragesParkingDetailContent = () => {
                       </li>
                       <li className="flex items-center text-sm text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Propuesta técnica con garantías
+                        Propuesta técnica profesional
                       </li>
                     </ul>
                   </CardContent>
@@ -1299,9 +1299,9 @@ const GaragesParkingDetailContent = () => {
                   <CardContent>
                     <ul className="space-y-1 text-sm text-muted-foreground">
                       <li><strong>Sistema:</strong> EpoxiCubierta M² Express (por zonas)</li>
-                      <li><strong>Impermeabilización:</strong> Total, 100% garantía</li>
+                      <li><strong>Impermeabilización:</strong> Total, máxima calidad</li>
                       <li><strong>Tiempo:</strong> 20 días (por zonas, parking funcionó)</li>
-                      <li><strong>Resultado:</strong> Sin filtraciones, garantía vitalicia impermeabilización</li>
+                      <li><strong>Resultado:</strong> Sin filtraciones, impermeabilización duradera</li>
                     </ul>
                   </CardContent>
                 </Card>

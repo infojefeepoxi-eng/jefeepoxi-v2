@@ -285,7 +285,7 @@ const VipIndividualDetailContent = () => {
             '"Art Deco" - patrones geométricos vidrio coloreado'
           ],
           time: '14-21 días trabajo manual + pulido',
-          warranty: '25 años recubrimiento'
+          durability: 'Recubrimiento de máxima calidad'
         },
         {
           name: 'EpoxiArte M² Classic + Efectos Artísticos',
@@ -649,7 +649,7 @@ const VipIndividualDetailContent = () => {
                   ✓ Diseño exclusivo
                 </div>
                 <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">
-                  ✓ Garantía hasta 25 años
+                  ✓ Máxima calidad y durabilidad
                 </div>
               </div>
             </div>
@@ -836,10 +836,10 @@ const VipIndividualDetailContent = () => {
                                             <span className="font-medium">{system.finish}</span>
                                           </div>
                                         )}
-                                        {system.warranty && (
+                                        {system.durability && (
                                           <div>
-                                            <span className="text-muted-foreground">Garantía: </span>
-                                            <span className="font-medium">{system.warranty}</span>
+                                            <span className="text-muted-foreground">Durabilidad: </span>
+                                            <span className="font-medium">{system.durability}</span>
                                           </div>
                                         )}
                                       </div>
@@ -1009,7 +1009,7 @@ const VipIndividualDetailContent = () => {
                 {/* VIP Guarantees */}
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Garantías VIP</CardTitle>
+                    <CardTitle className="text-lg text-primary">Servicio VIP</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-sm text-muted-foreground">

@@ -1219,7 +1219,7 @@ const DecorativeFloorsDetailContent = () => {
               <div className="mt-8 text-center">
                 <Card className="border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">Garantía Premium</CardTitle>
+                    <CardTitle className="text-lg text-primary">Calidad Premium</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-muted-foreground">
