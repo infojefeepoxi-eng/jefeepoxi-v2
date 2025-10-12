@@ -285,7 +285,6 @@ const PaintProtectiveDetailContent = () => {
             'No deja marcas de calzado',
             'Montaje rápido - oficina funciona'
           ],
-          finish: 'Brillante tipo laca',
           technology: [
             'Preparación: Lijado ligero',
             'Imprimación: EpoxiBase M² Imprimación',

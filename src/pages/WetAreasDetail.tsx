@@ -541,7 +541,7 @@ const WetAreasDetailContent = () => {
             'Sellado todas conexiones'
           ],
           result: 'Baño como taza monolítica',
-          colors: [
+          colorOptions: [
             'Blanco (clásico, limpieza)',
             'Azul claro (temática marina)',
             'Beige (cálido, acogedor)',
