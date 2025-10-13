@@ -11,9 +11,12 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useToast } from '@/hooks/use-toast';
+import { sendQuoteEmail } from '@/lib/emailService';
 
 const AiFloorVisualizer = () => {
   const { language } = useLanguage();
+  const { toast } = useToast();
   const [roomImage, setRoomImage] = useState<string | null>(null);
   const [referenceImage, setReferenceImage] = useState<string | null>(null);
   const [prompt, setPrompt] = useState<string>(
@@ -41,9 +44,9 @@ const AiFloorVisualizer = () => {
     phone: '',
     surface: '',
     address: '',
-    finish: '',
-    description: '',
-    privacy: false
+    finishType: '',
+    message: '',
+    gdprConsent: false
   });
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
@@ -255,26 +258,57 @@ const AiFloorVisualizer = () => {
   // Handle quote form submission
   const handleQuoteSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!formData.gdprConsent) {
+      toast({
+        title: language === 'es' ? 'Error' : 'Error',
+        description: language === 'es' 
+          ? 'Debe aceptar la política de privacidad para continuar' 
+          : 'You must accept the privacy policy to continue',
+        variant: 'destructive',
+      });
+      return;
+    }
+    
     setFormSubmitting(true);
 
     try {
-      // Here you would send the form data to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Add AI Visualizer specific note to message
+      const enrichedFormData = {
+        ...formData,
+        message: `[SOLICITUD DESDE AI VISUALIZADOR]\n\nEste cliente solicitó acceso a generaciones adicionales de AI.\n\nPor favor, enviar código de acceso: 2b5715b o ffdf2f8\n\n${formData.message || 'Sin descripción adicional'}`
+      };
+      
+      // Send email using the same service as main contact form
+      await sendQuoteEmail(enrichedFormData);
       
       setFormSuccess(true);
+      toast({
+        title: language === 'es' ? '¡Solicitud enviada!' : 'Request sent!',
+        description: language === 'es' 
+          ? 'Recibirás un código de acceso por email en las próximas 24 horas.' 
+          : 'You will receive an access code by email within 24 hours.',
+      });
+      
       setFormData({
         name: '',
         email: '',
         phone: '',
         surface: '',
         address: '',
-        finish: '',
-        description: '',
-        privacy: false
+        finishType: '',
+        message: '',
+        gdprConsent: false
       });
     } catch (error) {
       console.error('Form submission error:', error);
+      toast({
+        title: language === 'es' ? 'Error al enviar' : 'Sending error',
+        description: language === 'es' 
+          ? 'Hubo un problema. Por favor, llámanos directamente al +34 622 313 855' 
+          : 'There was a problem. Please call us directly at +34 622 313 855',
+        variant: 'destructive',
+      });
     } finally {
       setFormSubmitting(false);
     }
@@ -550,18 +584,22 @@ const AiFloorVisualizer = () => {
               </p>
 
               {formSuccess ? (
-                <div className="p-5 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Check className="w-6 h-6 text-green-600" />
-                    <h4 className="font-bold text-green-800">
-                      {language === 'es' ? '¡Solicitud enviada!' : 'Request sent!'}
-                    </h4>
+                <div className="p-6 bg-gradient-to-br from-emerald-900/90 to-green-900/90 border-2 border-emerald-600/50 rounded-xl shadow-lg">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-600/20 flex items-center justify-center">
+                      <Check className="w-6 h-6 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg text-emerald-50 mb-2">
+                        {language === 'es' ? '¡Solicitud enviada con éxito!' : 'Request sent successfully!'}
+                      </h4>
+                      <p className="text-sm text-emerald-100/90 leading-relaxed">
+                        {language === 'es' 
+                          ? 'Gracias por tu interés. Recibirás un código de acceso para 2 generaciones adicionales por email en las próximas 24 horas.' 
+                          : 'Thank you for your interest. You will receive an access code for 2 additional generations by email within 24 hours.'}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-sm text-green-700">
-                    {language === 'es' 
-                      ? 'Recibirás un código de acceso por email en las próximas 24 horas.' 
-                      : 'You will receive an access code by email within 24 hours.'}
-                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleQuoteSubmit} className="space-y-4">
@@ -637,8 +675,8 @@ const AiFloorVisualizer = () => {
                       {language === 'es' ? 'Tipo de acabado deseado' : 'Desired finish type'}
                     </Label>
                     <Input
-                      value={formData.finish}
-                      onChange={(e) => setFormData({...formData, finish: e.target.value})}
+                      value={formData.finishType}
+                      onChange={(e) => setFormData({...formData, finishType: e.target.value})}
                       placeholder={language === 'es' ? 'ej. Industrial, decorativo...' : 'e.g. Industrial, decorative...'}
                       className="mt-1"
                     />
@@ -649,8 +687,8 @@ const AiFloorVisualizer = () => {
                       {language === 'es' ? 'Descripción del proyecto' : 'Project description'}
                     </Label>
                     <Textarea
-                      value={formData.description}
-                      onChange={(e) => setFormData({...formData, description: e.target.value})}
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
                       placeholder={language === 'es' ? 'Cuéntanos más detalles...' : 'Tell us more details...'}
                       rows={3}
                       className="mt-1 resize-none"
@@ -660,8 +698,8 @@ const AiFloorVisualizer = () => {
                   <div className="flex items-start gap-2">
                     <Checkbox
                       id="privacy"
-                      checked={formData.privacy}
-                      onCheckedChange={(checked) => setFormData({...formData, privacy: checked as boolean})}
+                      checked={formData.gdprConsent}
+                      onCheckedChange={(checked) => setFormData({...formData, gdprConsent: checked as boolean})}
                       required
                     />
                     <label htmlFor="privacy" className="text-xs text-muted-foreground leading-tight cursor-pointer">
@@ -671,7 +709,7 @@ const AiFloorVisualizer = () => {
                     </label>
                   </div>
 
-                  <Button type="submit" disabled={formSubmitting || !formData.privacy} className="w-full" size="lg">
+                  <Button type="submit" disabled={formSubmitting || !formData.gdprConsent} className="w-full" size="lg">
                     {formSubmitting ? (
                       <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> {language === 'es' ? 'Enviando...' : 'Sending...'}</>
                     ) : (
@@ -683,16 +721,17 @@ const AiFloorVisualizer = () => {
             </div>
 
             {/* Info Box */}
-            <div className="p-5 bg-gradient-to-r from-blue-50 via-blue-50/50 to-indigo-50 border-2 border-blue-200/50 rounded-xl shadow-sm">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Info className="w-5 h-5 text-blue-600" />
+            <div className="p-6 bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 border-2 border-primary/20 rounded-xl shadow-md">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Info className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-bold text-blue-900 mb-1.5 text-base">
-                    {language === 'es' ? '📧 Recibirás tu código por email' : '📧 You will receive your code by email'}
+                  <p className="font-bold text-foreground mb-2 text-base flex items-center gap-2">
+                    <span>📧</span>
+                    {language === 'es' ? 'Recibirás tu código por email' : 'You will receive your code by email'}
                   </p>
-                  <p className="text-sm text-blue-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {language === 'es' 
                       ? 'Después de enviar el formulario, revisaremos tu solicitud y te enviaremos un código de acceso para 2 generaciones adicionales en un plazo de 24 horas.' 
                       : 'After submitting the form, we will review your request and send you an access code for 2 additional generations within 24 hours.'}
