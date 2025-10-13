@@ -522,7 +522,7 @@ const AiFloorVisualizer = () => {
 
       {/* Generation Limit Modal */}
       <Dialog open={showLimitModal} onOpenChange={setShowLimitModal}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto custom-scrollbar">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-2xl">
               <Lock className="w-6 h-6 text-primary" />
