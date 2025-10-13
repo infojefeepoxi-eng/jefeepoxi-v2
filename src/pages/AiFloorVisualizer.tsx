@@ -5,9 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info, Download, Loader2 } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info, Download, Loader2, Lock, Key, Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 const AiFloorVisualizer = () => {
   const { language } = useLanguage();
@@ -15,12 +17,21 @@ const AiFloorVisualizer = () => {
   const [referenceImage, setReferenceImage] = useState<string | null>(null);
   const [prompt, setPrompt] = useState<string>(
     language === 'es' 
-      ? 'Piso epoxi metalizado gris con acabado satinado' 
-      : 'Gray metallic epoxy floor with satin finish'
+      ? 'Reemplaza el piso actual con un suelo epoxi como se muestra en la imagen.' 
+      : 'Replace the current floor with an epoxy floor as shown in the image.'
   );
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [resultImage, setResultImage] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  
+  // Generation limit system
+  const [generationsUsed, setGenerationsUsed] = useState<number>(0);
+  const [generationsAvailable, setGenerationsAvailable] = useState<number>(1);
+  const [isUnlimited, setIsUnlimited] = useState<boolean>(false);
+  const [usedCodes, setUsedCodes] = useState<string[]>([]);
+  const [showLimitModal, setShowLimitModal] = useState<boolean>(false);
+  const [accessCode, setAccessCode] = useState<string>('');
+  const [codeError, setCodeError] = useState<string>('');
 
   const roomInputRef = useRef<HTMLInputElement | null>(null);
   const refInputRef = useRef<HTMLInputElement | null>(null);
@@ -76,6 +87,12 @@ const AiFloorVisualizer = () => {
 
   const generatePreview = async () => {
     if (!roomImage) return;
+    
+    // Check generation limit
+    if (!checkGenerationLimit()) {
+      return;
+    }
+    
     setIsLoading(true);
     setErrorMsg(null);
     
@@ -103,6 +120,8 @@ const AiFloorVisualizer = () => {
       const data = await res.json();
       if (data?.image_base64) {
         setResultImage(`data:image/png;base64,${data.image_base64}`);
+        // Increment generations used
+        setGenerationsUsed(prev => prev + 1);
       } else {
         throw new Error('No image_base64 in response');
       }
@@ -140,6 +159,83 @@ const AiFloorVisualizer = () => {
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [isLoading, language]);
+
+  // Load generation limits from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('ai_generation_limits');
+    if (saved) {
+      try {
+        const data = JSON.parse(saved);
+        setGenerationsUsed(data.used || 0);
+        setGenerationsAvailable(data.available || 1);
+        setIsUnlimited(data.isUnlimited || false);
+        setUsedCodes(data.usedCodes || []);
+      } catch (e) {
+        console.error('Error loading generation limits:', e);
+      }
+    }
+  }, []);
+
+  // Save to localStorage whenever state changes
+  useEffect(() => {
+    const data = {
+      used: generationsUsed,
+      available: generationsAvailable,
+      isUnlimited: isUnlimited,
+      usedCodes: usedCodes
+    };
+    localStorage.setItem('ai_generation_limits', JSON.stringify(data));
+  }, [generationsUsed, generationsAvailable, isUnlimited, usedCodes]);
+
+  // Verify access code
+  const verifyAccessCode = () => {
+    setCodeError('');
+    const code = accessCode.trim().toLowerCase();
+    
+    // Check if code already used
+    if (usedCodes.includes(code)) {
+      setCodeError(language === 'es' 
+        ? 'Este código ya fue utilizado' 
+        : 'This code has already been used');
+      return;
+    }
+
+    // Valid codes
+    const codes = {
+      '2b5715b': 2,  // +2 generations
+      'ffdf2f8': 2,  // +2 generations  
+      '112300': -1   // Unlimited (admin)
+    };
+
+    if (codes[code] !== undefined) {
+      if (code === '112300') {
+        // Admin code - unlimited
+        setIsUnlimited(true);
+        setGenerationsAvailable(999);
+      } else {
+        // Regular code - add generations
+        setGenerationsAvailable(prev => prev + codes[code]);
+      }
+      
+      setUsedCodes(prev => [...prev, code]);
+      setAccessCode('');
+      setShowLimitModal(false);
+      setCodeError('');
+    } else {
+      setCodeError(language === 'es' 
+        ? 'Código inválido. Solicita presupuesto para recibir uno.' 
+        : 'Invalid code. Request a quote to receive one.');
+    }
+  };
+
+  // Check if generation is allowed
+  const checkGenerationLimit = (): boolean => {
+    if (isUnlimited) return true;
+    if (generationsUsed < generationsAvailable) return true;
+    
+    setShowLimitModal(true);
+    return false;
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -240,9 +336,10 @@ const AiFloorVisualizer = () => {
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder={language === 'es' 
-                      ? 'Ej: Piso epoxi autonivelante gris RAL 7042, satinado, antideslizante R11'
-                      : 'E.g.: Self-leveling gray RAL 7042 epoxy floor, satin finish, non-slip R11'}
-                    rows={3}
+                      ? 'Ej: Reemplaza el piso actual con un suelo epoxi como se muestra en la imagen.'
+                      : 'E.g.: Replace the current floor with an epoxy floor as shown in the image.'}
+                    rows={4}
+                    className="resize-none"
                   />
                 </div>
 
@@ -258,19 +355,28 @@ const AiFloorVisualizer = () => {
                 </Button>
 
                 {isLoading && (
-                  <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-md text-sm text-blue-700 flex items-start gap-2">
-                    <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-semibold">
-                        {language === 'es' 
-                          ? '⏱️ Generación en progreso...' 
-                          : '⏱️ Generation in progress...'}
-                      </p>
-                      <p className="mt-1 text-xs">
-                        {language === 'es' 
-                          ? 'Esto puede tardar 30-60 segundos. Por favor, no cierres esta página.' 
-                          : 'This may take 30-60 seconds. Please do not close this page.'}
-                      </p>
+                  <div className="mt-4 p-5 bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border-2 border-primary/20 rounded-xl shadow-lg">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Loader2 className="w-6 h-6 text-primary animate-spin" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-primary mb-2">
+                          {language === 'es' 
+                            ? '⏱️ Generación en progreso...' 
+                            : '⏱️ Generation in progress...'}
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {language === 'es' 
+                            ? 'Nuestro sistema de IA está procesando tu imagen. Esto puede tardar 30-60 segundos. Por favor, mantén esta página abierta.' 
+                            : 'Our AI system is processing your image. This may take 30-60 seconds. Please keep this page open.'}
+                        </p>
+                        <div className="mt-3 flex items-center gap-2 text-xs text-primary/70">
+                          <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                          <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse delay-75"></span>
+                          <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse delay-150"></span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -336,6 +442,95 @@ const AiFloorVisualizer = () => {
           </div>
         </section>
       </main>
+
+      {/* Generation Limit Modal */}
+      <Dialog open={showLimitModal} onOpenChange={setShowLimitModal}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-2xl">
+              <Lock className="w-6 h-6 text-primary" />
+              {language === 'es' ? 'Generación Limitada' : 'Limited Generation'}
+            </DialogTitle>
+            <DialogDescription className="text-base">
+              {language === 'es' 
+                ? 'Has utilizado tu generación gratuita. Para continuar, introduce un código de acceso o solicita presupuesto.' 
+                : 'You have used your free generation. To continue, enter an access code or request a quote.'}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-6 mt-4">
+            {/* Code Input Section */}
+            <div className="p-5 border-2 border-primary/20 rounded-xl bg-primary/5">
+              <div className="flex items-center gap-2 mb-3">
+                <Key className="w-5 h-5 text-primary" />
+                <h3 className="font-bold text-lg">
+                  {language === 'es' ? '¿Ya tienes un código?' : 'Already have a code?'}
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4">
+                {language === 'es' 
+                  ? 'Si ya solicitaste presupuesto y recibiste un código por email, introdúcelo aquí:' 
+                  : 'If you already requested a quote and received a code by email, enter it here:'}
+              </p>
+              
+              <div className="flex gap-2">
+                <Input
+                  value={accessCode}
+                  onChange={(e) => setAccessCode(e.target.value)}
+                  placeholder={language === 'es' ? 'Introduce tu código' : 'Enter your code'}
+                  className="flex-1"
+                  onKeyDown={(e) => e.key === 'Enter' && verifyAccessCode()}
+                />
+                <Button onClick={verifyAccessCode} className="px-6">
+                  <Check className="w-4 h-4 mr-2" />
+                  {language === 'es' ? 'Verificar' : 'Verify'}
+                </Button>
+              </div>
+              
+              {codeError && (
+                <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-md flex items-start gap-2">
+                  <X className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-red-600">{codeError}</p>
+                </div>
+              )}
+            </div>
+
+            {/* Request Quote Section */}
+            <div className="p-5 border-2 border-muted rounded-xl">
+              <h3 className="font-bold text-lg mb-2">
+                {language === 'es' ? '¿No tienes código? Solicita uno gratis' : 'Don\'t have a code? Request one for free'}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                {language === 'es' 
+                  ? 'Completa el formulario de contacto y recibirás un código de acceso para 2 generaciones adicionales por email.' 
+                  : 'Complete the contact form and you will receive an access code for 2 additional generations by email.'}
+              </p>
+              
+              <Link to="/#contact">
+                <Button variant="default" className="w-full" size="lg">
+                  {language === 'es' ? 'Ir a Solicitar Presupuesto' : 'Go to Request Quote'}
+                </Button>
+              </Link>
+            </div>
+
+            {/* Info Box */}
+            <div className="p-4 bg-blue-50 border border-blue-200 rounded-md flex items-start gap-2">
+              <Info className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+              <div className="text-sm text-blue-700">
+                <p className="font-semibold mb-1">
+                  {language === 'es' ? '📧 Recibirás tu código por email' : '📧 You will receive your code by email'}
+                </p>
+                <p>
+                  {language === 'es' 
+                    ? 'Después de enviar el formulario, revisaremos tu solicitud y te enviaremos un código de acceso para 2 generaciones adicionales.' 
+                    : 'After submitting the form, we will review your request and send you an access code for 2 additional generations.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <Footer />
     </div>
   );
