@@ -6,10 +6,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
-import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info, Download, Loader2, Lock, Key, Check, X } from 'lucide-react';
+import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info, Download, Loader2, Lock, Key, Check, X, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const AiFloorVisualizer = () => {
   const { language } = useLanguage();
@@ -32,6 +33,20 @@ const AiFloorVisualizer = () => {
   const [showLimitModal, setShowLimitModal] = useState<boolean>(false);
   const [accessCode, setAccessCode] = useState<string>('');
   const [codeError, setCodeError] = useState<string>('');
+  
+  // Quote form states
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    surface: '',
+    address: '',
+    finish: '',
+    description: '',
+    privacy: false
+  });
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
 
   const roomInputRef = useRef<HTMLInputElement | null>(null);
   const refInputRef = useRef<HTMLInputElement | null>(null);
@@ -235,6 +250,34 @@ const AiFloorVisualizer = () => {
     
     setShowLimitModal(true);
     return false;
+  };
+
+  // Handle quote form submission
+  const handleQuoteSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormSubmitting(true);
+
+    try {
+      // Here you would send the form data to your backend
+      // For now, we'll simulate a successful submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setFormSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        surface: '',
+        address: '',
+        finish: '',
+        description: '',
+        privacy: false
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
@@ -495,36 +538,166 @@ const AiFloorVisualizer = () => {
               )}
             </div>
 
-            {/* Request Quote Section */}
+            {/* Request Quote Form Section */}
             <div className="p-5 border-2 border-muted rounded-xl">
               <h3 className="font-bold text-lg mb-2">
                 {language === 'es' ? '¿No tienes código? Solicita uno gratis' : 'Don\'t have a code? Request one for free'}
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
                 {language === 'es' 
-                  ? 'Completa el formulario de contacto y recibirás un código de acceso para 2 generaciones adicionales por email.' 
-                  : 'Complete the contact form and you will receive an access code for 2 additional generations by email.'}
+                  ? 'Completa el formulario y recibirás un código de acceso para 2 generaciones adicionales por email.' 
+                  : 'Complete the form and you will receive an access code for 2 additional generations by email.'}
               </p>
-              
-              <Link to="/#contact">
-                <Button variant="default" className="w-full" size="lg">
-                  {language === 'es' ? 'Ir a Solicitar Presupuesto' : 'Go to Request Quote'}
-                </Button>
-              </Link>
+
+              {formSuccess ? (
+                <div className="p-5 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Check className="w-6 h-6 text-green-600" />
+                    <h4 className="font-bold text-green-800">
+                      {language === 'es' ? '¡Solicitud enviada!' : 'Request sent!'}
+                    </h4>
+                  </div>
+                  <p className="text-sm text-green-700">
+                    {language === 'es' 
+                      ? 'Recibirás un código de acceso por email en las próximas 24 horas.' 
+                      : 'You will receive an access code by email within 24 hours.'}
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleQuoteSubmit} className="space-y-4">
+                  <div>
+                    <Label className="text-sm font-medium">
+                      {language === 'es' ? 'Nombre completo' : 'Full name'} <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      placeholder={language === 'es' ? 'Tu nombre' : 'Your name'}
+                      className="mt-1"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label className="text-sm font-medium">
+                        Email <span className="text-red-500">*</span>
+                      </Label>
+                      <Input
+                        required
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        placeholder="tu@email.com"
+                        className="mt-1"
+                      />
+                    </div>
+                    <div>
+                      <Label className="text-sm font-medium">
+                        {language === 'es' ? 'Teléfono' : 'Phone'} <span className="text-red-500">*</span>
+                      </Label>
+                      <Input
+                        required
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        placeholder="+34 600 000 000"
+                        className="mt-1"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label className="text-sm font-medium">
+                        {language === 'es' ? 'Superficie estimada (m²)' : 'Estimated surface (m²)'}
+                      </Label>
+                      <Input
+                        value={formData.surface}
+                        onChange={(e) => setFormData({...formData, surface: e.target.value})}
+                        placeholder={language === 'es' ? 'ej. 150' : 'e.g. 150'}
+                        className="mt-1"
+                      />
+                    </div>
+                    <div>
+                      <Label className="text-sm font-medium">
+                        {language === 'es' ? 'Dirección del proyecto' : 'Project address'}
+                      </Label>
+                      <Input
+                        value={formData.address}
+                        onChange={(e) => setFormData({...formData, address: e.target.value})}
+                        placeholder={language === 'es' ? 'Ciudad, provincia' : 'City, province'}
+                        className="mt-1"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label className="text-sm font-medium">
+                      {language === 'es' ? 'Tipo de acabado deseado' : 'Desired finish type'}
+                    </Label>
+                    <Input
+                      value={formData.finish}
+                      onChange={(e) => setFormData({...formData, finish: e.target.value})}
+                      placeholder={language === 'es' ? 'ej. Industrial, decorativo...' : 'e.g. Industrial, decorative...'}
+                      className="mt-1"
+                    />
+                  </div>
+
+                  <div>
+                    <Label className="text-sm font-medium">
+                      {language === 'es' ? 'Descripción del proyecto' : 'Project description'}
+                    </Label>
+                    <Textarea
+                      value={formData.description}
+                      onChange={(e) => setFormData({...formData, description: e.target.value})}
+                      placeholder={language === 'es' ? 'Cuéntanos más detalles...' : 'Tell us more details...'}
+                      rows={3}
+                      className="mt-1 resize-none"
+                    />
+                  </div>
+
+                  <div className="flex items-start gap-2">
+                    <Checkbox
+                      id="privacy"
+                      checked={formData.privacy}
+                      onCheckedChange={(checked) => setFormData({...formData, privacy: checked as boolean})}
+                      required
+                    />
+                    <label htmlFor="privacy" className="text-xs text-muted-foreground leading-tight cursor-pointer">
+                      {language === 'es' 
+                        ? 'Acepto la política de privacidad y consiento el tratamiento de mis datos para recibir información comercial de JefeEpoxi.' 
+                        : 'I accept the privacy policy and consent to the processing of my data to receive commercial information from JefeEpoxi.'}
+                    </label>
+                  </div>
+
+                  <Button type="submit" disabled={formSubmitting || !formData.privacy} className="w-full" size="lg">
+                    {formSubmitting ? (
+                      <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> {language === 'es' ? 'Enviando...' : 'Sending...'}</>
+                    ) : (
+                      <><Send className="w-4 h-4 mr-2" /> {language === 'es' ? 'Solicitar Presupuesto' : 'Request Quote'}</>
+                    )}
+                  </Button>
+                </form>
+              )}
             </div>
 
             {/* Info Box */}
-            <div className="p-4 bg-blue-50 border border-blue-200 rounded-md flex items-start gap-2">
-              <Info className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-              <div className="text-sm text-blue-700">
-                <p className="font-semibold mb-1">
-                  {language === 'es' ? '📧 Recibirás tu código por email' : '📧 You will receive your code by email'}
-                </p>
-                <p>
-                  {language === 'es' 
-                    ? 'Después de enviar el formulario, revisaremos tu solicitud y te enviaremos un código de acceso para 2 generaciones adicionales.' 
-                    : 'After submitting the form, we will review your request and send you an access code for 2 additional generations.'}
-                </p>
+            <div className="p-5 bg-gradient-to-r from-blue-50 via-blue-50/50 to-indigo-50 border-2 border-blue-200/50 rounded-xl shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                  <Info className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-blue-900 mb-1.5 text-base">
+                    {language === 'es' ? '📧 Recibirás tu código por email' : '📧 You will receive your code by email'}
+                  </p>
+                  <p className="text-sm text-blue-700 leading-relaxed">
+                    {language === 'es' 
+                      ? 'Después de enviar el formulario, revisaremos tu solicitud y te enviaremos un código de acceso para 2 generaciones adicionales en un plazo de 24 horas.' 
+                      : 'After submitting the form, we will review your request and send you an access code for 2 additional generations within 24 hours.'}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
