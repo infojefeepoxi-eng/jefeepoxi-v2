@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info } from 'lucide-react';
+import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -112,6 +112,18 @@ const AiFloorVisualizer = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const downloadImage = () => {
+    if (!resultImage) return;
+    
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = resultImage;
+    link.download = `jefeepoxi-ai-floor-${Date.now()}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -235,7 +247,11 @@ const AiFloorVisualizer = () => {
                 {resultImage && (
                   <div className="mt-6">
                     <Label className="mb-3 block text-lg">{language === 'es' ? 'Resultado' : 'Result'}</Label>
-                    <img src={resultImage} alt="result" className="rounded-lg shadow-lg w-full" loading="lazy" decoding="async" />
+                    <img src={resultImage} alt="result" className="rounded-lg shadow-lg w-full mb-4" loading="lazy" decoding="async" />
+                    <Button onClick={downloadImage} variant="default" size="lg" className="w-full">
+                      <Download className="w-5 h-5 mr-2" />
+                      {language === 'es' ? 'Descargar imagen' : 'Download image'}
+                    </Button>
                   </div>
                 )}
 
