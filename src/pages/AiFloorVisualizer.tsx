@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info, Download } from 'lucide-react';
+import { Upload, Image as ImageIcon, Wand2, ArrowLeft, Info, Download, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -126,6 +126,21 @@ const AiFloorVisualizer = () => {
     document.body.removeChild(link);
   };
 
+  // Prevent page close during generation
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (isLoading) {
+        e.preventDefault();
+        e.returnValue = language === 'es' 
+          ? 'La generación está en progreso. ¿Estás seguro de que quieres salir?'
+          : 'Generation in progress. Are you sure you want to leave?';
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [isLoading, language]);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -232,11 +247,33 @@ const AiFloorVisualizer = () => {
                 </div>
 
                 <Button onClick={generatePreview} disabled={!roomImage || isLoading} className="w-full" size="lg">
-                  <Wand2 className="w-5 h-5 mr-2" /> 
+                  {isLoading ? (
+                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  ) : (
+                    <Wand2 className="w-5 h-5 mr-2" />
+                  )}
                   {isLoading 
                     ? (language === 'es' ? 'Generando…' : 'Generating…') 
                     : (language === 'es' ? 'Generar vista previa' : 'Generate preview')}
                 </Button>
+
+                {isLoading && (
+                  <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-md text-sm text-blue-700 flex items-start gap-2">
+                    <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">
+                        {language === 'es' 
+                          ? '⏱️ Generación en progreso...' 
+                          : '⏱️ Generation in progress...'}
+                      </p>
+                      <p className="mt-1 text-xs">
+                        {language === 'es' 
+                          ? 'Esto puede tardar 30-60 segundos. Por favor, no cierres esta página.' 
+                          : 'This may take 30-60 seconds. Please do not close this page.'}
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 {errorMsg && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-md text-sm text-red-600">
